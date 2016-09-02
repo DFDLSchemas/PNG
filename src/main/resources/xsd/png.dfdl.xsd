@@ -31,7 +31,8 @@
                          textNumberRoundingMode="roundUnnecessary" textNumberRoundingIncrement="0" textStandardGroupingSeparator="," 
                          separatorPosition="infix" sequenceKind="ordered" terminator="" textBidi="no" textNumberCheckPolicy="strict" 
                          textNumberRep="standard" textPadKind="none" textStandardBase="10" textTrimKind="none" trailingSkip="0" truncateSpecifiedLengthString="no" 
-                         utf16Width="fixed" encoding="US-ASCII" nilKind="literalValue" nilValueDelimiterPolicy="none" occursCountKind="parsed"/>
+                         utf16Width="fixed" encoding="US-ASCII" nilKind="literalValue" nilValueDelimiterPolicy="none" occursCountKind="parsed"
+                         textOutputMinLength="0" />
         </xs:appinfo>
     </xs:annotation>
 
@@ -41,32 +42,103 @@
         chunks, and an IEND chunk.
       -->
 
+	<xs:group name="hiddenChunk_Header">
+		<xs:sequence>
+			<xs:element name="Length" type="unsignedint32" dfdl:outputValueCalc="{
+				     if (fn:exists(../IHDR)) then dfdl:valueLength(../IHDR, 'bytes')
+				else if (fn:exists(../PLTE)) then fn:count(../PLTE/Entry) * 3
+				else if (fn:exists(../IDAT)) then dfdl:valueLength(../IDAT/Data, 'bytes')
+				else if (fn:exists(../IEND)) then dfdl:valueLength(../IEND, 'bytes')
+				else if (fn:exists(../cHRM)) then 32
+				else if (fn:exists(../gAMA)) then dfdl:valueLength(../gAMA/Image_Gamma, 'bytes')
+				else if (fn:exists(../iCCP)) then dfdl:valueLength(../iCCP/Profile_Name, 'bytes') + dfdl:valueLength(../iCCP/Compressed_Profile, 'bytes') + 3
+				else if (fn:exists(../sBIT)) then (
+					if (fn:exists(../sBIT/Color_Type/Color_Type_0)) then 1
+					else if (fn:exists(../sBIT/Color_Type/Color_Types_2_and_3)) then 3
+					else if (fn:exists(../sBIT/Color_Type/Color_Type_4)) then 4
+					else if (fn:exists(../sBIT/Color_Type/Color_Type_6)) then 4
+					else daf:error()
+				)
+				else if (fn:exists(../sRGB)) then dfdl:valueLength(../sRGB, 'bytes')
+				else if (fn:exists(../tEXt)) then dfdl:valueLength(../tEXt/Keyword, 'bytes') + dfdl:valueLength(../tEXt/Text, 'bytes') + 1
+				else if (fn:exists(../zTXt)) then dfdl:valueLength(../zTXt/Keyword, 'bytes') + dfdl:valueLength(../zTXt/Compressed_Text_Datastream, 'bytes') + 2
+				else if (fn:exists(../iTXt)) then dfdl:valueLength(../iTXt/Keyword, 'bytes') + dfdl:valueLength(../iTXt/Language_Tag, 'bytes') + dfdl:valueLength(../iTXt/Translated_Keyword, 'bytes') + dfdl:valueLength(../iTXt/Text, 'bytes') + 5
+				else if (fn:exists(../bKGD)) then (
+					if (fn:exists(../bKGD/Color_Types_0_and_4)) then 2
+					else if (fn:exists(../bKGD/Color_Types_2_and_6)) then 6
+					else if (fn:exists(../bKGD/Color_Type_3)) then 1
+					else daf:error()
+				)
+				else if (fn:exists(../hIST)) then fn:count(../hIST/Frequency) * 2
+				else if (fn:exists(../tRNS)) then (
+					if (fn:exists(../tRNS/Grey)) then 2
+					else if (fn:exists(../tRNS/Red)) then 6
+					else if (fn:exists(../tRNS/Alpha)) then fn:count(../tRNS/Alpha)
+					else daf:error()
+				)
+				else if (fn:exists(../pHYs)) then 9
+				else if (fn:exists(../sPLT)) then (
+					if (../sPLT/Sample_Depth eq 8)
+					then (fn:count(../sPLT/Palette_Entries/Eight_bit_Sample_Depth) * 6) + dfdl:valueLength(../sPLT/Palette_Name, 'bytes') + 2
+					else (fn:count(../sPLT/Palette_Entries/Sixteen_bit_Sample_Depth) * 10) + dfdl:valueLength(../sPLT/Palette_Name, 'bytes') + 2
+				)
+				else if (fn:exists(../tIME)) then 7
+				else daf:error()
+				}" />
+			<xs:element name="Chunk_Type" type="xs:string" dfdl:alignment="1" dfdl:alignmentUnits="bytes" dfdl:representation="text" dfdl:lengthKind="explicit" dfdl:length="4" dfdl:lengthUnits="bytes" dfdl:outputValueCalc="{
+				     if (fn:exists(../IHDR)) then 'IHDR'
+				else if (fn:exists(../PLTE)) then 'PLTE'
+				else if (fn:exists(../IDAT)) then 'IDAT'
+				else if (fn:exists(../IEND)) then 'IEND'
+				else if (fn:exists(../cHRM)) then 'cHRM'
+				else if (fn:exists(../gAMA)) then 'gAMA'
+				else if (fn:exists(../iCCP)) then 'iCCP'
+				else if (fn:exists(../sBIT)) then 'sBIT'
+				else if (fn:exists(../sRGB)) then 'sRGB'
+				else if (fn:exists(../tEXt)) then 'tEXt'
+				else if (fn:exists(../zTXt)) then 'zTXt'
+				else if (fn:exists(../iTXt)) then 'iTXt'
+				else if (fn:exists(../bKGD)) then 'bKGD'
+				else if (fn:exists(../hIST)) then 'hIST'
+				else if (fn:exists(../tRNS)) then 'tRNS'
+				else if (fn:exists(../pHYs)) then 'pHYs'
+				else if (fn:exists(../sPLT)) then 'sPLT'
+				else if (fn:exists(../tIME)) then 'tIME'
+				else daf:error()
+				}" />
+		</xs:sequence>
+	</xs:group>
+
     <xs:element name="PNG">
         <xs:complexType>
         	<xs:sequence>
         		<xs:sequence dfdl:hiddenGroupRef="hiddenFile_SignatureGroup" />
         		<xs:element name="Chunk" minOccurs="0" maxOccurs="unbounded" dfdl:occursCountKind="implicit">
         			<xs:complexType>
-        				<xs:choice>
-        					<xs:element ref="IHDR" />
-        					<xs:element ref="PLTE" />
-        					<xs:element ref="IDAT" />
-        					<xs:element ref="IEND" />
-        					<xs:element ref="cHRM" />
-        					<xs:element ref="gAMA" />
-        					<xs:element ref="iCCP" />
-        					<xs:element ref="sBIT" />
-        					<xs:element ref="sRGB" />
-        					<xs:element ref="tEXt" />
-        					<xs:element ref="zTXt" />
-        					<xs:element ref="iTXt" />
-        					<xs:element ref="bKGD" />
-        					<xs:element ref="hIST" />
-        					<xs:element ref="tRNS" />
-        					<xs:element ref="pHYs" />
-        					<xs:element ref="sPLT" />
-        					<xs:element ref="tIME" />
-        				</xs:choice>
+        				<xs:sequence>
+							<xs:sequence dfdl:hiddenGroupRef="hiddenChunk_Header" />
+							<xs:choice>
+								<xs:element ref="IHDR" dfdl:lengthKind="explicit" dfdl:lengthUnits="bytes" dfdl:length="{ ../Length }" />
+								<xs:element ref="PLTE" dfdl:lengthKind="explicit" dfdl:lengthUnits="bytes" dfdl:length="{ ../Length }" />
+								<xs:element ref="IDAT" dfdl:lengthKind="explicit" dfdl:lengthUnits="bytes" dfdl:length="{ ../Length }" />
+								<xs:element ref="IEND" dfdl:lengthKind="explicit" dfdl:lengthUnits="bytes" dfdl:length="{ ../Length }" />
+								<xs:element ref="cHRM" dfdl:lengthKind="explicit" dfdl:lengthUnits="bytes" dfdl:length="{ ../Length }" />
+								<xs:element ref="gAMA" dfdl:lengthKind="explicit" dfdl:lengthUnits="bytes" dfdl:length="{ ../Length }" />
+								<xs:element ref="iCCP" dfdl:lengthKind="explicit" dfdl:lengthUnits="bytes" dfdl:length="{ ../Length }" />
+								<xs:element ref="sBIT" dfdl:lengthKind="explicit" dfdl:lengthUnits="bytes" dfdl:length="{ ../Length }" />
+								<xs:element ref="sRGB" dfdl:lengthKind="explicit" dfdl:lengthUnits="bytes" dfdl:length="{ ../Length }" />
+								<xs:element ref="tEXt" dfdl:lengthKind="explicit" dfdl:lengthUnits="bytes" dfdl:length="{ ../Length }" />
+								<xs:element ref="zTXt" dfdl:lengthKind="explicit" dfdl:lengthUnits="bytes" dfdl:length="{ ../Length }" />
+								<xs:element ref="iTXt" dfdl:lengthKind="explicit" dfdl:lengthUnits="bytes" dfdl:length="{ ../Length }" />
+								<xs:element ref="bKGD" dfdl:lengthKind="explicit" dfdl:lengthUnits="bytes" dfdl:length="{ ../Length }" />
+								<xs:element ref="hIST" dfdl:lengthKind="explicit" dfdl:lengthUnits="bytes" dfdl:length="{ ../Length }" />
+								<xs:element ref="tRNS" dfdl:lengthKind="explicit" dfdl:lengthUnits="bytes" dfdl:length="{ ../Length }" />
+								<xs:element ref="pHYs" dfdl:lengthKind="explicit" dfdl:lengthUnits="bytes" dfdl:length="{ ../Length }" />
+								<xs:element ref="sPLT" dfdl:lengthKind="explicit" dfdl:lengthUnits="bytes" dfdl:length="{ ../Length }" />
+								<xs:element ref="tIME" dfdl:lengthKind="explicit" dfdl:lengthUnits="bytes" dfdl:length="{ ../Length }" />
+							</xs:choice>
+							<xs:element name="CRC" type="unsignedint32"/>
+						</xs:sequence>
         			</xs:complexType>
         		</xs:element>
             </xs:sequence>
@@ -76,9 +148,14 @@
 	<xs:element name="zTXt">
 		<xs:complexType>
 			<xs:sequence>
-				<xs:element name="Length" type="unsignedint32" />
-				<xs:sequence dfdl:hiddenGroupRef="hiddenzTXt_Chunk_TypeGroup" />
-				<xs:element name="Keyword" type="xs:string" dfdl:alignment="1" dfdl:alignmentUnits="bytes" dfdl:representation="text" dfdl:lengthKind="delimited" dfdl:terminator="%NUL;" dfdl:outputNewLine="" />
+				<xs:sequence>
+					<xs:annotation>
+						<xs:appinfo source="http://www.ogf.org/dfdl/">
+							<dfdl:discriminator test="{ ../Chunk_Type eq 'zTXt' }" />
+						</xs:appinfo>
+					</xs:annotation>
+				</xs:sequence>
+				<xs:element name="Keyword" type="xs:string" dfdl:alignment="1" dfdl:alignmentUnits="bytes" dfdl:representation="text" dfdl:lengthKind="delimited" dfdl:terminator="%NUL;" dfdl:outputNewLine="%LF;" />
 				<xs:element name="Compression_Method" type="unsignedint8">
 					<xs:annotation>
 						<xs:appinfo source="http://www.ogf.org/dfdl/">
@@ -86,54 +163,38 @@
 						</xs:appinfo>
 					</xs:annotation>
 				</xs:element>
-				<xs:element name="Compressed_Text_Datastream" type="xs:hexBinary" minOccurs="0" dfdl:representation="text" dfdl:occursCountKind="implicit" dfdl:lengthKind="explicit" dfdl:lengthUnits="bytes" dfdl:length="{../Length - fn:string-length(../Keyword) - 2}"/>
-				<xs:element name="CRC" type="unsignedint32"/>
+				<xs:element name="Compressed_Text_Datastream" type="xs:hexBinary" minOccurs="0" dfdl:representation="text" dfdl:occursCountKind="implicit" dfdl:lengthKind="explicit" dfdl:lengthUnits="bytes" dfdl:length="{../../Length - fn:string-length(../Keyword) - 2}"/>
 			</xs:sequence>
 		</xs:complexType>
 	</xs:element>
-	
-	<xs:group name="hiddenzTXt_Chunk_TypeGroup">
-		<xs:sequence>
-			<xs:element name="Chunk_Type" type="xs:string" dfdl:alignment="1" dfdl:alignmentUnits="bytes" dfdl:representation="text" dfdl:lengthKind="explicit" dfdl:length="4" dfdl:lengthUnits="bytes">
-				<xs:annotation>
-					<xs:appinfo source="http://www.ogf.org/dfdl/">
-						<dfdl:assert><![CDATA[{ . eq 'zTXt' }]]></dfdl:assert>
-					</xs:appinfo>
-				</xs:annotation>
-			</xs:element>
-		</xs:sequence>
-	</xs:group>
 	
 	<xs:element name="tEXt">
 		<xs:complexType>
 			<xs:sequence>
-				<xs:element name="Length" type="unsignedint32" />
-				<xs:sequence dfdl:hiddenGroupRef="hiddentEXt_Chunk_TypeGroup" />
-				<xs:element name="Keyword" type="xs:string" dfdl:alignment="1" dfdl:alignmentUnits="bytes" dfdl:representation="text" dfdl:lengthKind="delimited" dfdl:terminator="%NUL;" dfdl:outputNewLine="" />
-				<xs:element name="Text" type="xs:string" minOccurs="0" dfdl:representation="text" dfdl:occursCountKind="implicit" dfdl:lengthKind="explicit" dfdl:lengthUnits="bytes" dfdl:length="{../Length - fn:string-length(../Keyword) - 1}"/>
-				<xs:element name="CRC" type="unsignedint32"/>
+				<xs:sequence>
+					<xs:annotation>
+						<xs:appinfo source="http://www.ogf.org/dfdl/">
+							<dfdl:discriminator test="{ ../Chunk_Type eq 'tEXt' }" />
+						</xs:appinfo>
+					</xs:annotation>
+				</xs:sequence>
+				<xs:element name="Keyword" type="xs:string" dfdl:alignment="1" dfdl:alignmentUnits="bytes" dfdl:representation="text" dfdl:lengthKind="delimited" dfdl:terminator="%NUL;" dfdl:outputNewLine="%LF;" />
+				<xs:element name="Text" type="xs:string" dfdl:representation="text" dfdl:lengthKind="explicit" dfdl:lengthUnits="bytes" dfdl:length="{ ../../Length - fn:string-length(../Keyword) - 1}"/>
 			</xs:sequence>
 		</xs:complexType>
 	</xs:element>
 	
-	<xs:group name="hiddentEXt_Chunk_TypeGroup">
-		<xs:sequence>
-			<xs:element name="Chunk_Type" type="xs:string" dfdl:alignment="1" dfdl:alignmentUnits="bytes" dfdl:representation="text" dfdl:lengthKind="explicit" dfdl:length="4" dfdl:lengthUnits="bytes">
-				<xs:annotation>
-					<xs:appinfo source="http://www.ogf.org/dfdl/">
-						<dfdl:assert><![CDATA[{ . eq 'tEXt' }]]></dfdl:assert>
-					</xs:appinfo>
-				</xs:annotation>
-			</xs:element>
-		</xs:sequence>
-	</xs:group>
-	
 	<xs:element name="iTXt">
 		<xs:complexType>
 			<xs:sequence>
-				<xs:element name="Length" type="unsignedint32" />
-				<xs:sequence dfdl:hiddenGroupRef="hiddeniTXt_Chunk_TypeGroup" />
-				<xs:element name="Keyword" type="xs:string" dfdl:alignment="1" dfdl:alignmentUnits="bytes" dfdl:representation="text" dfdl:lengthKind="delimited" dfdl:terminator="%NUL;" dfdl:outputNewLine="" />
+				<xs:sequence>
+					<xs:annotation>
+						<xs:appinfo source="http://www.ogf.org/dfdl/">
+							<dfdl:discriminator test="{ ../Chunk_Type eq 'iTXt' }" />
+						</xs:appinfo>
+					</xs:annotation>
+				</xs:sequence>
+				<xs:element name="Keyword" type="xs:string" dfdl:alignment="1" dfdl:alignmentUnits="bytes" dfdl:representation="text" dfdl:lengthKind="delimited" dfdl:terminator="%NUL;" dfdl:outputNewLine="%LF;" />
 				<xs:element name="Compression_Flag">
 					<xs:simpleType>
 						<xs:restriction base="unsignedint8">
@@ -149,31 +210,23 @@
 						</xs:appinfo>
 					</xs:annotation>
 				</xs:element>				
-				<xs:element name="Language_Tag" type="xs:string" dfdl:alignment="1" dfdl:alignmentUnits="bytes" dfdl:representation="text" dfdl:lengthKind="delimited" dfdl:terminator="%NUL;" dfdl:outputNewLine="" />
-				<xs:element name="Translated_Keyword" type="xs:string" dfdl:alignment="1" dfdl:alignmentUnits="bytes" dfdl:representation="text" dfdl:lengthKind="delimited" dfdl:terminator="%NUL;" dfdl:outputNewLine="" />
-				<xs:element name="Text" type="xs:string" minOccurs="0" dfdl:representation="text" dfdl:occursCountKind="implicit" dfdl:lengthKind="explicit" dfdl:lengthUnits="bytes" dfdl:length="{../Length - fn:string-length(../Keyword) - fn:string-length(../Language_Tag) - fn:string-length(../Translated_Keyword) - 5}"/>
-				<xs:element name="CRC" type="unsignedint32"/>
+				<xs:element name="Language_Tag" type="xs:string" dfdl:alignment="1" dfdl:alignmentUnits="bytes" dfdl:representation="text" dfdl:lengthKind="delimited" dfdl:terminator="%NUL;" dfdl:outputNewLine="%LF;" />
+				<xs:element name="Translated_Keyword" type="xs:string" dfdl:encoding="UTF-8" dfdl:alignment="1" dfdl:alignmentUnits="bytes" dfdl:representation="text" dfdl:lengthKind="delimited" dfdl:terminator="%NUL;" dfdl:outputNewLine="%LF;" />
+				<xs:element name="Text" type="xs:string" dfdl:encoding="UTF-8" dfdl:representation="text" dfdl:lengthKind="explicit" dfdl:lengthUnits="bytes" dfdl:length="{../../Length - fn:string-length(../Keyword) - fn:string-length(../Language_Tag) - dfdl:valueLength(../Translated_Keyword, 'bytes') - 5}"/>
 			</xs:sequence>
 		</xs:complexType>
 	</xs:element>
 	
-	<xs:group name="hiddeniTXt_Chunk_TypeGroup">
-		<xs:sequence>
-			<xs:element name="Chunk_Type" type="xs:string" dfdl:alignment="1" dfdl:alignmentUnits="bytes" dfdl:representation="text" dfdl:lengthKind="explicit" dfdl:length="4" dfdl:lengthUnits="bytes">
-				<xs:annotation>
-					<xs:appinfo source="http://www.ogf.org/dfdl/">
-						<dfdl:assert><![CDATA[{ . eq 'iTXt' }]]></dfdl:assert>
-					</xs:appinfo>
-				</xs:annotation>
-			</xs:element>
-		</xs:sequence>
-	</xs:group>
-	
 	<xs:element name="tIME">
 		<xs:complexType>
 			<xs:sequence>
-				<xs:element name="Length" type="unsignedint32" />
-				<xs:sequence dfdl:hiddenGroupRef="hiddentIME_Chunk_TypeGroup" />
+				<xs:sequence>
+					<xs:annotation>
+						<xs:appinfo source="http://www.ogf.org/dfdl/">
+							<dfdl:discriminator test="{ ../Chunk_Type eq 'tIME' }" />
+						</xs:appinfo>
+					</xs:annotation>
+				</xs:sequence>
 				<xs:element name="Year">
 					<xs:simpleType>
 						<xs:restriction base="unsignedint16">
@@ -222,29 +275,21 @@
 						</xs:restriction>
 					</xs:simpleType>
 				</xs:element>
-				<xs:element name="CRC" type="unsignedint32"/>
 			</xs:sequence>
 		</xs:complexType>
 	</xs:element>
 	
-	<xs:group name="hiddentIME_Chunk_TypeGroup">
-		<xs:sequence>
-			<xs:element name="Chunk_Type" type="xs:string" dfdl:alignment="1" dfdl:alignmentUnits="bytes" dfdl:representation="text" dfdl:lengthKind="explicit" dfdl:length="4" dfdl:lengthUnits="bytes">
-				<xs:annotation>
-					<xs:appinfo source="http://www.ogf.org/dfdl/">
-						<dfdl:assert><![CDATA[{ . eq 'tIME' }]]></dfdl:assert>
-					</xs:appinfo>
-				</xs:annotation>
-			</xs:element>
-		</xs:sequence>
-	</xs:group>
-	
 	<xs:element name="sPLT">
 		<xs:complexType>
 			<xs:sequence>
-				<xs:element name="Length" type="unsignedint32" />
-				<xs:sequence dfdl:hiddenGroupRef="hiddensPLT_Chunk_TypeGroup" />
-				<xs:element name="Palette_Name" type="xs:string" dfdl:alignment="1" dfdl:alignmentUnits="bytes" dfdl:representation="text" dfdl:lengthKind="delimited" dfdl:terminator="%NUL;" dfdl:outputNewLine="" />
+				<xs:sequence>
+					<xs:annotation>
+						<xs:appinfo source="http://www.ogf.org/dfdl/">
+							<dfdl:discriminator test="{ ../Chunk_Type eq 'sPLT' }" />
+						</xs:appinfo>
+					</xs:annotation>
+				</xs:sequence>
+				<xs:element name="Palette_Name" type="xs:string" dfdl:alignment="1" dfdl:alignmentUnits="bytes" dfdl:representation="text" dfdl:lengthKind="delimited" dfdl:terminator="%NUL;" dfdl:outputNewLine="%LF;" />
 				<xs:element name="Sample_Depth" type="unsignedint8">
 					<xs:annotation>
 						<xs:appinfo source="http://www.ogf.org/dfdl/">
@@ -261,7 +306,7 @@
 										<dfdl:discriminator test="{ ../Sample_Depth eq 8 }" />
 									</xs:appinfo>
 								</xs:annotation>
-								<xs:element name="Eight_bit_Sample_Depth" maxOccurs="unbounded" dfdl:occursCountKind="expression" dfdl:occursCount="{(../../Length - fn:string-length(../../Palette_Name) - 1) div 6}">
+								<xs:element name="Eight_bit_Sample_Depth" maxOccurs="unbounded" dfdl:occursCountKind="expression" dfdl:occursCount="{(../../../Length - fn:string-length(../../Palette_Name) - 2) div 6}">
 									<xs:complexType>
 										<xs:sequence>
 											<xs:element name="Red" type="unsignedint8" />
@@ -279,7 +324,7 @@
 										<dfdl:discriminator test="{ ../Sample_Depth eq 16 }" />
 									</xs:appinfo>
 								</xs:annotation>
-								<xs:element name="Sixteen_bit_Sample_Depth" maxOccurs="unbounded" dfdl:occursCountKind="expression" dfdl:occursCount="{(../../Length - fn:string-length(../../Palette_Name) - 1) div 10}">
+								<xs:element name="Sixteen_bit_Sample_Depth" maxOccurs="unbounded" dfdl:occursCountKind="expression" dfdl:occursCount="{(../../../Length - fn:string-length(../../Palette_Name) - 2) div 10}">
 									<xs:complexType>
 										<xs:sequence>
 											<xs:element name="Red" type="unsignedint16" />
@@ -294,57 +339,42 @@
 						</xs:choice>
 					</xs:complexType>
 				</xs:element>
-				<xs:element name="CRC" type="unsignedint32"/>
 			</xs:sequence>
 		</xs:complexType>
 	</xs:element>
-	
-	<xs:group name="hiddensPLT_Chunk_TypeGroup">
-		<xs:sequence>
-			<xs:element name="Chunk_Type" type="xs:string" dfdl:alignment="1" dfdl:alignmentUnits="bytes" dfdl:representation="text" dfdl:lengthKind="explicit" dfdl:length="4" dfdl:lengthUnits="bytes">
-				<xs:annotation>
-					<xs:appinfo source="http://www.ogf.org/dfdl/">
-						<dfdl:assert><![CDATA[{ . eq 'sPLT' }]]></dfdl:assert>
-					</xs:appinfo>
-				</xs:annotation>
-			</xs:element>
-		</xs:sequence>
-	</xs:group>
 	
 	<xs:element name="hIST">
 		<xs:complexType>
 			<xs:sequence>
-				<xs:element name="Length" type="unsignedint32" />
-				<xs:sequence dfdl:hiddenGroupRef="hiddenhIST_Chunk_TypeGroup" />
-				<xs:element name="Frequency" type="unsignedint16" maxOccurs="unbounded" dfdl:occursCountKind="expression" dfdl:occursCount="{(../Length) div 2}"/>
-				<xs:element name="CRC" type="unsignedint32"/>
+				<xs:sequence>
+					<xs:annotation>
+						<xs:appinfo source="http://www.ogf.org/dfdl/">
+							<dfdl:discriminator test="{ ../Chunk_Type eq 'hIST' }" />
+						</xs:appinfo>
+					</xs:annotation>
+				</xs:sequence>
+				<xs:element name="Frequency" type="unsignedint16" maxOccurs="unbounded" dfdl:occursCountKind="expression" dfdl:occursCount="{(../../Length) div 2}"/>
 			</xs:sequence>
 		</xs:complexType>
 	</xs:element>
 	
-	<xs:group name="hiddenhIST_Chunk_TypeGroup">
-		<xs:sequence>
-			<xs:element name="Chunk_Type" type="xs:string" dfdl:alignment="1" dfdl:alignmentUnits="bytes" dfdl:representation="text" dfdl:lengthKind="explicit" dfdl:length="4" dfdl:lengthUnits="bytes">
-				<xs:annotation>
-					<xs:appinfo source="http://www.ogf.org/dfdl/">
-						<dfdl:assert><![CDATA[{ . eq 'hIST' }]]></dfdl:assert>
-					</xs:appinfo>
-				</xs:annotation>
-			</xs:element>
-		</xs:sequence>
-	</xs:group>
-	
 	<xs:element name="IHDR">
 		<xs:complexType>
 			<xs:sequence>
-				<xs:element name="Length" type="unsignedint32">
+				<xs:sequence>
 					<xs:annotation>
 						<xs:appinfo source="http://www.ogf.org/dfdl/">
-							<dfdl:assert><![CDATA[{ . eq 13 }]]></dfdl:assert>
+							<dfdl:discriminator test="{ ../Chunk_Type eq 'IHDR' }" />
 						</xs:appinfo>
 					</xs:annotation>
-				</xs:element>
-				<xs:sequence dfdl:hiddenGroupRef="hiddenIHDR_Chunk_TypeGroup" />
+				</xs:sequence>
+				<xs:sequence>
+					<xs:annotation>
+						<xs:appinfo source="http://www.ogf.org/dfdl/">
+							<dfdl:assert><![CDATA[{ ../Length eq 13 }]]></dfdl:assert>
+						</xs:appinfo>
+					</xs:annotation>
+				</xs:sequence>
 				<xs:element name="Width" type="unsignedint32" />
 				<xs:element name="Height" type="unsignedint32" />
 				<xs:element name="Bit_Depth" type="unsignedint8" />
@@ -352,34 +382,27 @@
 				<xs:element name="Compression_Method" type="unsignedint8" />
 				<xs:element name="Filter_Method" type="unsignedint8" />
 				<xs:element name="Interlace_Method" type="unsignedint8" />
-				<xs:element name="CRC" type="unsignedint32" />
 			</xs:sequence>
 		</xs:complexType>
 	</xs:element>
 	
-	<xs:group name="hiddenIHDR_Chunk_TypeGroup">
-		<xs:sequence>
-			<xs:element name="Chunk_Type" type="xs:string" dfdl:alignment="1" dfdl:alignmentUnits="bytes" dfdl:representation="text" dfdl:lengthKind="explicit" dfdl:length="4" dfdl:lengthUnits="bytes">
-				<xs:annotation>
-					<xs:appinfo source="http://www.ogf.org/dfdl/">
-						<dfdl:assert><![CDATA[{ . eq 'IHDR' }]]></dfdl:assert>
-					</xs:appinfo>
-				</xs:annotation>
-			</xs:element>
-		</xs:sequence>
-	</xs:group>
-	
 	<xs:element name="cHRM">
 		<xs:complexType>
 			<xs:sequence>
-				<xs:element name="Length" type="unsignedint32">
+				<xs:sequence>
 					<xs:annotation>
 						<xs:appinfo source="http://www.ogf.org/dfdl/">
-							<dfdl:assert><![CDATA[{ . eq 32 }]]></dfdl:assert>
+							<dfdl:discriminator test="{ ../Chunk_Type eq 'cHRM' }" />
 						</xs:appinfo>
 					</xs:annotation>
-				</xs:element>
-				<xs:sequence dfdl:hiddenGroupRef="hiddencHRM_Chunk_TypeGroup" />
+				</xs:sequence>
+				<xs:sequence>
+					<xs:annotation>
+						<xs:appinfo source="http://www.ogf.org/dfdl/">
+							<dfdl:assert><![CDATA[{ ../Length eq 32 }]]></dfdl:assert>
+						</xs:appinfo>
+					</xs:annotation>
+				</xs:sequence>
 				<xs:element name="White_point_x" type="unsignedint32" />
 				<xs:element name="White_point_y" type="unsignedint32" />
 				<xs:element name="Red_x" type="unsignedint32" />
@@ -388,34 +411,27 @@
 				<xs:element name="Green_y" type="unsignedint32" />
 				<xs:element name="Blue_x" type="unsignedint32" />
 				<xs:element name="Blue_y" type="unsignedint32" />
-				<xs:element name="CRC" type="unsignedint32"/>
 			</xs:sequence>
 		</xs:complexType>
 	</xs:element>
 	
-	<xs:group name="hiddencHRM_Chunk_TypeGroup">
-		<xs:sequence>
-			<xs:element name="Chunk_Type" type="xs:string" dfdl:alignment="1" dfdl:alignmentUnits="bytes" dfdl:representation="text" dfdl:lengthKind="explicit" dfdl:length="4" dfdl:lengthUnits="bytes">
-				<xs:annotation>
-					<xs:appinfo source="http://www.ogf.org/dfdl/">
-						<dfdl:assert><![CDATA[{ . eq 'cHRM' }]]></dfdl:assert>
-					</xs:appinfo>
-				</xs:annotation>
-			</xs:element>
-		</xs:sequence>
-	</xs:group>
-	
 	<xs:element name="sRGB">
 		<xs:complexType>
 			<xs:sequence>
-				<xs:element name="Length" type="unsignedint32">
+				<xs:sequence>
 					<xs:annotation>
 						<xs:appinfo source="http://www.ogf.org/dfdl/">
-							<dfdl:assert><![CDATA[{ . eq 1 }]]></dfdl:assert>
+							<dfdl:discriminator test="{ ../Chunk_Type eq 'sRGB' }" />
 						</xs:appinfo>
 					</xs:annotation>
-				</xs:element>
-				<xs:sequence dfdl:hiddenGroupRef="hiddensRGB_Chunk_TypeGroup" />
+				</xs:sequence>
+				<xs:sequence>
+					<xs:annotation>
+						<xs:appinfo source="http://www.ogf.org/dfdl/">
+							<dfdl:assert><![CDATA[{ ../Length eq 1 }]]></dfdl:assert>
+						</xs:appinfo>
+					</xs:annotation>
+				</xs:sequence>
 				<xs:sequence dfdl:hiddenGroupRef="hiddenRendering_IntentGroup" />
 				<xs:element name='Unit' type='xs:string' dfdl:inputValueCalc='{
 					if (../Rendering_Intent eq 0) then "perceptual (0)"
@@ -424,70 +440,61 @@
 					else if (../Rendering_Intent eq 3) then "absolute colorimetric (3)"
 					else "daf:error()"
 					}' />
-				<xs:element name="CRC" type="unsignedint32"/>
 			</xs:sequence>
 		</xs:complexType>
 	</xs:element>
 	
-	<xs:group name="hiddensRGB_Chunk_TypeGroup">
-		<xs:sequence>
-			<xs:element name="Chunk_Type" type="xs:string" dfdl:alignment="1" dfdl:alignmentUnits="bytes" dfdl:representation="text" dfdl:lengthKind="explicit" dfdl:length="4" dfdl:lengthUnits="bytes">
-				<xs:annotation>
-					<xs:appinfo source="http://www.ogf.org/dfdl/">
-						<dfdl:assert><![CDATA[{ . eq 'sRGB' }]]></dfdl:assert>
-					</xs:appinfo>
-				</xs:annotation>
-			</xs:element>
-		</xs:sequence>
-	</xs:group>
-	
 	<xs:group name="hiddenRendering_IntentGroup">
 		<xs:sequence>
-			<xs:element name="Rendering_Intent" type="unsignedint8" />
+			<xs:element name="Rendering_Intent" type="unsignedint8" dfdl:outputValueCalc="{
+				     if (../Unit eq 'perceptual (0)') then 0
+				else if (../Unit eq 'relative colorimetric (1)') then 1
+				else if (../Unit eq 'saturation (2)') then 2
+				else if (../Unit eq 'absolute colorimetric (3)') then 3
+				else daf:error()
+				}" />
 		</xs:sequence>
 	</xs:group>
 	
 	<xs:element name="gAMA">
 		<xs:complexType>
 			<xs:sequence>
-				<xs:element name="Length" type="unsignedint32">
+				<xs:sequence>
 					<xs:annotation>
 						<xs:appinfo source="http://www.ogf.org/dfdl/">
-							<dfdl:assert><![CDATA[{ . eq 4 }]]></dfdl:assert>
+							<dfdl:discriminator test="{ ../Chunk_Type eq 'gAMA' }" />
 						</xs:appinfo>
 					</xs:annotation>
-				</xs:element>
-				<xs:sequence dfdl:hiddenGroupRef="hiddengAMA_Chunk_TypeGroup" />
+				</xs:sequence>
+				<xs:sequence>
+					<xs:annotation>
+						<xs:appinfo source="http://www.ogf.org/dfdl/">
+							<dfdl:assert><![CDATA[{ ../Length eq 4 }]]></dfdl:assert>
+						</xs:appinfo>
+					</xs:annotation>
+				</xs:sequence>
 				<xs:element name="Image_Gamma" type="unsignedint32" />
-				<xs:element name="CRC" type="unsignedint32"/>
 			</xs:sequence>
 		</xs:complexType>
 	</xs:element>
 	
-	<xs:group name="hiddengAMA_Chunk_TypeGroup">
-		<xs:sequence>
-			<xs:element name="Chunk_Type" type="xs:string" dfdl:alignment="1" dfdl:alignmentUnits="bytes" dfdl:representation="text" dfdl:lengthKind="explicit" dfdl:length="4" dfdl:lengthUnits="bytes">
-				<xs:annotation>
-					<xs:appinfo source="http://www.ogf.org/dfdl/">
-						<dfdl:assert><![CDATA[{ . eq 'gAMA' }]]></dfdl:assert>
-					</xs:appinfo>
-				</xs:annotation>
-			</xs:element>
-		</xs:sequence>
-	</xs:group>
-	
 	<xs:element name="sBIT">
 		<xs:complexType>
 			<xs:sequence>
-				<xs:element name="Length" type="unsignedint32" />
-				<xs:sequence dfdl:hiddenGroupRef="hiddensBIT_Chunk_TypeGroup" />
+				<xs:sequence>
+					<xs:annotation>
+						<xs:appinfo source="http://www.ogf.org/dfdl/">
+							<dfdl:discriminator test="{ ../Chunk_Type eq 'sBIT' }" />
+						</xs:appinfo>
+					</xs:annotation>
+				</xs:sequence>
 				<xs:element name="Color_Type">
 					<xs:complexType>
 						<xs:choice>
 							<xs:sequence>
 								<xs:annotation>
 									<xs:appinfo source="http://www.ogf.org/dfdl/">
-										<dfdl:discriminator test="{ ../Length eq 1 }" />
+										<dfdl:discriminator test="{ ../../Length eq 1 }" />
 									</xs:appinfo>
 								</xs:annotation>
 								<xs:element name="Color_Type_0">
@@ -501,7 +508,7 @@
 							<xs:sequence>
 								<xs:annotation>
 									<xs:appinfo source="http://www.ogf.org/dfdl/">
-										<dfdl:discriminator test="{ ../Length eq 3 }" />
+										<dfdl:discriminator test="{ ../../Length eq 3 }" />
 									</xs:appinfo>
 								</xs:annotation>
 								<xs:element name="Color_Types_2_and_3">
@@ -517,7 +524,7 @@
 							<xs:sequence>
 								<xs:annotation>
 									<xs:appinfo source="http://www.ogf.org/dfdl/">
-										<dfdl:discriminator test="{ ../Length eq 2 }" />
+										<dfdl:discriminator test="{ ../../Length eq 2 }" />
 									</xs:appinfo>
 								</xs:annotation>
 								<xs:element name="Color_Type_4">
@@ -532,7 +539,7 @@
 							<xs:sequence>
 								<xs:annotation>
 									<xs:appinfo source="http://www.ogf.org/dfdl/">
-										<dfdl:discriminator test="{ ../Length eq 4 }" />
+										<dfdl:discriminator test="{ ../../Length eq 4 }" />
 									</xs:appinfo>
 								</xs:annotation>
 								<xs:element name="Color_Type_6">
@@ -549,28 +556,20 @@
 						</xs:choice>
 					</xs:complexType>
 				</xs:element>
-				<xs:element name="CRC" type="unsignedint32"/>
 			</xs:sequence>
 		</xs:complexType>
 	</xs:element>
 	
-	<xs:group name="hiddensBIT_Chunk_TypeGroup">
-		<xs:sequence>
-			<xs:element name="Chunk_Type" type="xs:string" dfdl:alignment="1" dfdl:alignmentUnits="bytes" dfdl:representation="text" dfdl:lengthKind="explicit" dfdl:length="4" dfdl:lengthUnits="bytes">
-				<xs:annotation>
-					<xs:appinfo source="http://www.ogf.org/dfdl/">
-						<dfdl:assert><![CDATA[{ . eq 'sBIT' }]]></dfdl:assert>
-					</xs:appinfo>
-				</xs:annotation>
-			</xs:element>
-		</xs:sequence>
-	</xs:group>
-	
 	<xs:element name="iCCP">
 		<xs:complexType>
 			<xs:sequence>
-				<xs:element name="Length" type="unsignedint32" />
-				<xs:sequence dfdl:hiddenGroupRef="hiddeniCCP_Chunk_TypeGroup" />
+				<xs:sequence>
+					<xs:annotation>
+						<xs:appinfo source="http://www.ogf.org/dfdl/">
+							<dfdl:discriminator test="{ ../Chunk_Type eq 'iCCP' }" />
+						</xs:appinfo>
+					</xs:annotation>
+				</xs:sequence>
 				<xs:element name="Profile_Name" type="xs:string" dfdl:alignment="1" dfdl:alignmentUnits="bytes" dfdl:representation="text" dfdl:lengthKind="pattern" dfdl:lengthPattern="[&#32;-&#126;&#161;&#255;]{1,79}" />
 				<xs:element name="Null_Separator" type="unsignedint8">
 					<xs:annotation>
@@ -586,30 +585,22 @@
 						</xs:appinfo>
 					</xs:annotation>
 				</xs:element>
-				<xs:element name="Compressed_Profile" type="xs:hexBinary" dfdl:alignment="1" dfdl:alignmentUnits="bytes" dfdl:representation="binary" dfdl:lengthKind="explicit" dfdl:lengthUnits="bytes" dfdl:length="{../Length - fn:string-length(../Profile_Name) - 2}" />
-				<xs:element name="CRC" type="unsignedint32"/>
+				<xs:element name="Compressed_Profile" type="xs:hexBinary" dfdl:alignment="1" dfdl:alignmentUnits="bytes" dfdl:representation="binary" dfdl:lengthKind="explicit" dfdl:lengthUnits="bytes" dfdl:length="{../../Length - fn:string-length(../Profile_Name) - 3}" />
 			</xs:sequence>
 		</xs:complexType>
 	</xs:element>
 	
-	<xs:group name="hiddeniCCP_Chunk_TypeGroup">
-		<xs:sequence>
-			<xs:element name="Chunk_Type" type="xs:string" dfdl:alignment="1" dfdl:alignmentUnits="bytes" dfdl:representation="text" dfdl:lengthKind="explicit" dfdl:length="4" dfdl:lengthUnits="bytes">
-				<xs:annotation>
-					<xs:appinfo source="http://www.ogf.org/dfdl/">
-						<dfdl:assert><![CDATA[{ . eq 'iCCP' }]]></dfdl:assert>
-					</xs:appinfo>
-				</xs:annotation>
-			</xs:element>
-		</xs:sequence>
-	</xs:group>
-	
 	<xs:element name="PLTE">
 		<xs:complexType>
 			<xs:sequence>
-				<xs:element name="Length" type="unsignedint32" />
-				<xs:sequence dfdl:hiddenGroupRef="hiddenPLTE_Chunk_TypeGroup" />
-				<xs:element name="Entry" minOccurs="0" maxOccurs="unbounded" dfdl:occursCountKind="expression" dfdl:occursCount="{../Length div 3}">
+				<xs:sequence>
+					<xs:annotation>
+						<xs:appinfo source="http://www.ogf.org/dfdl/">
+							<dfdl:discriminator test="{ ../Chunk_Type eq 'PLTE' }" />
+						</xs:appinfo>
+					</xs:annotation>
+				</xs:sequence>
+				<xs:element name="Entry" minOccurs="0" maxOccurs="unbounded" dfdl:occursCountKind="expression" dfdl:occursCount="{../../Length div 3}">
 					<xs:complexType>
 						<xs:sequence>
 							<xs:element name="Red" type="unsignedint8" />
@@ -618,33 +609,25 @@
 						</xs:sequence>
 					</xs:complexType>
 				</xs:element>
-				<xs:element name="CRC" type="unsignedint32"/>
 			</xs:sequence>
 		</xs:complexType>
 	</xs:element>
 	
-	<xs:group name="hiddenPLTE_Chunk_TypeGroup">
-		<xs:sequence>
-			<xs:element name="Chunk_Type" type="xs:string" dfdl:alignment="1" dfdl:alignmentUnits="bytes" dfdl:representation="text" dfdl:lengthKind="explicit" dfdl:length="4" dfdl:lengthUnits="bytes">
-				<xs:annotation>
-					<xs:appinfo source="http://www.ogf.org/dfdl/">
-						<dfdl:assert><![CDATA[{ . eq 'PLTE' }]]></dfdl:assert>
-					</xs:appinfo>
-				</xs:annotation>
-			</xs:element>
-		</xs:sequence>
-	</xs:group>
-	
 	<xs:element name="bKGD">
 		<xs:complexType>
 			<xs:sequence>
-				<xs:element name="Length" type="unsignedint32" />
-				<xs:sequence dfdl:hiddenGroupRef="hiddenbKGD_Chunk_TypeGroup" />
+				<xs:sequence>
+					<xs:annotation>
+						<xs:appinfo source="http://www.ogf.org/dfdl/">
+							<dfdl:discriminator test="{ ../Chunk_Type eq 'bKGD' }" />
+						</xs:appinfo>
+					</xs:annotation>
+				</xs:sequence>
 				<xs:choice>
 					<xs:sequence>
 						<xs:annotation>
 							<xs:appinfo source="http://www.ogf.org/dfdl/">
-								<dfdl:discriminator test="{ Length eq 2 }" />
+								<dfdl:discriminator test="{ ../Length eq 2 }" />
 							</xs:appinfo>
 						</xs:annotation>
 						<xs:element name="Color_Types_0_and_4">
@@ -658,7 +641,7 @@
 					<xs:sequence>
 						<xs:annotation>
 							<xs:appinfo source="http://www.ogf.org/dfdl/">
-								<dfdl:discriminator test="{ Length eq 6 }" />
+								<dfdl:discriminator test="{ ../Length eq 6 }" />
 							</xs:appinfo>
 						</xs:annotation>
 						<xs:element name="Color_Types_2_and_6">
@@ -674,7 +657,7 @@
 					<xs:sequence>
 						<xs:annotation>
 							<xs:appinfo source="http://www.ogf.org/dfdl/">
-								<dfdl:discriminator test="{ Length eq 1 }" />
+								<dfdl:discriminator test="{ ../Length eq 1 }" />
 							</xs:appinfo>
 						</xs:annotation>
 						<xs:element name="Color_Type_3">
@@ -686,28 +669,20 @@
 						</xs:element>
 					</xs:sequence>
 				</xs:choice>
-				<xs:element name="CRC" type="unsignedint32"/>
 			</xs:sequence>
 		</xs:complexType>
 	</xs:element>
 	
-	<xs:group name="hiddenbKGD_Chunk_TypeGroup">
-		<xs:sequence>
-			<xs:element name="Chunk_Type" type="xs:string" dfdl:alignment="1" dfdl:alignmentUnits="bytes" dfdl:representation="text" dfdl:lengthKind="explicit" dfdl:length="4" dfdl:lengthUnits="bytes">
-				<xs:annotation>
-					<xs:appinfo source="http://www.ogf.org/dfdl/">
-						<dfdl:assert><![CDATA[{ . eq 'bKGD' }]]></dfdl:assert>
-					</xs:appinfo>
-				</xs:annotation>
-			</xs:element>
-		</xs:sequence>
-	</xs:group>
-	
 	<xs:element name="tRNS">
 		<xs:complexType>
 			<xs:sequence>
-				<xs:element name="Length" type="unsignedint32" />
-				<xs:sequence dfdl:hiddenGroupRef="hiddentRNS_Chunk_TypeGroup" />
+				<xs:sequence>
+					<xs:annotation>
+						<xs:appinfo source="http://www.ogf.org/dfdl/">
+							<dfdl:discriminator test="{ ../Chunk_Type eq 'tRNS' }" />
+						</xs:appinfo>
+					</xs:annotation>
+				</xs:sequence>
 				<xs:choice>
 					<xs:sequence>
 						<!-- If ../../Chunk[1]/IHDR/Color_Type = 0 then use Grey -->
@@ -736,37 +711,30 @@
 								<dfdl:discriminator test="{ ../../Chunk[1]/IHDR/Color_Type eq 3 }"  message="Color_Type is not 3"/>
 							</xs:appinfo>
 						</xs:annotation>			
-						<xs:element name="Alpha" type="unsignedint8" maxOccurs="unbounded" dfdl:occursCountKind="expression" dfdl:occursCount="{../Length}" />
+						<xs:element name="Alpha" type="unsignedint8" maxOccurs="unbounded" dfdl:occursCountKind="expression" dfdl:occursCount="{../../Length}" />
 					</xs:sequence>
 				</xs:choice>
-				<xs:element name="CRC" type="unsignedint32"/>
 			</xs:sequence>
 		</xs:complexType>
 	</xs:element>
 	
-	<xs:group name="hiddentRNS_Chunk_TypeGroup">
-		<xs:sequence>
-			<xs:element name="Chunk_Type" type="xs:string" dfdl:alignment="1" dfdl:alignmentUnits="bytes" dfdl:representation="text" dfdl:lengthKind="explicit" dfdl:length="4" dfdl:lengthUnits="bytes">
-				<xs:annotation>
-					<xs:appinfo source="http://www.ogf.org/dfdl/">
-						<dfdl:assert><![CDATA[{ . eq 'tRNS' }]]></dfdl:assert>
-					</xs:appinfo>
-				</xs:annotation>
-			</xs:element>
-		</xs:sequence>
-	</xs:group>
-	
 	<xs:element name="pHYs">
 		<xs:complexType>
 			<xs:sequence>
-				<xs:element name="Length" type="unsignedint32">
+				<xs:sequence>
 					<xs:annotation>
 						<xs:appinfo source="http://www.ogf.org/dfdl/">
-							<dfdl:assert><![CDATA[{ . eq 9 }]]></dfdl:assert>
+							<dfdl:discriminator test="{ ../Chunk_Type eq 'pHYs' }" />
 						</xs:appinfo>
 					</xs:annotation>
-				</xs:element>
-				<xs:sequence dfdl:hiddenGroupRef="hiddenpHYs_Chunk_TypeGroup" />
+				</xs:sequence>
+				<xs:sequence>
+					<xs:annotation>
+						<xs:appinfo source="http://www.ogf.org/dfdl/">
+							<dfdl:assert><![CDATA[{ ../Length eq 9 }]]></dfdl:assert>
+						</xs:appinfo>
+					</xs:annotation>
+				</xs:sequence>
 				<xs:element name="Pixels_per_unit_X_axis" type="unsignedint32" />
 				<xs:element name="Pixels_per_unit_Y_axis" type="unsignedint32" />
 				<xs:sequence dfdl:hiddenGroupRef="hiddenUnit_SpecifierGroup" />
@@ -775,87 +743,63 @@
 					else if (../Unit_Specifier eq 1) then "metre (1)"
 					else "daf:error()"
 					}' />
-				<xs:element name="CRC" type="unsignedint32"/>
 			</xs:sequence>
 		</xs:complexType>
 	</xs:element>
 	
-	<xs:group name="hiddenpHYs_Chunk_TypeGroup">
-		<xs:sequence>
-			<xs:element name="Chunk_Type" type="xs:string" dfdl:alignment="1" dfdl:alignmentUnits="bytes" dfdl:representation="text" dfdl:lengthKind="explicit" dfdl:length="4" dfdl:lengthUnits="bytes">
-				<xs:annotation>
-					<xs:appinfo source="http://www.ogf.org/dfdl/">
-						<dfdl:assert><![CDATA[{ . eq 'pHYs' }]]></dfdl:assert>
-					</xs:appinfo>
-				</xs:annotation>
-			</xs:element>
-		</xs:sequence>
-	</xs:group>
-	
 	<xs:group name="hiddenUnit_SpecifierGroup">
 		<xs:sequence>
-			<xs:element name="Unit_Specifier" type="unsignedint8" />
+			<xs:element name="Unit_Specifier" type="unsignedint8" dfdl:outputValueCalc="{
+				     if (../Unit eq 'unknown (0)') then 0
+				else if (../Unit eq 'metre (1)') then 1
+				else daf:error()
+				}" />
 		</xs:sequence>
 	</xs:group>
 	
 	<xs:element name="IDAT">
 		<xs:complexType>
 			<xs:sequence>
-				<xs:element name="Length" type="unsignedint32" />
-				<xs:sequence dfdl:hiddenGroupRef="hiddenIDAT_Chunk_TypeGroup" />
+				<xs:sequence>
+					<xs:annotation>
+						<xs:appinfo source="http://www.ogf.org/dfdl/">
+							<dfdl:discriminator test="{ ../Chunk_Type eq 'IDAT' }" />
+						</xs:appinfo>
+					</xs:annotation>
+				</xs:sequence>
 				<xs:sequence dfdl:hiddenGroupRef="hiddenIDAT_DataGroup" />
-				<xs:element name="CRC" type="unsignedint32"/>
 			</xs:sequence>
 		</xs:complexType>
 	</xs:element>
 	
-	<xs:group name="hiddenIDAT_Chunk_TypeGroup">
-		<xs:sequence>
-			<xs:element name="Chunk_Type" type="xs:string" dfdl:alignment="1" dfdl:alignmentUnits="bytes" dfdl:representation="text" dfdl:lengthKind="explicit" dfdl:length="4" dfdl:lengthUnits="bytes">
-				<xs:annotation>
-					<xs:appinfo source="http://www.ogf.org/dfdl/">
-						<dfdl:assert><![CDATA[{ . eq 'IDAT' }]]></dfdl:assert>
-					</xs:appinfo>
-				</xs:annotation>
-			</xs:element>
-		</xs:sequence>
-	</xs:group>
-	
 	<xs:group name="hiddenIDAT_DataGroup">
 		<xs:sequence>
-			<!--<xs:element name="Data" maxOccurs="unbounded" type="unsignedint8" dfdl:occursCountKind="expression" dfdl:occursCount="{../Length}"/>-->
-			<xs:element name="Data" type="xs:hexBinary" minOccurs="0"  dfdl:occursCountKind="implicit" dfdl:lengthKind="explicit" dfdl:lengthUnits="bytes" dfdl:length="{../Length}"/>
+			<!--<xs:element name="Data" maxOccurs="unbounded" type="unsignedint8" dfdl:occursCountKind="expression" dfdl:occursCount="{../../Length}"/>-->
+			<xs:element name="Data" type="xs:hexBinary" dfdl:lengthKind="explicit" dfdl:lengthUnits="bytes" dfdl:length="{../../Length}" dfdl:outputValueCalc="{ xs:hexBinary('00') }" />
 		</xs:sequence>
 	</xs:group>
 	
 	<xs:element name="IEND">
 		<xs:complexType>
 			<xs:sequence>
-				<xs:element name="Length" type="unsignedint32">
+				<xs:sequence>
 					<xs:annotation>
 						<xs:appinfo source="http://www.ogf.org/dfdl/">
-							<dfdl:assert><![CDATA[{ . eq 0 }]]></dfdl:assert>
+							<dfdl:discriminator test="{ ../Chunk_Type eq 'IEND' }" />
 						</xs:appinfo>
 					</xs:annotation>
-				</xs:element>
-				<xs:sequence dfdl:hiddenGroupRef="hiddenIEND_Chunk_TypeGroup" />
-				<xs:element name="CRC" type="unsignedint32" />
+				</xs:sequence>
+				<xs:sequence>
+					<xs:annotation>
+						<xs:appinfo source="http://www.ogf.org/dfdl/">
+							<dfdl:assert><![CDATA[{ ../Length eq 0 }]]></dfdl:assert>
+						</xs:appinfo>
+					</xs:annotation>
+				</xs:sequence>
 			</xs:sequence>
 		</xs:complexType>	
 	</xs:element>
 	
-	<xs:group name="hiddenIEND_Chunk_TypeGroup">
-		<xs:sequence>
-			<xs:element name="Chunk_Type" type="xs:string" dfdl:alignment="1" dfdl:alignmentUnits="bytes" dfdl:representation="text" dfdl:lengthKind="explicit" dfdl:length="4" dfdl:lengthUnits="bytes">
-				<xs:annotation>
-					<xs:appinfo source="http://www.ogf.org/dfdl/">
-						<dfdl:assert><![CDATA[{ . eq 'IEND' }]]></dfdl:assert>
-					</xs:appinfo>
-				</xs:annotation>
-			</xs:element>
-		</xs:sequence>
-	</xs:group>
-		
 	<xs:simpleType name="unsignedint32" dfdl:length="32" dfdl:lengthKind="explicit">
 		<xs:restriction base="xs:unsignedInt"/>
 	</xs:simpleType>
@@ -879,59 +823,59 @@
 	
 	<xs:group name="hiddenFile_SignatureGroup">
 		<xs:sequence>
-			<xs:element name="Byte1" type="unsignedint8">
+			<xs:element name="Byte1" type="unsignedint8" dfdl:outputValueCalc="{ 137 }">
 				<xs:annotation>
 					<xs:appinfo source="http://www.ogf.org/dfdl/">
-						<dfdl:assert><![CDATA[{ . eq 137 }]]></dfdl:assert>
+						<dfdl:assert message="Byte 1 of the signature must be 137"><![CDATA[{ . eq 137 }]]></dfdl:assert>
 					</xs:appinfo>
 				</xs:annotation>
 			</xs:element>
-			<xs:element name="Byte2" type="unsignedint8">
+			<xs:element name="Byte2" type="unsignedint8" dfdl:outputValueCalc="{ 80 }">
 				<xs:annotation>
 					<xs:appinfo source="http://www.ogf.org/dfdl/">
-						<dfdl:assert><![CDATA[{ . eq 80 }]]></dfdl:assert>
+						<dfdl:assert message="Byte 2 of the signature must be 80"><![CDATA[{ . eq 80 }]]></dfdl:assert>
 					</xs:appinfo>
 				</xs:annotation>
 			</xs:element>
-			<xs:element name="Byte3" type="unsignedint8">
+			<xs:element name="Byte3" type="unsignedint8" dfdl:outputValueCalc="{ 78 }">
 				<xs:annotation>
 					<xs:appinfo source="http://www.ogf.org/dfdl/">
-						<dfdl:assert><![CDATA[{ . eq 78 }]]></dfdl:assert>
+						<dfdl:assert message="Byte 3 of the signature must be 78"><![CDATA[{ . eq 78 }]]></dfdl:assert>
 					</xs:appinfo>
 				</xs:annotation>
 			</xs:element>
-			<xs:element name="Byte4" type="unsignedint8">
+			<xs:element name="Byte4" type="unsignedint8" dfdl:outputValueCalc="{ 71 }">
 				<xs:annotation>
 					<xs:appinfo source="http://www.ogf.org/dfdl/">
-						<dfdl:assert><![CDATA[{ . eq 71 }]]></dfdl:assert>
+						<dfdl:assert message="Byte 4 of the signature must be 71"><![CDATA[{ . eq 71 }]]></dfdl:assert>
 					</xs:appinfo>
 				</xs:annotation>
 			</xs:element>
-			<xs:element name="Byte5" type="unsignedint8">
+			<xs:element name="Byte5" type="unsignedint8" dfdl:outputValueCalc="{ 13 }">
 				<xs:annotation>
 					<xs:appinfo source="http://www.ogf.org/dfdl/">
-						<dfdl:assert><![CDATA[{ . eq 13 }]]></dfdl:assert>
+						<dfdl:assert message="Byte 5 of the signature must be 13"><![CDATA[{ . eq 13 }]]></dfdl:assert>
 					</xs:appinfo>
 				</xs:annotation>
 			</xs:element>
-			<xs:element name="Byte6" type="unsignedint8">
+			<xs:element name="Byte6" type="unsignedint8" dfdl:outputValueCalc="{ 10 }">
 				<xs:annotation>
 					<xs:appinfo source="http://www.ogf.org/dfdl/">
-						<dfdl:assert><![CDATA[{ . eq 10 }]]></dfdl:assert>
+						<dfdl:assert message="Byte 6 of the signature must be 10"><![CDATA[{ . eq 10 }]]></dfdl:assert>
 					</xs:appinfo>
 				</xs:annotation>
 			</xs:element>
-			<xs:element name="Byte7" type="unsignedint8">
+			<xs:element name="Byte7" type="unsignedint8" dfdl:outputValueCalc="{ 26 }">
 				<xs:annotation>
 					<xs:appinfo source="http://www.ogf.org/dfdl/">
-						<dfdl:assert><![CDATA[{ . eq 26 }]]></dfdl:assert>
+						<dfdl:assert message="Byte 7 of the signature must be 26"><![CDATA[{ . eq 26 }]]></dfdl:assert>
 					</xs:appinfo>
 				</xs:annotation>
 			</xs:element>
-			<xs:element name="Byte8" type="unsignedint8">
+			<xs:element name="Byte8" type="unsignedint8" dfdl:outputValueCalc="{ 10 }">
 				<xs:annotation>
 					<xs:appinfo source="http://www.ogf.org/dfdl/">
-						<dfdl:assert><![CDATA[{ . eq 10 }]]></dfdl:assert>
+						<dfdl:assert message="Byte 8 of the signature must be 10"><![CDATA[{ . eq 10 }]]></dfdl:assert>
 					</xs:appinfo>
 				</xs:annotation>
 			</xs:element>
