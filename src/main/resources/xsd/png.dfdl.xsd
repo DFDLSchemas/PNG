@@ -59,7 +59,7 @@
 					else if (fn:exists(../sBIT/Color_Type/Color_Type_6)) then 4
 					else daf:error()
 				)
-				else if (fn:exists(../sRGB)) then dfdl:valueLength(../sRGB, 'bytes')
+				else if (fn:exists(../sRGB)) then 1
 				else if (fn:exists(../tEXt)) then dfdl:valueLength(../tEXt/Keyword, 'bytes') + dfdl:valueLength(../tEXt/Text, 'bytes') + 1
 				else if (fn:exists(../zTXt)) then dfdl:valueLength(../zTXt/Keyword, 'bytes') + dfdl:valueLength(../zTXt/Compressed_Text_Datastream, 'bytes') + 2
 				else if (fn:exists(../iTXt)) then dfdl:valueLength(../iTXt/Keyword, 'bytes') + dfdl:valueLength(../iTXt/Language_Tag, 'bytes') + dfdl:valueLength(../iTXt/Translated_Keyword, 'bytes') + dfdl:valueLength(../iTXt/Text, 'bytes') + 5
