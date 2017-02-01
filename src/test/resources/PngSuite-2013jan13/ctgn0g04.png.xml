@@ -1,0 +1,97 @@
+<PNG>
+  <Chunk>
+    <IHDR>
+      <Width>32</Width>
+      <Height>32</Height>
+      <Bit_Depth>4</Bit_Depth>
+      <Color_Type>0</Color_Type>
+      <Compression_Method>0</Compression_Method>
+      <Filter_Method>0</Filter_Method>
+      <Interlace_Method>0</Interlace_Method>
+    </IHDR>
+    <CRC>2481047593</CRC>
+  </Chunk>
+  <Chunk>
+    <gAMA>
+      <Image_Gamma>100000</Image_Gamma>
+    </gAMA>
+    <CRC>837326431</CRC>
+  </Chunk>
+  <Chunk>
+    <iTXt>
+      <Keyword>Title</Keyword>
+      <Compression_Flag>0</Compression_Flag>
+      <Compression_Method>0</Compression_Method>
+      <Language_Tag>el</Language_Tag>
+      <Translated_Keyword>Τίτλος</Translated_Keyword>
+      <Text>PngSuite</Text>
+    </iTXt>
+    <CRC>545734841</CRC>
+  </Chunk>
+  <Chunk>
+    <iTXt>
+      <Keyword>Author</Keyword>
+      <Compression_Flag>0</Compression_Flag>
+      <Compression_Method>0</Compression_Method>
+      <Language_Tag>el</Language_Tag>
+      <Translated_Keyword>Συγγραφέας</Translated_Keyword>
+      <Text>Willem van Schaik (willem@schaik.com)</Text>
+    </iTXt>
+    <CRC>3593090662</CRC>
+  </Chunk>
+  <Chunk>
+    <iTXt>
+      <Keyword>Copyright</Keyword>
+      <Compression_Flag>0</Compression_Flag>
+      <Compression_Method>0</Compression_Method>
+      <Language_Tag>el</Language_Tag>
+      <Translated_Keyword>Πνευματικά δικαιώματα</Translated_Keyword>
+      <Text>Πνευματικά δικαιώματα Schaik van Willem, Καναδάς 2011</Text>
+    </iTXt>
+    <CRC>3609453686</CRC>
+  </Chunk>
+  <Chunk>
+    <iTXt>
+      <Keyword>Description</Keyword>
+      <Compression_Flag>0</Compression_Flag>
+      <Compression_Method>0</Compression_Method>
+      <Language_Tag>el</Language_Tag>
+      <Translated_Keyword>Περιγραφή</Translated_Keyword>
+      <Text>Μια συλλογή από ένα σύνολο εικόνων που δημιουργήθηκαν για τη δοκιμή των διαφόρων χρωμάτων-τύπων του μορφή PNG. Περιλαμβάνονται οι ασπρόμαυρες, χρώμα, paletted, με άλφα κανάλι, με μορφές της διαφάνειας. Όλοι λίγο-βάθη επιτρέπεται σύμφωνα με το spec είναι παρόντες.</Text>
+    </iTXt>
+    <CRC>2793941272</CRC>
+  </Chunk>
+  <Chunk>
+    <iTXt>
+      <Keyword>Software</Keyword>
+      <Compression_Flag>0</Compression_Flag>
+      <Compression_Method>0</Compression_Method>
+      <Language_Tag>el</Language_Tag>
+      <Translated_Keyword>Λογισμικό</Translated_Keyword>
+      <Text>Δημιουργήθηκε σε ένα χρώμα NeXTstation χρησιμοποιώντας &quot;pnmtopng&quot;.</Text>
+    </iTXt>
+    <CRC>1131989995</CRC>
+  </Chunk>
+  <Chunk>
+    <iTXt>
+      <Keyword>Disclaimer</Keyword>
+      <Compression_Flag>0</Compression_Flag>
+      <Compression_Method>0</Compression_Method>
+      <Language_Tag>el</Language_Tag>
+      <Translated_Keyword>Αποποίηση</Translated_Keyword>
+      <Text>Δωρεάν λογισμικό.</Text>
+    </iTXt>
+    <CRC>748597100</CRC>
+  </Chunk>
+  <Chunk>
+    <IDAT>
+      <Data>28919DCE411100210C43D168C10216B080052C60A116B0500B58400B16B2D39DDDE93DC7FF0E9900204BA9B5B5DEC798130244927F9A699083666B69D01AF97D84BB0291E47B29120AE425F7BD35C804CED1200723EF15E0014539F241</Data>
+    </IDAT>
+    <CRC>263361349</CRC>
+  </Chunk>
+  <Chunk>
+    <IEND>
+    </IEND>
+    <CRC>2923585666</CRC>
+  </Chunk>
+</PNG>

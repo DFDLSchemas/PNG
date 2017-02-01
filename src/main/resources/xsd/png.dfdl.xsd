@@ -767,17 +767,10 @@
 						</xs:appinfo>
 					</xs:annotation>
 				</xs:sequence>
-				<xs:sequence dfdl:hiddenGroupRef="hiddenIDAT_DataGroup" />
+				<xs:element name="Data" type="xs:hexBinary" dfdl:lengthKind="explicit" dfdl:lengthUnits="bytes" dfdl:length="{../../Length}" />
 			</xs:sequence>
 		</xs:complexType>
 	</xs:element>
-	
-	<xs:group name="hiddenIDAT_DataGroup">
-		<xs:sequence>
-			<!--<xs:element name="Data" maxOccurs="unbounded" type="unsignedint8" dfdl:occursCountKind="expression" dfdl:occursCount="{../../Length}"/>-->
-			<xs:element name="Data" type="xs:hexBinary" dfdl:lengthKind="explicit" dfdl:lengthUnits="bytes" dfdl:length="{../../Length}" dfdl:outputValueCalc="{ xs:hexBinary('00') }" />
-		</xs:sequence>
-	</xs:group>
 	
 	<xs:element name="IEND">
 		<xs:complexType>

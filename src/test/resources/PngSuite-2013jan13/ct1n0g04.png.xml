@@ -1,0 +1,78 @@
+<PNG>
+  <Chunk>
+    <IHDR>
+      <Width>32</Width>
+      <Height>32</Height>
+      <Bit_Depth>4</Bit_Depth>
+      <Color_Type>0</Color_Type>
+      <Compression_Method>0</Compression_Method>
+      <Filter_Method>0</Filter_Method>
+      <Interlace_Method>0</Interlace_Method>
+    </IHDR>
+    <CRC>2481047593</CRC>
+  </Chunk>
+  <Chunk>
+    <gAMA>
+      <Image_Gamma>100000</Image_Gamma>
+    </gAMA>
+    <CRC>837326431</CRC>
+  </Chunk>
+  <Chunk>
+    <tEXt>
+      <Keyword>Title</Keyword>
+      <Text>PngSuite</Text>
+    </tEXt>
+    <CRC>1331023692</CRC>
+  </Chunk>
+  <Chunk>
+    <tEXt>
+      <Keyword>Author</Keyword>
+      <Text>Willem A.J. van Schaik
+(willem@schaik.com)</Text>
+    </tEXt>
+    <CRC>2395752223</CRC>
+  </Chunk>
+  <Chunk>
+    <tEXt>
+      <Keyword>Copyright</Keyword>
+      <Text>Copyright Willem van Schaik, Singapore 1995-96</Text>
+    </tEXt>
+    <CRC>2219836472</CRC>
+  </Chunk>
+  <Chunk>
+    <tEXt>
+      <Keyword>Description</Keyword>
+      <Text>A compilation of a set of images created to test the
+various color-types of the PNG format. Included are
+black&amp;white, color, paletted, with alpha channel, with
+transparency formats. All bit-depths allowed according
+to the spec are present.</Text>
+    </tEXt>
+    <CRC>1292438891</CRC>
+  </Chunk>
+  <Chunk>
+    <tEXt>
+      <Keyword>Software</Keyword>
+      <Text>Created on a NeXTstation color using &quot;pnmtopng&quot;.</Text>
+    </tEXt>
+    <CRC>1779590265</CRC>
+  </Chunk>
+  <Chunk>
+    <tEXt>
+      <Keyword>Disclaimer</Keyword>
+      <Text>Freeware.</Text>
+    </tEXt>
+    <CRC>1602235466</CRC>
+  </Chunk>
+  <Chunk>
+    <IDAT>
+      <Data>789C5DD1C10DC2300C05501F2A4008F0081DA123B00A2354E2C80531011B30026C50466003D8A0463D95029FC44951E21C2AE7C575ED94601625716B810D489EF19A88A9F1B4806D02F77FCD08FCB5E0DF9F09D18D3D2C14B866EC4F4B0AE707A0D0748EC028C8EF05E492D71EA6ED460B3BE850BA80AFBE7B7870E75D0339872F07708F2A2428EC2AE979ECD583A0D7FE1EDAE9E7E840F743BC20120963D471169E8B4EDB552384293131B72E8D81157210E4F0660317E430B081E4676828A58174FD001ED9C245</Data>
+    </IDAT>
+    <CRC>4177496427</CRC>
+  </Chunk>
+  <Chunk>
+    <IEND>
+    </IEND>
+    <CRC>2923585666</CRC>
+  </Chunk>
+</PNG>

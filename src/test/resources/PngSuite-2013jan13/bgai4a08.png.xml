@@ -1,0 +1,31 @@
+<PNG>
+  <Chunk>
+    <IHDR>
+      <Width>32</Width>
+      <Height>32</Height>
+      <Bit_Depth>8</Bit_Depth>
+      <Color_Type>4</Color_Type>
+      <Compression_Method>0</Compression_Method>
+      <Filter_Method>0</Filter_Method>
+      <Interlace_Method>1</Interlace_Method>
+    </IHDR>
+    <CRC>2926871273</CRC>
+  </Chunk>
+  <Chunk>
+    <gAMA>
+      <Image_Gamma>100000</Image_Gamma>
+    </gAMA>
+    <CRC>837326431</CRC>
+  </Chunk>
+  <Chunk>
+    <IDAT>
+      <Data>789CED8FCD0A83300CC77F811EF4D6BD41FB28F6C1F728734FB0EDE4B51E1C15A21241568698101AD2FF4722193A12C9DD9962D9480E240BF380409CB3FCA0A19B03C9BEF00391E87A4DA9329017783C3755A55B3074D4003C7F6E21B959BB7E2EF7B62C3E16E052A8667158410668BED9AA77CFA4351DAC306F30054EB0C1094EB836F8870D8E0A8CEC4F3D09</Data>
+    </IDAT>
+    <CRC>492393821</CRC>
+  </Chunk>
+  <Chunk>
+    <IEND>
+    </IEND>
+    <CRC>2923585666</CRC>
+  </Chunk>
+</PNG>
