@@ -117,25 +117,25 @@
         			<xs:complexType>
         				<xs:sequence>
 							<xs:sequence dfdl:hiddenGroupRef="hiddenChunk_Header" />
-							<xs:choice>
-								<xs:element ref="IHDR" dfdl:lengthKind="explicit" dfdl:lengthUnits="bytes" dfdl:length="{ ../Length }" />
-								<xs:element ref="PLTE" dfdl:lengthKind="explicit" dfdl:lengthUnits="bytes" dfdl:length="{ ../Length }" />
-								<xs:element ref="IDAT" dfdl:lengthKind="explicit" dfdl:lengthUnits="bytes" dfdl:length="{ ../Length }" />
-								<xs:element ref="IEND" dfdl:lengthKind="explicit" dfdl:lengthUnits="bytes" dfdl:length="{ ../Length }" />
-								<xs:element ref="cHRM" dfdl:lengthKind="explicit" dfdl:lengthUnits="bytes" dfdl:length="{ ../Length }" />
-								<xs:element ref="gAMA" dfdl:lengthKind="explicit" dfdl:lengthUnits="bytes" dfdl:length="{ ../Length }" />
-								<xs:element ref="iCCP" dfdl:lengthKind="explicit" dfdl:lengthUnits="bytes" dfdl:length="{ ../Length }" />
-								<xs:element ref="sBIT" dfdl:lengthKind="explicit" dfdl:lengthUnits="bytes" dfdl:length="{ ../Length }" />
-								<xs:element ref="sRGB" dfdl:lengthKind="explicit" dfdl:lengthUnits="bytes" dfdl:length="{ ../Length }" />
-								<xs:element ref="tEXt" dfdl:lengthKind="explicit" dfdl:lengthUnits="bytes" dfdl:length="{ ../Length }" />
-								<xs:element ref="zTXt" dfdl:lengthKind="explicit" dfdl:lengthUnits="bytes" dfdl:length="{ ../Length }" />
-								<xs:element ref="iTXt" dfdl:lengthKind="explicit" dfdl:lengthUnits="bytes" dfdl:length="{ ../Length }" />
-								<xs:element ref="bKGD" dfdl:lengthKind="explicit" dfdl:lengthUnits="bytes" dfdl:length="{ ../Length }" />
-								<xs:element ref="hIST" dfdl:lengthKind="explicit" dfdl:lengthUnits="bytes" dfdl:length="{ ../Length }" />
-								<xs:element ref="tRNS" dfdl:lengthKind="explicit" dfdl:lengthUnits="bytes" dfdl:length="{ ../Length }" />
-								<xs:element ref="pHYs" dfdl:lengthKind="explicit" dfdl:lengthUnits="bytes" dfdl:length="{ ../Length }" />
-								<xs:element ref="sPLT" dfdl:lengthKind="explicit" dfdl:lengthUnits="bytes" dfdl:length="{ ../Length }" />
-								<xs:element ref="tIME" dfdl:lengthKind="explicit" dfdl:lengthUnits="bytes" dfdl:length="{ ../Length }" />
+							<xs:choice dfdl:choiceDispatchKey="{ ./Chunk_Type }">
+								<xs:element ref="IHDR" dfdl:choiceBranchKey="IHDR" dfdl:lengthKind="explicit" dfdl:lengthUnits="bytes" dfdl:length="{ ../Length }" />
+								<xs:element ref="PLTE" dfdl:choiceBranchKey="PLTE" dfdl:lengthKind="explicit" dfdl:lengthUnits="bytes" dfdl:length="{ ../Length }" />
+								<xs:element ref="IDAT" dfdl:choiceBranchKey="IDAT" dfdl:lengthKind="explicit" dfdl:lengthUnits="bytes" dfdl:length="{ ../Length }" />
+								<xs:element ref="IEND" dfdl:choiceBranchKey="IEND" dfdl:lengthKind="explicit" dfdl:lengthUnits="bytes" dfdl:length="{ ../Length }" />
+								<xs:element ref="cHRM" dfdl:choiceBranchKey="cHRM" dfdl:lengthKind="explicit" dfdl:lengthUnits="bytes" dfdl:length="{ ../Length }" />
+								<xs:element ref="gAMA" dfdl:choiceBranchKey="gAMA" dfdl:lengthKind="explicit" dfdl:lengthUnits="bytes" dfdl:length="{ ../Length }" />
+								<xs:element ref="iCCP" dfdl:choiceBranchKey="iCCP" dfdl:lengthKind="explicit" dfdl:lengthUnits="bytes" dfdl:length="{ ../Length }" />
+								<xs:element ref="sBIT" dfdl:choiceBranchKey="sBIT" dfdl:lengthKind="explicit" dfdl:lengthUnits="bytes" dfdl:length="{ ../Length }" />
+								<xs:element ref="sRGB" dfdl:choiceBranchKey="sRGB" dfdl:lengthKind="explicit" dfdl:lengthUnits="bytes" dfdl:length="{ ../Length }" />
+								<xs:element ref="tEXt" dfdl:choiceBranchKey="tEXt" dfdl:lengthKind="explicit" dfdl:lengthUnits="bytes" dfdl:length="{ ../Length }" />
+								<xs:element ref="zTXt" dfdl:choiceBranchKey="zTXt" dfdl:lengthKind="explicit" dfdl:lengthUnits="bytes" dfdl:length="{ ../Length }" />
+								<xs:element ref="iTXt" dfdl:choiceBranchKey="iTXt" dfdl:lengthKind="explicit" dfdl:lengthUnits="bytes" dfdl:length="{ ../Length }" />
+								<xs:element ref="bKGD" dfdl:choiceBranchKey="bKGD" dfdl:lengthKind="explicit" dfdl:lengthUnits="bytes" dfdl:length="{ ../Length }" />
+								<xs:element ref="hIST" dfdl:choiceBranchKey="hIST" dfdl:lengthKind="explicit" dfdl:lengthUnits="bytes" dfdl:length="{ ../Length }" />
+								<xs:element ref="tRNS" dfdl:choiceBranchKey="tRNS" dfdl:lengthKind="explicit" dfdl:lengthUnits="bytes" dfdl:length="{ ../Length }" />
+								<xs:element ref="pHYs" dfdl:choiceBranchKey="pHYs" dfdl:lengthKind="explicit" dfdl:lengthUnits="bytes" dfdl:length="{ ../Length }" />
+								<xs:element ref="sPLT" dfdl:choiceBranchKey="sPLT" dfdl:lengthKind="explicit" dfdl:lengthUnits="bytes" dfdl:length="{ ../Length }" />
+								<xs:element ref="tIME" dfdl:choiceBranchKey="tIME" dfdl:lengthKind="explicit" dfdl:lengthUnits="bytes" dfdl:length="{ ../Length }" />
 							</xs:choice>
 							<xs:element name="CRC" type="unsignedint32"/>
 						</xs:sequence>
@@ -148,13 +148,6 @@
 	<xs:element name="zTXt">
 		<xs:complexType>
 			<xs:sequence>
-				<xs:sequence>
-					<xs:annotation>
-						<xs:appinfo source="http://www.ogf.org/dfdl/">
-							<dfdl:discriminator test="{ ../Chunk_Type eq 'zTXt' }" />
-						</xs:appinfo>
-					</xs:annotation>
-				</xs:sequence>
 				<xs:element name="Keyword" type="xs:string" dfdl:alignment="1" dfdl:alignmentUnits="bytes" dfdl:representation="text" dfdl:lengthKind="delimited" dfdl:terminator="%NUL;" dfdl:outputNewLine="%LF;" />
 				<xs:element name="Compression_Method" type="unsignedint8">
 					<xs:annotation>
@@ -171,13 +164,6 @@
 	<xs:element name="tEXt">
 		<xs:complexType>
 			<xs:sequence>
-				<xs:sequence>
-					<xs:annotation>
-						<xs:appinfo source="http://www.ogf.org/dfdl/">
-							<dfdl:discriminator test="{ ../Chunk_Type eq 'tEXt' }" />
-						</xs:appinfo>
-					</xs:annotation>
-				</xs:sequence>
 				<xs:element name="Keyword" type="xs:string" dfdl:alignment="1" dfdl:alignmentUnits="bytes" dfdl:representation="text" dfdl:lengthKind="delimited" dfdl:terminator="%NUL;" dfdl:outputNewLine="%LF;" />
 				<xs:element name="Text" type="xs:string" dfdl:representation="text" dfdl:lengthKind="explicit" dfdl:lengthUnits="bytes" dfdl:length="{ ../../Length - fn:string-length(../Keyword) - 1}"/>
 			</xs:sequence>
@@ -187,13 +173,6 @@
 	<xs:element name="iTXt">
 		<xs:complexType>
 			<xs:sequence>
-				<xs:sequence>
-					<xs:annotation>
-						<xs:appinfo source="http://www.ogf.org/dfdl/">
-							<dfdl:discriminator test="{ ../Chunk_Type eq 'iTXt' }" />
-						</xs:appinfo>
-					</xs:annotation>
-				</xs:sequence>
 				<xs:element name="Keyword" type="xs:string" dfdl:alignment="1" dfdl:alignmentUnits="bytes" dfdl:representation="text" dfdl:lengthKind="delimited" dfdl:terminator="%NUL;" dfdl:outputNewLine="%LF;" />
 				<xs:element name="Compression_Flag">
 					<xs:simpleType>
@@ -220,13 +199,6 @@
 	<xs:element name="tIME">
 		<xs:complexType>
 			<xs:sequence>
-				<xs:sequence>
-					<xs:annotation>
-						<xs:appinfo source="http://www.ogf.org/dfdl/">
-							<dfdl:discriminator test="{ ../Chunk_Type eq 'tIME' }" />
-						</xs:appinfo>
-					</xs:annotation>
-				</xs:sequence>
 				<xs:element name="Year">
 					<xs:simpleType>
 						<xs:restriction base="unsignedint16">
@@ -282,13 +254,6 @@
 	<xs:element name="sPLT">
 		<xs:complexType>
 			<xs:sequence>
-				<xs:sequence>
-					<xs:annotation>
-						<xs:appinfo source="http://www.ogf.org/dfdl/">
-							<dfdl:discriminator test="{ ../Chunk_Type eq 'sPLT' }" />
-						</xs:appinfo>
-					</xs:annotation>
-				</xs:sequence>
 				<xs:element name="Palette_Name" type="xs:string" dfdl:alignment="1" dfdl:alignmentUnits="bytes" dfdl:representation="text" dfdl:lengthKind="delimited" dfdl:terminator="%NUL;" dfdl:outputNewLine="%LF;" />
 				<xs:element name="Sample_Depth" type="unsignedint8">
 					<xs:annotation>
@@ -346,13 +311,6 @@
 	<xs:element name="hIST">
 		<xs:complexType>
 			<xs:sequence>
-				<xs:sequence>
-					<xs:annotation>
-						<xs:appinfo source="http://www.ogf.org/dfdl/">
-							<dfdl:discriminator test="{ ../Chunk_Type eq 'hIST' }" />
-						</xs:appinfo>
-					</xs:annotation>
-				</xs:sequence>
 				<xs:element name="Frequency" type="unsignedint16" maxOccurs="unbounded" dfdl:occursCountKind="expression" dfdl:occursCount="{(../../Length) div 2}"/>
 			</xs:sequence>
 		</xs:complexType>
@@ -361,13 +319,6 @@
 	<xs:element name="IHDR">
 		<xs:complexType>
 			<xs:sequence>
-				<xs:sequence>
-					<xs:annotation>
-						<xs:appinfo source="http://www.ogf.org/dfdl/">
-							<dfdl:discriminator test="{ ../Chunk_Type eq 'IHDR' }" />
-						</xs:appinfo>
-					</xs:annotation>
-				</xs:sequence>
 				<xs:sequence>
 					<xs:annotation>
 						<xs:appinfo source="http://www.ogf.org/dfdl/">
@@ -392,13 +343,6 @@
 				<xs:sequence>
 					<xs:annotation>
 						<xs:appinfo source="http://www.ogf.org/dfdl/">
-							<dfdl:discriminator test="{ ../Chunk_Type eq 'cHRM' }" />
-						</xs:appinfo>
-					</xs:annotation>
-				</xs:sequence>
-				<xs:sequence>
-					<xs:annotation>
-						<xs:appinfo source="http://www.ogf.org/dfdl/">
 							<dfdl:assert><![CDATA[{ ../Length eq 32 }]]></dfdl:assert>
 						</xs:appinfo>
 					</xs:annotation>
@@ -418,13 +362,6 @@
 	<xs:element name="sRGB">
 		<xs:complexType>
 			<xs:sequence>
-				<xs:sequence>
-					<xs:annotation>
-						<xs:appinfo source="http://www.ogf.org/dfdl/">
-							<dfdl:discriminator test="{ ../Chunk_Type eq 'sRGB' }" />
-						</xs:appinfo>
-					</xs:annotation>
-				</xs:sequence>
 				<xs:sequence>
 					<xs:annotation>
 						<xs:appinfo source="http://www.ogf.org/dfdl/">
@@ -462,13 +399,6 @@
 				<xs:sequence>
 					<xs:annotation>
 						<xs:appinfo source="http://www.ogf.org/dfdl/">
-							<dfdl:discriminator test="{ ../Chunk_Type eq 'gAMA' }" />
-						</xs:appinfo>
-					</xs:annotation>
-				</xs:sequence>
-				<xs:sequence>
-					<xs:annotation>
-						<xs:appinfo source="http://www.ogf.org/dfdl/">
 							<dfdl:assert><![CDATA[{ ../Length eq 4 }]]></dfdl:assert>
 						</xs:appinfo>
 					</xs:annotation>
@@ -481,13 +411,6 @@
 	<xs:element name="sBIT">
 		<xs:complexType>
 			<xs:sequence>
-				<xs:sequence>
-					<xs:annotation>
-						<xs:appinfo source="http://www.ogf.org/dfdl/">
-							<dfdl:discriminator test="{ ../Chunk_Type eq 'sBIT' }" />
-						</xs:appinfo>
-					</xs:annotation>
-				</xs:sequence>
 				<xs:element name="Color_Type">
 					<xs:complexType>
 						<xs:choice>
@@ -563,13 +486,6 @@
 	<xs:element name="iCCP">
 		<xs:complexType>
 			<xs:sequence>
-				<xs:sequence>
-					<xs:annotation>
-						<xs:appinfo source="http://www.ogf.org/dfdl/">
-							<dfdl:discriminator test="{ ../Chunk_Type eq 'iCCP' }" />
-						</xs:appinfo>
-					</xs:annotation>
-				</xs:sequence>
 				<xs:element name="Profile_Name" type="xs:string" dfdl:alignment="1" dfdl:alignmentUnits="bytes" dfdl:representation="text" dfdl:lengthKind="pattern" dfdl:lengthPattern="[&#32;-&#126;&#161;&#255;]{1,79}" />
 				<xs:element name="Null_Separator" type="unsignedint8">
 					<xs:annotation>
@@ -593,13 +509,6 @@
 	<xs:element name="PLTE">
 		<xs:complexType>
 			<xs:sequence>
-				<xs:sequence>
-					<xs:annotation>
-						<xs:appinfo source="http://www.ogf.org/dfdl/">
-							<dfdl:discriminator test="{ ../Chunk_Type eq 'PLTE' }" />
-						</xs:appinfo>
-					</xs:annotation>
-				</xs:sequence>
 				<xs:element name="Entry" minOccurs="0" maxOccurs="unbounded" dfdl:occursCountKind="expression" dfdl:occursCount="{../../Length div 3}">
 					<xs:complexType>
 						<xs:sequence>
@@ -616,13 +525,6 @@
 	<xs:element name="bKGD">
 		<xs:complexType>
 			<xs:sequence>
-				<xs:sequence>
-					<xs:annotation>
-						<xs:appinfo source="http://www.ogf.org/dfdl/">
-							<dfdl:discriminator test="{ ../Chunk_Type eq 'bKGD' }" />
-						</xs:appinfo>
-					</xs:annotation>
-				</xs:sequence>
 				<xs:choice>
 					<xs:sequence>
 						<xs:annotation>
@@ -676,13 +578,6 @@
 	<xs:element name="tRNS">
 		<xs:complexType>
 			<xs:sequence>
-				<xs:sequence>
-					<xs:annotation>
-						<xs:appinfo source="http://www.ogf.org/dfdl/">
-							<dfdl:discriminator test="{ ../Chunk_Type eq 'tRNS' }" />
-						</xs:appinfo>
-					</xs:annotation>
-				</xs:sequence>
 				<xs:choice>
 					<xs:sequence>
 						<!-- If ../../Chunk[1]/IHDR/Color_Type = 0 then use Grey -->
@@ -724,13 +619,6 @@
 				<xs:sequence>
 					<xs:annotation>
 						<xs:appinfo source="http://www.ogf.org/dfdl/">
-							<dfdl:discriminator test="{ ../Chunk_Type eq 'pHYs' }" />
-						</xs:appinfo>
-					</xs:annotation>
-				</xs:sequence>
-				<xs:sequence>
-					<xs:annotation>
-						<xs:appinfo source="http://www.ogf.org/dfdl/">
 							<dfdl:assert><![CDATA[{ ../Length eq 9 }]]></dfdl:assert>
 						</xs:appinfo>
 					</xs:annotation>
@@ -760,13 +648,6 @@
 	<xs:element name="IDAT">
 		<xs:complexType>
 			<xs:sequence>
-				<xs:sequence>
-					<xs:annotation>
-						<xs:appinfo source="http://www.ogf.org/dfdl/">
-							<dfdl:discriminator test="{ ../Chunk_Type eq 'IDAT' }" />
-						</xs:appinfo>
-					</xs:annotation>
-				</xs:sequence>
 				<xs:element name="Data" type="xs:hexBinary" dfdl:lengthKind="explicit" dfdl:lengthUnits="bytes" dfdl:length="{../../Length}" />
 			</xs:sequence>
 		</xs:complexType>
@@ -775,13 +656,6 @@
 	<xs:element name="IEND">
 		<xs:complexType>
 			<xs:sequence>
-				<xs:sequence>
-					<xs:annotation>
-						<xs:appinfo source="http://www.ogf.org/dfdl/">
-							<dfdl:discriminator test="{ ../Chunk_Type eq 'IEND' }" />
-						</xs:appinfo>
-					</xs:annotation>
-				</xs:sequence>
 				<xs:sequence>
 					<xs:annotation>
 						<xs:appinfo source="http://www.ogf.org/dfdl/">
