@@ -1,4 +1,4 @@
-package com.tresys.png
+package com.mitre.png
 import org.junit.Test
 import edu.illinois.ncsa.daffodil.tdml.DFDLTestSuite
 import edu.illinois.ncsa.daffodil.util.Misc

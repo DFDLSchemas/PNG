@@ -43,7 +43,7 @@ SOFTWARE.
   http://www.ibm.com/xmlns/dfdl/testData xsd/tdml.xsd"
   defaultRoundTrip="true">
 
-  <tdml:parserTestCase name="basi0g01" root="PNG" model="xsd/png.dfdl.xsd">
+  <tdml:parserTestCase name="basi0g01" root="PNG" model="com/mitre/png/xsd/png.dfdl.xsd">
     <tdml:document>
       <tdml:documentPart type="file">PngSuite-2013jan13/basi0g01.png</tdml:documentPart>
     </tdml:document>
@@ -52,7 +52,7 @@ SOFTWARE.
     </tdml:infoset>
   </tdml:parserTestCase>
 
-  <tdml:parserTestCase name="basi0g02" root="PNG" model="xsd/png.dfdl.xsd">
+  <tdml:parserTestCase name="basi0g02" root="PNG" model="com/mitre/png/xsd/png.dfdl.xsd">
     <tdml:document>
       <tdml:documentPart type="file">PngSuite-2013jan13/basi0g02.png</tdml:documentPart>
     </tdml:document>
@@ -61,7 +61,7 @@ SOFTWARE.
     </tdml:infoset>
   </tdml:parserTestCase>
 
-  <tdml:parserTestCase name="basi0g04" root="PNG" model="xsd/png.dfdl.xsd">
+  <tdml:parserTestCase name="basi0g04" root="PNG" model="com/mitre/png/xsd/png.dfdl.xsd">
     <tdml:document>
       <tdml:documentPart type="file">PngSuite-2013jan13/basi0g04.png</tdml:documentPart>
     </tdml:document>
@@ -70,7 +70,7 @@ SOFTWARE.
     </tdml:infoset>
   </tdml:parserTestCase>
 
-  <tdml:parserTestCase name="basi0g08" root="PNG" model="xsd/png.dfdl.xsd">
+  <tdml:parserTestCase name="basi0g08" root="PNG" model="com/mitre/png/xsd/png.dfdl.xsd">
     <tdml:document>
       <tdml:documentPart type="file">PngSuite-2013jan13/basi0g08.png</tdml:documentPart>
     </tdml:document>
@@ -79,7 +79,7 @@ SOFTWARE.
     </tdml:infoset>
   </tdml:parserTestCase>
 
-  <tdml:parserTestCase name="basi0g16" root="PNG" model="xsd/png.dfdl.xsd">
+  <tdml:parserTestCase name="basi0g16" root="PNG" model="com/mitre/png/xsd/png.dfdl.xsd">
     <tdml:document>
       <tdml:documentPart type="file">PngSuite-2013jan13/basi0g16.png</tdml:documentPart>
     </tdml:document>
@@ -88,7 +88,7 @@ SOFTWARE.
     </tdml:infoset>
   </tdml:parserTestCase>
 
-  <tdml:parserTestCase name="basi2c08" root="PNG" model="xsd/png.dfdl.xsd">
+  <tdml:parserTestCase name="basi2c08" root="PNG" model="com/mitre/png/xsd/png.dfdl.xsd">
     <tdml:document>
       <tdml:documentPart type="file">PngSuite-2013jan13/basi2c08.png</tdml:documentPart>
     </tdml:document>
@@ -97,7 +97,7 @@ SOFTWARE.
     </tdml:infoset>
   </tdml:parserTestCase>
 
-  <tdml:parserTestCase name="basi2c16" root="PNG" model="xsd/png.dfdl.xsd">
+  <tdml:parserTestCase name="basi2c16" root="PNG" model="com/mitre/png/xsd/png.dfdl.xsd">
     <tdml:document>
       <tdml:documentPart type="file">PngSuite-2013jan13/basi2c16.png</tdml:documentPart>
     </tdml:document>
@@ -106,7 +106,7 @@ SOFTWARE.
     </tdml:infoset>
   </tdml:parserTestCase>
 
-  <tdml:parserTestCase name="basi3p01" root="PNG" model="xsd/png.dfdl.xsd">
+  <tdml:parserTestCase name="basi3p01" root="PNG" model="com/mitre/png/xsd/png.dfdl.xsd">
     <tdml:document>
       <tdml:documentPart type="file">PngSuite-2013jan13/basi3p01.png</tdml:documentPart>
     </tdml:document>
@@ -115,7 +115,7 @@ SOFTWARE.
     </tdml:infoset>
   </tdml:parserTestCase>
 
-  <tdml:parserTestCase name="basi3p02" root="PNG" model="xsd/png.dfdl.xsd">
+  <tdml:parserTestCase name="basi3p02" root="PNG" model="com/mitre/png/xsd/png.dfdl.xsd">
     <tdml:document>
       <tdml:documentPart type="file">PngSuite-2013jan13/basi3p02.png</tdml:documentPart>
     </tdml:document>
@@ -124,7 +124,7 @@ SOFTWARE.
     </tdml:infoset>
   </tdml:parserTestCase>
 
-  <tdml:parserTestCase name="basi3p04" root="PNG" model="xsd/png.dfdl.xsd">
+  <tdml:parserTestCase name="basi3p04" root="PNG" model="com/mitre/png/xsd/png.dfdl.xsd">
     <tdml:document>
       <tdml:documentPart type="file">PngSuite-2013jan13/basi3p04.png</tdml:documentPart>
     </tdml:document>
@@ -133,7 +133,7 @@ SOFTWARE.
     </tdml:infoset>
   </tdml:parserTestCase>
 
-  <tdml:parserTestCase name="basi3p08" root="PNG" model="xsd/png.dfdl.xsd">
+  <tdml:parserTestCase name="basi3p08" root="PNG" model="com/mitre/png/xsd/png.dfdl.xsd">
     <tdml:document>
       <tdml:documentPart type="file">PngSuite-2013jan13/basi3p08.png</tdml:documentPart>
     </tdml:document>
@@ -142,7 +142,7 @@ SOFTWARE.
     </tdml:infoset>
   </tdml:parserTestCase>
 
-  <tdml:parserTestCase name="basi4a08" root="PNG" model="xsd/png.dfdl.xsd">
+  <tdml:parserTestCase name="basi4a08" root="PNG" model="com/mitre/png/xsd/png.dfdl.xsd">
     <tdml:document>
       <tdml:documentPart type="file">PngSuite-2013jan13/basi4a08.png</tdml:documentPart>
     </tdml:document>
@@ -151,7 +151,7 @@ SOFTWARE.
     </tdml:infoset>
   </tdml:parserTestCase>
 
-  <tdml:parserTestCase name="basi4a16" root="PNG" model="xsd/png.dfdl.xsd">
+  <tdml:parserTestCase name="basi4a16" root="PNG" model="com/mitre/png/xsd/png.dfdl.xsd">
     <tdml:document>
       <tdml:documentPart type="file">PngSuite-2013jan13/basi4a16.png</tdml:documentPart>
     </tdml:document>
@@ -160,7 +160,7 @@ SOFTWARE.
     </tdml:infoset>
   </tdml:parserTestCase>
 
-  <tdml:parserTestCase name="basi6a08" root="PNG" model="xsd/png.dfdl.xsd">
+  <tdml:parserTestCase name="basi6a08" root="PNG" model="com/mitre/png/xsd/png.dfdl.xsd">
     <tdml:document>
       <tdml:documentPart type="file">PngSuite-2013jan13/basi6a08.png</tdml:documentPart>
     </tdml:document>
@@ -169,7 +169,7 @@ SOFTWARE.
     </tdml:infoset>
   </tdml:parserTestCase>
 
-  <tdml:parserTestCase name="basi6a16" root="PNG" model="xsd/png.dfdl.xsd">
+  <tdml:parserTestCase name="basi6a16" root="PNG" model="com/mitre/png/xsd/png.dfdl.xsd">
     <tdml:document>
       <tdml:documentPart type="file">PngSuite-2013jan13/basi6a16.png</tdml:documentPart>
     </tdml:document>
@@ -178,7 +178,7 @@ SOFTWARE.
     </tdml:infoset>
   </tdml:parserTestCase>
 
-  <tdml:parserTestCase name="basn0g01" root="PNG" model="xsd/png.dfdl.xsd">
+  <tdml:parserTestCase name="basn0g01" root="PNG" model="com/mitre/png/xsd/png.dfdl.xsd">
     <tdml:document>
       <tdml:documentPart type="file">PngSuite-2013jan13/basn0g01.png</tdml:documentPart>
     </tdml:document>
@@ -187,7 +187,7 @@ SOFTWARE.
     </tdml:infoset>
   </tdml:parserTestCase>
 
-  <tdml:parserTestCase name="basn0g02" root="PNG" model="xsd/png.dfdl.xsd">
+  <tdml:parserTestCase name="basn0g02" root="PNG" model="com/mitre/png/xsd/png.dfdl.xsd">
     <tdml:document>
       <tdml:documentPart type="file">PngSuite-2013jan13/basn0g02.png</tdml:documentPart>
     </tdml:document>
@@ -196,7 +196,7 @@ SOFTWARE.
     </tdml:infoset>
   </tdml:parserTestCase>
 
-  <tdml:parserTestCase name="basn0g04" root="PNG" model="xsd/png.dfdl.xsd">
+  <tdml:parserTestCase name="basn0g04" root="PNG" model="com/mitre/png/xsd/png.dfdl.xsd">
     <tdml:document>
       <tdml:documentPart type="file">PngSuite-2013jan13/basn0g04.png</tdml:documentPart>
     </tdml:document>
@@ -205,7 +205,7 @@ SOFTWARE.
     </tdml:infoset>
   </tdml:parserTestCase>
 
-  <tdml:parserTestCase name="basn0g08" root="PNG" model="xsd/png.dfdl.xsd">
+  <tdml:parserTestCase name="basn0g08" root="PNG" model="com/mitre/png/xsd/png.dfdl.xsd">
     <tdml:document>
       <tdml:documentPart type="file">PngSuite-2013jan13/basn0g08.png</tdml:documentPart>
     </tdml:document>
@@ -214,7 +214,7 @@ SOFTWARE.
     </tdml:infoset>
   </tdml:parserTestCase>
 
-  <tdml:parserTestCase name="basn0g16" root="PNG" model="xsd/png.dfdl.xsd">
+  <tdml:parserTestCase name="basn0g16" root="PNG" model="com/mitre/png/xsd/png.dfdl.xsd">
     <tdml:document>
       <tdml:documentPart type="file">PngSuite-2013jan13/basn0g16.png</tdml:documentPart>
     </tdml:document>
@@ -223,7 +223,7 @@ SOFTWARE.
     </tdml:infoset>
   </tdml:parserTestCase>
 
-  <tdml:parserTestCase name="basn2c08" root="PNG" model="xsd/png.dfdl.xsd">
+  <tdml:parserTestCase name="basn2c08" root="PNG" model="com/mitre/png/xsd/png.dfdl.xsd">
     <tdml:document>
       <tdml:documentPart type="file">PngSuite-2013jan13/basn2c08.png</tdml:documentPart>
     </tdml:document>
@@ -232,7 +232,7 @@ SOFTWARE.
     </tdml:infoset>
   </tdml:parserTestCase>
 
-  <tdml:parserTestCase name="basn2c16" root="PNG" model="xsd/png.dfdl.xsd">
+  <tdml:parserTestCase name="basn2c16" root="PNG" model="com/mitre/png/xsd/png.dfdl.xsd">
     <tdml:document>
       <tdml:documentPart type="file">PngSuite-2013jan13/basn2c16.png</tdml:documentPart>
     </tdml:document>
@@ -241,7 +241,7 @@ SOFTWARE.
     </tdml:infoset>
   </tdml:parserTestCase>
 
-  <tdml:parserTestCase name="basn3p01" root="PNG" model="xsd/png.dfdl.xsd">
+  <tdml:parserTestCase name="basn3p01" root="PNG" model="com/mitre/png/xsd/png.dfdl.xsd">
     <tdml:document>
       <tdml:documentPart type="file">PngSuite-2013jan13/basn3p01.png</tdml:documentPart>
     </tdml:document>
@@ -250,7 +250,7 @@ SOFTWARE.
     </tdml:infoset>
   </tdml:parserTestCase>
 
-  <tdml:parserTestCase name="basn3p02" root="PNG" model="xsd/png.dfdl.xsd">
+  <tdml:parserTestCase name="basn3p02" root="PNG" model="com/mitre/png/xsd/png.dfdl.xsd">
     <tdml:document>
       <tdml:documentPart type="file">PngSuite-2013jan13/basn3p02.png</tdml:documentPart>
     </tdml:document>
@@ -259,7 +259,7 @@ SOFTWARE.
     </tdml:infoset>
   </tdml:parserTestCase>
 
-  <tdml:parserTestCase name="basn3p04" root="PNG" model="xsd/png.dfdl.xsd">
+  <tdml:parserTestCase name="basn3p04" root="PNG" model="com/mitre/png/xsd/png.dfdl.xsd">
     <tdml:document>
       <tdml:documentPart type="file">PngSuite-2013jan13/basn3p04.png</tdml:documentPart>
     </tdml:document>
@@ -268,7 +268,7 @@ SOFTWARE.
     </tdml:infoset>
   </tdml:parserTestCase>
 
-  <tdml:parserTestCase name="basn3p08" root="PNG" model="xsd/png.dfdl.xsd">
+  <tdml:parserTestCase name="basn3p08" root="PNG" model="com/mitre/png/xsd/png.dfdl.xsd">
     <tdml:document>
       <tdml:documentPart type="file">PngSuite-2013jan13/basn3p08.png</tdml:documentPart>
     </tdml:document>
@@ -277,7 +277,7 @@ SOFTWARE.
     </tdml:infoset>
   </tdml:parserTestCase>
 
-  <tdml:parserTestCase name="basn4a08" root="PNG" model="xsd/png.dfdl.xsd">
+  <tdml:parserTestCase name="basn4a08" root="PNG" model="com/mitre/png/xsd/png.dfdl.xsd">
     <tdml:document>
       <tdml:documentPart type="file">PngSuite-2013jan13/basn4a08.png</tdml:documentPart>
     </tdml:document>
@@ -286,7 +286,7 @@ SOFTWARE.
     </tdml:infoset>
   </tdml:parserTestCase>
 
-  <tdml:parserTestCase name="basn4a16" root="PNG" model="xsd/png.dfdl.xsd">
+  <tdml:parserTestCase name="basn4a16" root="PNG" model="com/mitre/png/xsd/png.dfdl.xsd">
     <tdml:document>
       <tdml:documentPart type="file">PngSuite-2013jan13/basn4a16.png</tdml:documentPart>
     </tdml:document>
@@ -295,7 +295,7 @@ SOFTWARE.
     </tdml:infoset>
   </tdml:parserTestCase>
 
-  <tdml:parserTestCase name="basn6a08" root="PNG" model="xsd/png.dfdl.xsd">
+  <tdml:parserTestCase name="basn6a08" root="PNG" model="com/mitre/png/xsd/png.dfdl.xsd">
     <tdml:document>
       <tdml:documentPart type="file">PngSuite-2013jan13/basn6a08.png</tdml:documentPart>
     </tdml:document>
@@ -304,7 +304,7 @@ SOFTWARE.
     </tdml:infoset>
   </tdml:parserTestCase>
 
-  <tdml:parserTestCase name="basn6a16" root="PNG" model="xsd/png.dfdl.xsd">
+  <tdml:parserTestCase name="basn6a16" root="PNG" model="com/mitre/png/xsd/png.dfdl.xsd">
     <tdml:document>
       <tdml:documentPart type="file">PngSuite-2013jan13/basn6a16.png</tdml:documentPart>
     </tdml:document>
@@ -313,7 +313,7 @@ SOFTWARE.
     </tdml:infoset>
   </tdml:parserTestCase>
 
-  <tdml:parserTestCase name="bgai4a08" root="PNG" model="xsd/png.dfdl.xsd">
+  <tdml:parserTestCase name="bgai4a08" root="PNG" model="com/mitre/png/xsd/png.dfdl.xsd">
     <tdml:document>
       <tdml:documentPart type="file">PngSuite-2013jan13/bgai4a08.png</tdml:documentPart>
     </tdml:document>
@@ -322,7 +322,7 @@ SOFTWARE.
     </tdml:infoset>
   </tdml:parserTestCase>
 
-  <tdml:parserTestCase name="bgai4a16" root="PNG" model="xsd/png.dfdl.xsd">
+  <tdml:parserTestCase name="bgai4a16" root="PNG" model="com/mitre/png/xsd/png.dfdl.xsd">
     <tdml:document>
       <tdml:documentPart type="file">PngSuite-2013jan13/bgai4a16.png</tdml:documentPart>
     </tdml:document>
@@ -331,7 +331,7 @@ SOFTWARE.
     </tdml:infoset>
   </tdml:parserTestCase>
 
-  <tdml:parserTestCase name="bgan6a08" root="PNG" model="xsd/png.dfdl.xsd">
+  <tdml:parserTestCase name="bgan6a08" root="PNG" model="com/mitre/png/xsd/png.dfdl.xsd">
     <tdml:document>
       <tdml:documentPart type="file">PngSuite-2013jan13/bgan6a08.png</tdml:documentPart>
     </tdml:document>
@@ -340,7 +340,7 @@ SOFTWARE.
     </tdml:infoset>
   </tdml:parserTestCase>
 
-  <tdml:parserTestCase name="bgan6a16" root="PNG" model="xsd/png.dfdl.xsd">
+  <tdml:parserTestCase name="bgan6a16" root="PNG" model="com/mitre/png/xsd/png.dfdl.xsd">
     <tdml:document>
       <tdml:documentPart type="file">PngSuite-2013jan13/bgan6a16.png</tdml:documentPart>
     </tdml:document>
@@ -349,7 +349,7 @@ SOFTWARE.
     </tdml:infoset>
   </tdml:parserTestCase>
 
-  <tdml:parserTestCase name="bgbn4a08" root="PNG" model="xsd/png.dfdl.xsd">
+  <tdml:parserTestCase name="bgbn4a08" root="PNG" model="com/mitre/png/xsd/png.dfdl.xsd">
     <tdml:document>
       <tdml:documentPart type="file">PngSuite-2013jan13/bgbn4a08.png</tdml:documentPart>
     </tdml:document>
@@ -358,7 +358,7 @@ SOFTWARE.
     </tdml:infoset>
   </tdml:parserTestCase>
 
-  <tdml:parserTestCase name="bggn4a16" root="PNG" model="xsd/png.dfdl.xsd">
+  <tdml:parserTestCase name="bggn4a16" root="PNG" model="com/mitre/png/xsd/png.dfdl.xsd">
     <tdml:document>
       <tdml:documentPart type="file">PngSuite-2013jan13/bggn4a16.png</tdml:documentPart>
     </tdml:document>
@@ -367,7 +367,7 @@ SOFTWARE.
     </tdml:infoset>
   </tdml:parserTestCase>
 
-  <tdml:parserTestCase name="bgwn6a08" root="PNG" model="xsd/png.dfdl.xsd">
+  <tdml:parserTestCase name="bgwn6a08" root="PNG" model="com/mitre/png/xsd/png.dfdl.xsd">
     <tdml:document>
       <tdml:documentPart type="file">PngSuite-2013jan13/bgwn6a08.png</tdml:documentPart>
     </tdml:document>
@@ -376,7 +376,7 @@ SOFTWARE.
     </tdml:infoset>
   </tdml:parserTestCase>
 
-  <tdml:parserTestCase name="bgyn6a16" root="PNG" model="xsd/png.dfdl.xsd">
+  <tdml:parserTestCase name="bgyn6a16" root="PNG" model="com/mitre/png/xsd/png.dfdl.xsd">
     <tdml:document>
       <tdml:documentPart type="file">PngSuite-2013jan13/bgyn6a16.png</tdml:documentPart>
     </tdml:document>
@@ -385,7 +385,7 @@ SOFTWARE.
     </tdml:infoset>
   </tdml:parserTestCase>
 
-  <tdml:parserTestCase name="ccwn2c08" root="PNG" model="xsd/png.dfdl.xsd">
+  <tdml:parserTestCase name="ccwn2c08" root="PNG" model="com/mitre/png/xsd/png.dfdl.xsd">
     <tdml:document>
       <tdml:documentPart type="file">PngSuite-2013jan13/ccwn2c08.png</tdml:documentPart>
     </tdml:document>
@@ -394,7 +394,7 @@ SOFTWARE.
     </tdml:infoset>
   </tdml:parserTestCase>
 
-  <tdml:parserTestCase name="ccwn3p08" root="PNG" model="xsd/png.dfdl.xsd">
+  <tdml:parserTestCase name="ccwn3p08" root="PNG" model="com/mitre/png/xsd/png.dfdl.xsd">
     <tdml:document>
       <tdml:documentPart type="file">PngSuite-2013jan13/ccwn3p08.png</tdml:documentPart>
     </tdml:document>
@@ -403,7 +403,7 @@ SOFTWARE.
     </tdml:infoset>
   </tdml:parserTestCase>
 
-  <tdml:parserTestCase name="cdfn2c08" root="PNG" model="xsd/png.dfdl.xsd">
+  <tdml:parserTestCase name="cdfn2c08" root="PNG" model="com/mitre/png/xsd/png.dfdl.xsd">
     <tdml:document>
       <tdml:documentPart type="file">PngSuite-2013jan13/cdfn2c08.png</tdml:documentPart>
     </tdml:document>
@@ -412,7 +412,7 @@ SOFTWARE.
     </tdml:infoset>
   </tdml:parserTestCase>
 
-  <tdml:parserTestCase name="cdhn2c08" root="PNG" model="xsd/png.dfdl.xsd">
+  <tdml:parserTestCase name="cdhn2c08" root="PNG" model="com/mitre/png/xsd/png.dfdl.xsd">
     <tdml:document>
       <tdml:documentPart type="file">PngSuite-2013jan13/cdhn2c08.png</tdml:documentPart>
     </tdml:document>
@@ -421,7 +421,7 @@ SOFTWARE.
     </tdml:infoset>
   </tdml:parserTestCase>
 
-  <tdml:parserTestCase name="cdsn2c08" root="PNG" model="xsd/png.dfdl.xsd">
+  <tdml:parserTestCase name="cdsn2c08" root="PNG" model="com/mitre/png/xsd/png.dfdl.xsd">
     <tdml:document>
       <tdml:documentPart type="file">PngSuite-2013jan13/cdsn2c08.png</tdml:documentPart>
     </tdml:document>
@@ -430,7 +430,7 @@ SOFTWARE.
     </tdml:infoset>
   </tdml:parserTestCase>
 
-  <tdml:parserTestCase name="cdun2c08" root="PNG" model="xsd/png.dfdl.xsd">
+  <tdml:parserTestCase name="cdun2c08" root="PNG" model="com/mitre/png/xsd/png.dfdl.xsd">
     <tdml:document>
       <tdml:documentPart type="file">PngSuite-2013jan13/cdun2c08.png</tdml:documentPart>
     </tdml:document>
@@ -439,7 +439,7 @@ SOFTWARE.
     </tdml:infoset>
   </tdml:parserTestCase>
 
-  <tdml:parserTestCase name="ch1n3p04" root="PNG" model="xsd/png.dfdl.xsd">
+  <tdml:parserTestCase name="ch1n3p04" root="PNG" model="com/mitre/png/xsd/png.dfdl.xsd">
     <tdml:document>
       <tdml:documentPart type="file">PngSuite-2013jan13/ch1n3p04.png</tdml:documentPart>
     </tdml:document>
@@ -448,7 +448,7 @@ SOFTWARE.
     </tdml:infoset>
   </tdml:parserTestCase>
 
-  <tdml:parserTestCase name="ch2n3p08" root="PNG" model="xsd/png.dfdl.xsd">
+  <tdml:parserTestCase name="ch2n3p08" root="PNG" model="com/mitre/png/xsd/png.dfdl.xsd">
     <tdml:document>
       <tdml:documentPart type="file">PngSuite-2013jan13/ch2n3p08.png</tdml:documentPart>
     </tdml:document>
@@ -457,7 +457,7 @@ SOFTWARE.
     </tdml:infoset>
   </tdml:parserTestCase>
 
-  <tdml:parserTestCase name="cm0n0g04" root="PNG" model="xsd/png.dfdl.xsd">
+  <tdml:parserTestCase name="cm0n0g04" root="PNG" model="com/mitre/png/xsd/png.dfdl.xsd">
     <tdml:document>
       <tdml:documentPart type="file">PngSuite-2013jan13/cm0n0g04.png</tdml:documentPart>
     </tdml:document>
@@ -466,7 +466,7 @@ SOFTWARE.
     </tdml:infoset>
   </tdml:parserTestCase>
 
-  <tdml:parserTestCase name="cm7n0g04" root="PNG" model="xsd/png.dfdl.xsd">
+  <tdml:parserTestCase name="cm7n0g04" root="PNG" model="com/mitre/png/xsd/png.dfdl.xsd">
     <tdml:document>
       <tdml:documentPart type="file">PngSuite-2013jan13/cm7n0g04.png</tdml:documentPart>
     </tdml:document>
@@ -475,7 +475,7 @@ SOFTWARE.
     </tdml:infoset>
   </tdml:parserTestCase>
 
-  <tdml:parserTestCase name="cm9n0g04" root="PNG" model="xsd/png.dfdl.xsd">
+  <tdml:parserTestCase name="cm9n0g04" root="PNG" model="com/mitre/png/xsd/png.dfdl.xsd">
     <tdml:document>
       <tdml:documentPart type="file">PngSuite-2013jan13/cm9n0g04.png</tdml:documentPart>
     </tdml:document>
@@ -484,7 +484,7 @@ SOFTWARE.
     </tdml:infoset>
   </tdml:parserTestCase>
 
-  <tdml:parserTestCase name="cs3n2c16" root="PNG" model="xsd/png.dfdl.xsd">
+  <tdml:parserTestCase name="cs3n2c16" root="PNG" model="com/mitre/png/xsd/png.dfdl.xsd">
     <tdml:document>
       <tdml:documentPart type="file">PngSuite-2013jan13/cs3n2c16.png</tdml:documentPart>
     </tdml:document>
@@ -493,7 +493,7 @@ SOFTWARE.
     </tdml:infoset>
   </tdml:parserTestCase>
 
-  <tdml:parserTestCase name="cs3n3p08" root="PNG" model="xsd/png.dfdl.xsd">
+  <tdml:parserTestCase name="cs3n3p08" root="PNG" model="com/mitre/png/xsd/png.dfdl.xsd">
     <tdml:document>
       <tdml:documentPart type="file">PngSuite-2013jan13/cs3n3p08.png</tdml:documentPart>
     </tdml:document>
@@ -502,7 +502,7 @@ SOFTWARE.
     </tdml:infoset>
   </tdml:parserTestCase>
 
-  <tdml:parserTestCase name="cs5n2c08" root="PNG" model="xsd/png.dfdl.xsd">
+  <tdml:parserTestCase name="cs5n2c08" root="PNG" model="com/mitre/png/xsd/png.dfdl.xsd">
     <tdml:document>
       <tdml:documentPart type="file">PngSuite-2013jan13/cs5n2c08.png</tdml:documentPart>
     </tdml:document>
@@ -511,7 +511,7 @@ SOFTWARE.
     </tdml:infoset>
   </tdml:parserTestCase>
 
-  <tdml:parserTestCase name="cs5n3p08" root="PNG" model="xsd/png.dfdl.xsd">
+  <tdml:parserTestCase name="cs5n3p08" root="PNG" model="com/mitre/png/xsd/png.dfdl.xsd">
     <tdml:document>
       <tdml:documentPart type="file">PngSuite-2013jan13/cs5n3p08.png</tdml:documentPart>
     </tdml:document>
@@ -520,7 +520,7 @@ SOFTWARE.
     </tdml:infoset>
   </tdml:parserTestCase>
 
-  <tdml:parserTestCase name="cs8n2c08" root="PNG" model="xsd/png.dfdl.xsd">
+  <tdml:parserTestCase name="cs8n2c08" root="PNG" model="com/mitre/png/xsd/png.dfdl.xsd">
     <tdml:document>
       <tdml:documentPart type="file">PngSuite-2013jan13/cs8n2c08.png</tdml:documentPart>
     </tdml:document>
@@ -529,7 +529,7 @@ SOFTWARE.
     </tdml:infoset>
   </tdml:parserTestCase>
 
-  <tdml:parserTestCase name="cs8n3p08" root="PNG" model="xsd/png.dfdl.xsd">
+  <tdml:parserTestCase name="cs8n3p08" root="PNG" model="com/mitre/png/xsd/png.dfdl.xsd">
     <tdml:document>
       <tdml:documentPart type="file">PngSuite-2013jan13/cs8n3p08.png</tdml:documentPart>
     </tdml:document>
@@ -538,7 +538,7 @@ SOFTWARE.
     </tdml:infoset>
   </tdml:parserTestCase>
 
-  <tdml:parserTestCase name="ct0n0g04" root="PNG" model="xsd/png.dfdl.xsd">
+  <tdml:parserTestCase name="ct0n0g04" root="PNG" model="com/mitre/png/xsd/png.dfdl.xsd">
     <tdml:document>
       <tdml:documentPart type="file">PngSuite-2013jan13/ct0n0g04.png</tdml:documentPart>
     </tdml:document>
@@ -547,7 +547,7 @@ SOFTWARE.
     </tdml:infoset>
   </tdml:parserTestCase>
 
-  <tdml:parserTestCase name="ct1n0g04" root="PNG" model="xsd/png.dfdl.xsd">
+  <tdml:parserTestCase name="ct1n0g04" root="PNG" model="com/mitre/png/xsd/png.dfdl.xsd">
     <tdml:document>
       <tdml:documentPart type="file">PngSuite-2013jan13/ct1n0g04.png</tdml:documentPart>
     </tdml:document>
@@ -556,7 +556,7 @@ SOFTWARE.
     </tdml:infoset>
   </tdml:parserTestCase>
 
-  <tdml:parserTestCase name="cten0g04" root="PNG" model="xsd/png.dfdl.xsd">
+  <tdml:parserTestCase name="cten0g04" root="PNG" model="com/mitre/png/xsd/png.dfdl.xsd">
     <tdml:document>
       <tdml:documentPart type="file">PngSuite-2013jan13/cten0g04.png</tdml:documentPart>
     </tdml:document>
@@ -565,7 +565,7 @@ SOFTWARE.
     </tdml:infoset>
   </tdml:parserTestCase>
 
-  <tdml:parserTestCase name="ctfn0g04" root="PNG" model="xsd/png.dfdl.xsd">
+  <tdml:parserTestCase name="ctfn0g04" root="PNG" model="com/mitre/png/xsd/png.dfdl.xsd">
     <tdml:document>
       <tdml:documentPart type="file">PngSuite-2013jan13/ctfn0g04.png</tdml:documentPart>
     </tdml:document>
@@ -574,7 +574,7 @@ SOFTWARE.
     </tdml:infoset>
   </tdml:parserTestCase>
 
-  <tdml:parserTestCase name="ctgn0g04" root="PNG" model="xsd/png.dfdl.xsd">
+  <tdml:parserTestCase name="ctgn0g04" root="PNG" model="com/mitre/png/xsd/png.dfdl.xsd">
     <tdml:document>
       <tdml:documentPart type="file">PngSuite-2013jan13/ctgn0g04.png</tdml:documentPart>
     </tdml:document>
@@ -583,7 +583,7 @@ SOFTWARE.
     </tdml:infoset>
   </tdml:parserTestCase>
 
-  <tdml:parserTestCase name="cthn0g04" root="PNG" model="xsd/png.dfdl.xsd">
+  <tdml:parserTestCase name="cthn0g04" root="PNG" model="com/mitre/png/xsd/png.dfdl.xsd">
     <tdml:document>
       <tdml:documentPart type="file">PngSuite-2013jan13/cthn0g04.png</tdml:documentPart>
     </tdml:document>
@@ -592,7 +592,7 @@ SOFTWARE.
     </tdml:infoset>
   </tdml:parserTestCase>
 
-  <tdml:parserTestCase name="ctjn0g04" root="PNG" model="xsd/png.dfdl.xsd">
+  <tdml:parserTestCase name="ctjn0g04" root="PNG" model="com/mitre/png/xsd/png.dfdl.xsd">
     <tdml:document>
       <tdml:documentPart type="file">PngSuite-2013jan13/ctjn0g04.png</tdml:documentPart>
     </tdml:document>
@@ -601,7 +601,7 @@ SOFTWARE.
     </tdml:infoset>
   </tdml:parserTestCase>
 
-  <tdml:parserTestCase name="ctzn0g04" root="PNG" model="xsd/png.dfdl.xsd">
+  <tdml:parserTestCase name="ctzn0g04" root="PNG" model="com/mitre/png/xsd/png.dfdl.xsd">
     <tdml:document>
       <tdml:documentPart type="file">PngSuite-2013jan13/ctzn0g04.png</tdml:documentPart>
     </tdml:document>
@@ -610,7 +610,7 @@ SOFTWARE.
     </tdml:infoset>
   </tdml:parserTestCase>
 
-  <tdml:parserTestCase name="f00n0g08" root="PNG" model="xsd/png.dfdl.xsd">
+  <tdml:parserTestCase name="f00n0g08" root="PNG" model="com/mitre/png/xsd/png.dfdl.xsd">
     <tdml:document>
       <tdml:documentPart type="file">PngSuite-2013jan13/f00n0g08.png</tdml:documentPart>
     </tdml:document>
@@ -619,7 +619,7 @@ SOFTWARE.
     </tdml:infoset>
   </tdml:parserTestCase>
 
-  <tdml:parserTestCase name="f00n2c08" root="PNG" model="xsd/png.dfdl.xsd">
+  <tdml:parserTestCase name="f00n2c08" root="PNG" model="com/mitre/png/xsd/png.dfdl.xsd">
     <tdml:document>
       <tdml:documentPart type="file">PngSuite-2013jan13/f00n2c08.png</tdml:documentPart>
     </tdml:document>
@@ -628,7 +628,7 @@ SOFTWARE.
     </tdml:infoset>
   </tdml:parserTestCase>
 
-  <tdml:parserTestCase name="f01n0g08" root="PNG" model="xsd/png.dfdl.xsd">
+  <tdml:parserTestCase name="f01n0g08" root="PNG" model="com/mitre/png/xsd/png.dfdl.xsd">
     <tdml:document>
       <tdml:documentPart type="file">PngSuite-2013jan13/f01n0g08.png</tdml:documentPart>
     </tdml:document>
@@ -637,7 +637,7 @@ SOFTWARE.
     </tdml:infoset>
   </tdml:parserTestCase>
 
-  <tdml:parserTestCase name="f01n2c08" root="PNG" model="xsd/png.dfdl.xsd">
+  <tdml:parserTestCase name="f01n2c08" root="PNG" model="com/mitre/png/xsd/png.dfdl.xsd">
     <tdml:document>
       <tdml:documentPart type="file">PngSuite-2013jan13/f01n2c08.png</tdml:documentPart>
     </tdml:document>
@@ -646,7 +646,7 @@ SOFTWARE.
     </tdml:infoset>
   </tdml:parserTestCase>
 
-  <tdml:parserTestCase name="f02n0g08" root="PNG" model="xsd/png.dfdl.xsd">
+  <tdml:parserTestCase name="f02n0g08" root="PNG" model="com/mitre/png/xsd/png.dfdl.xsd">
     <tdml:document>
       <tdml:documentPart type="file">PngSuite-2013jan13/f02n0g08.png</tdml:documentPart>
     </tdml:document>
@@ -655,7 +655,7 @@ SOFTWARE.
     </tdml:infoset>
   </tdml:parserTestCase>
 
-  <tdml:parserTestCase name="f02n2c08" root="PNG" model="xsd/png.dfdl.xsd">
+  <tdml:parserTestCase name="f02n2c08" root="PNG" model="com/mitre/png/xsd/png.dfdl.xsd">
     <tdml:document>
       <tdml:documentPart type="file">PngSuite-2013jan13/f02n2c08.png</tdml:documentPart>
     </tdml:document>
@@ -664,7 +664,7 @@ SOFTWARE.
     </tdml:infoset>
   </tdml:parserTestCase>
 
-  <tdml:parserTestCase name="f03n0g08" root="PNG" model="xsd/png.dfdl.xsd">
+  <tdml:parserTestCase name="f03n0g08" root="PNG" model="com/mitre/png/xsd/png.dfdl.xsd">
     <tdml:document>
       <tdml:documentPart type="file">PngSuite-2013jan13/f03n0g08.png</tdml:documentPart>
     </tdml:document>
@@ -673,7 +673,7 @@ SOFTWARE.
     </tdml:infoset>
   </tdml:parserTestCase>
 
-  <tdml:parserTestCase name="f03n2c08" root="PNG" model="xsd/png.dfdl.xsd">
+  <tdml:parserTestCase name="f03n2c08" root="PNG" model="com/mitre/png/xsd/png.dfdl.xsd">
     <tdml:document>
       <tdml:documentPart type="file">PngSuite-2013jan13/f03n2c08.png</tdml:documentPart>
     </tdml:document>
@@ -682,7 +682,7 @@ SOFTWARE.
     </tdml:infoset>
   </tdml:parserTestCase>
 
-  <tdml:parserTestCase name="f04n0g08" root="PNG" model="xsd/png.dfdl.xsd">
+  <tdml:parserTestCase name="f04n0g08" root="PNG" model="com/mitre/png/xsd/png.dfdl.xsd">
     <tdml:document>
       <tdml:documentPart type="file">PngSuite-2013jan13/f04n0g08.png</tdml:documentPart>
     </tdml:document>
@@ -691,7 +691,7 @@ SOFTWARE.
     </tdml:infoset>
   </tdml:parserTestCase>
 
-  <tdml:parserTestCase name="f04n2c08" root="PNG" model="xsd/png.dfdl.xsd">
+  <tdml:parserTestCase name="f04n2c08" root="PNG" model="com/mitre/png/xsd/png.dfdl.xsd">
     <tdml:document>
       <tdml:documentPart type="file">PngSuite-2013jan13/f04n2c08.png</tdml:documentPart>
     </tdml:document>
@@ -700,7 +700,7 @@ SOFTWARE.
     </tdml:infoset>
   </tdml:parserTestCase>
 
-  <tdml:parserTestCase name="f99n0g04" root="PNG" model="xsd/png.dfdl.xsd">
+  <tdml:parserTestCase name="f99n0g04" root="PNG" model="com/mitre/png/xsd/png.dfdl.xsd">
     <tdml:document>
       <tdml:documentPart type="file">PngSuite-2013jan13/f99n0g04.png</tdml:documentPart>
     </tdml:document>
@@ -709,7 +709,7 @@ SOFTWARE.
     </tdml:infoset>
   </tdml:parserTestCase>
 
-  <tdml:parserTestCase name="g03n0g16" root="PNG" model="xsd/png.dfdl.xsd">
+  <tdml:parserTestCase name="g03n0g16" root="PNG" model="com/mitre/png/xsd/png.dfdl.xsd">
     <tdml:document>
       <tdml:documentPart type="file">PngSuite-2013jan13/g03n0g16.png</tdml:documentPart>
     </tdml:document>
@@ -718,7 +718,7 @@ SOFTWARE.
     </tdml:infoset>
   </tdml:parserTestCase>
 
-  <tdml:parserTestCase name="g03n2c08" root="PNG" model="xsd/png.dfdl.xsd">
+  <tdml:parserTestCase name="g03n2c08" root="PNG" model="com/mitre/png/xsd/png.dfdl.xsd">
     <tdml:document>
       <tdml:documentPart type="file">PngSuite-2013jan13/g03n2c08.png</tdml:documentPart>
     </tdml:document>
@@ -727,7 +727,7 @@ SOFTWARE.
     </tdml:infoset>
   </tdml:parserTestCase>
 
-  <tdml:parserTestCase name="g03n3p04" root="PNG" model="xsd/png.dfdl.xsd">
+  <tdml:parserTestCase name="g03n3p04" root="PNG" model="com/mitre/png/xsd/png.dfdl.xsd">
     <tdml:document>
       <tdml:documentPart type="file">PngSuite-2013jan13/g03n3p04.png</tdml:documentPart>
     </tdml:document>
@@ -736,7 +736,7 @@ SOFTWARE.
     </tdml:infoset>
   </tdml:parserTestCase>
 
-  <tdml:parserTestCase name="g04n0g16" root="PNG" model="xsd/png.dfdl.xsd">
+  <tdml:parserTestCase name="g04n0g16" root="PNG" model="com/mitre/png/xsd/png.dfdl.xsd">
     <tdml:document>
       <tdml:documentPart type="file">PngSuite-2013jan13/g04n0g16.png</tdml:documentPart>
     </tdml:document>
@@ -745,7 +745,7 @@ SOFTWARE.
     </tdml:infoset>
   </tdml:parserTestCase>
 
-  <tdml:parserTestCase name="g04n2c08" root="PNG" model="xsd/png.dfdl.xsd">
+  <tdml:parserTestCase name="g04n2c08" root="PNG" model="com/mitre/png/xsd/png.dfdl.xsd">
     <tdml:document>
       <tdml:documentPart type="file">PngSuite-2013jan13/g04n2c08.png</tdml:documentPart>
     </tdml:document>
@@ -754,7 +754,7 @@ SOFTWARE.
     </tdml:infoset>
   </tdml:parserTestCase>
 
-  <tdml:parserTestCase name="g04n3p04" root="PNG" model="xsd/png.dfdl.xsd">
+  <tdml:parserTestCase name="g04n3p04" root="PNG" model="com/mitre/png/xsd/png.dfdl.xsd">
     <tdml:document>
       <tdml:documentPart type="file">PngSuite-2013jan13/g04n3p04.png</tdml:documentPart>
     </tdml:document>
@@ -763,7 +763,7 @@ SOFTWARE.
     </tdml:infoset>
   </tdml:parserTestCase>
 
-  <tdml:parserTestCase name="g05n0g16" root="PNG" model="xsd/png.dfdl.xsd">
+  <tdml:parserTestCase name="g05n0g16" root="PNG" model="com/mitre/png/xsd/png.dfdl.xsd">
     <tdml:document>
       <tdml:documentPart type="file">PngSuite-2013jan13/g05n0g16.png</tdml:documentPart>
     </tdml:document>
@@ -772,7 +772,7 @@ SOFTWARE.
     </tdml:infoset>
   </tdml:parserTestCase>
 
-  <tdml:parserTestCase name="g05n2c08" root="PNG" model="xsd/png.dfdl.xsd">
+  <tdml:parserTestCase name="g05n2c08" root="PNG" model="com/mitre/png/xsd/png.dfdl.xsd">
     <tdml:document>
       <tdml:documentPart type="file">PngSuite-2013jan13/g05n2c08.png</tdml:documentPart>
     </tdml:document>
@@ -781,7 +781,7 @@ SOFTWARE.
     </tdml:infoset>
   </tdml:parserTestCase>
 
-  <tdml:parserTestCase name="g05n3p04" root="PNG" model="xsd/png.dfdl.xsd">
+  <tdml:parserTestCase name="g05n3p04" root="PNG" model="com/mitre/png/xsd/png.dfdl.xsd">
     <tdml:document>
       <tdml:documentPart type="file">PngSuite-2013jan13/g05n3p04.png</tdml:documentPart>
     </tdml:document>
@@ -790,7 +790,7 @@ SOFTWARE.
     </tdml:infoset>
   </tdml:parserTestCase>
 
-  <tdml:parserTestCase name="g07n0g16" root="PNG" model="xsd/png.dfdl.xsd">
+  <tdml:parserTestCase name="g07n0g16" root="PNG" model="com/mitre/png/xsd/png.dfdl.xsd">
     <tdml:document>
       <tdml:documentPart type="file">PngSuite-2013jan13/g07n0g16.png</tdml:documentPart>
     </tdml:document>
@@ -799,7 +799,7 @@ SOFTWARE.
     </tdml:infoset>
   </tdml:parserTestCase>
 
-  <tdml:parserTestCase name="g07n2c08" root="PNG" model="xsd/png.dfdl.xsd">
+  <tdml:parserTestCase name="g07n2c08" root="PNG" model="com/mitre/png/xsd/png.dfdl.xsd">
     <tdml:document>
       <tdml:documentPart type="file">PngSuite-2013jan13/g07n2c08.png</tdml:documentPart>
     </tdml:document>
@@ -808,7 +808,7 @@ SOFTWARE.
     </tdml:infoset>
   </tdml:parserTestCase>
 
-  <tdml:parserTestCase name="g07n3p04" root="PNG" model="xsd/png.dfdl.xsd">
+  <tdml:parserTestCase name="g07n3p04" root="PNG" model="com/mitre/png/xsd/png.dfdl.xsd">
     <tdml:document>
       <tdml:documentPart type="file">PngSuite-2013jan13/g07n3p04.png</tdml:documentPart>
     </tdml:document>
@@ -817,7 +817,7 @@ SOFTWARE.
     </tdml:infoset>
   </tdml:parserTestCase>
 
-  <tdml:parserTestCase name="g10n0g16" root="PNG" model="xsd/png.dfdl.xsd">
+  <tdml:parserTestCase name="g10n0g16" root="PNG" model="com/mitre/png/xsd/png.dfdl.xsd">
     <tdml:document>
       <tdml:documentPart type="file">PngSuite-2013jan13/g10n0g16.png</tdml:documentPart>
     </tdml:document>
@@ -826,7 +826,7 @@ SOFTWARE.
     </tdml:infoset>
   </tdml:parserTestCase>
 
-  <tdml:parserTestCase name="g10n2c08" root="PNG" model="xsd/png.dfdl.xsd">
+  <tdml:parserTestCase name="g10n2c08" root="PNG" model="com/mitre/png/xsd/png.dfdl.xsd">
     <tdml:document>
       <tdml:documentPart type="file">PngSuite-2013jan13/g10n2c08.png</tdml:documentPart>
     </tdml:document>
@@ -835,7 +835,7 @@ SOFTWARE.
     </tdml:infoset>
   </tdml:parserTestCase>
 
-  <tdml:parserTestCase name="g10n3p04" root="PNG" model="xsd/png.dfdl.xsd">
+  <tdml:parserTestCase name="g10n3p04" root="PNG" model="com/mitre/png/xsd/png.dfdl.xsd">
     <tdml:document>
       <tdml:documentPart type="file">PngSuite-2013jan13/g10n3p04.png</tdml:documentPart>
     </tdml:document>
@@ -844,7 +844,7 @@ SOFTWARE.
     </tdml:infoset>
   </tdml:parserTestCase>
 
-  <tdml:parserTestCase name="g25n0g16" root="PNG" model="xsd/png.dfdl.xsd">
+  <tdml:parserTestCase name="g25n0g16" root="PNG" model="com/mitre/png/xsd/png.dfdl.xsd">
     <tdml:document>
       <tdml:documentPart type="file">PngSuite-2013jan13/g25n0g16.png</tdml:documentPart>
     </tdml:document>
@@ -853,7 +853,7 @@ SOFTWARE.
     </tdml:infoset>
   </tdml:parserTestCase>
 
-  <tdml:parserTestCase name="g25n2c08" root="PNG" model="xsd/png.dfdl.xsd">
+  <tdml:parserTestCase name="g25n2c08" root="PNG" model="com/mitre/png/xsd/png.dfdl.xsd">
     <tdml:document>
       <tdml:documentPart type="file">PngSuite-2013jan13/g25n2c08.png</tdml:documentPart>
     </tdml:document>
@@ -862,7 +862,7 @@ SOFTWARE.
     </tdml:infoset>
   </tdml:parserTestCase>
 
-  <tdml:parserTestCase name="g25n3p04" root="PNG" model="xsd/png.dfdl.xsd">
+  <tdml:parserTestCase name="g25n3p04" root="PNG" model="com/mitre/png/xsd/png.dfdl.xsd">
     <tdml:document>
       <tdml:documentPart type="file">PngSuite-2013jan13/g25n3p04.png</tdml:documentPart>
     </tdml:document>
@@ -871,7 +871,7 @@ SOFTWARE.
     </tdml:infoset>
   </tdml:parserTestCase>
 
-  <tdml:parserTestCase name="oi1n0g16" root="PNG" model="xsd/png.dfdl.xsd">
+  <tdml:parserTestCase name="oi1n0g16" root="PNG" model="com/mitre/png/xsd/png.dfdl.xsd">
     <tdml:document>
       <tdml:documentPart type="file">PngSuite-2013jan13/oi1n0g16.png</tdml:documentPart>
     </tdml:document>
@@ -880,7 +880,7 @@ SOFTWARE.
     </tdml:infoset>
   </tdml:parserTestCase>
 
-  <tdml:parserTestCase name="oi1n2c16" root="PNG" model="xsd/png.dfdl.xsd">
+  <tdml:parserTestCase name="oi1n2c16" root="PNG" model="com/mitre/png/xsd/png.dfdl.xsd">
     <tdml:document>
       <tdml:documentPart type="file">PngSuite-2013jan13/oi1n2c16.png</tdml:documentPart>
     </tdml:document>
@@ -889,7 +889,7 @@ SOFTWARE.
     </tdml:infoset>
   </tdml:parserTestCase>
 
-  <tdml:parserTestCase name="oi2n0g16" root="PNG" model="xsd/png.dfdl.xsd">
+  <tdml:parserTestCase name="oi2n0g16" root="PNG" model="com/mitre/png/xsd/png.dfdl.xsd">
     <tdml:document>
       <tdml:documentPart type="file">PngSuite-2013jan13/oi2n0g16.png</tdml:documentPart>
     </tdml:document>
@@ -898,7 +898,7 @@ SOFTWARE.
     </tdml:infoset>
   </tdml:parserTestCase>
 
-  <tdml:parserTestCase name="oi2n2c16" root="PNG" model="xsd/png.dfdl.xsd">
+  <tdml:parserTestCase name="oi2n2c16" root="PNG" model="com/mitre/png/xsd/png.dfdl.xsd">
     <tdml:document>
       <tdml:documentPart type="file">PngSuite-2013jan13/oi2n2c16.png</tdml:documentPart>
     </tdml:document>
@@ -907,7 +907,7 @@ SOFTWARE.
     </tdml:infoset>
   </tdml:parserTestCase>
 
-  <tdml:parserTestCase name="oi4n0g16" root="PNG" model="xsd/png.dfdl.xsd">
+  <tdml:parserTestCase name="oi4n0g16" root="PNG" model="com/mitre/png/xsd/png.dfdl.xsd">
     <tdml:document>
       <tdml:documentPart type="file">PngSuite-2013jan13/oi4n0g16.png</tdml:documentPart>
     </tdml:document>
@@ -916,7 +916,7 @@ SOFTWARE.
     </tdml:infoset>
   </tdml:parserTestCase>
 
-  <tdml:parserTestCase name="oi4n2c16" root="PNG" model="xsd/png.dfdl.xsd">
+  <tdml:parserTestCase name="oi4n2c16" root="PNG" model="com/mitre/png/xsd/png.dfdl.xsd">
     <tdml:document>
       <tdml:documentPart type="file">PngSuite-2013jan13/oi4n2c16.png</tdml:documentPart>
     </tdml:document>
@@ -925,7 +925,7 @@ SOFTWARE.
     </tdml:infoset>
   </tdml:parserTestCase>
 
-  <tdml:parserTestCase name="oi9n0g16" root="PNG" model="xsd/png.dfdl.xsd">
+  <tdml:parserTestCase name="oi9n0g16" root="PNG" model="com/mitre/png/xsd/png.dfdl.xsd">
     <tdml:document>
       <tdml:documentPart type="file">PngSuite-2013jan13/oi9n0g16.png</tdml:documentPart>
     </tdml:document>
@@ -934,7 +934,7 @@ SOFTWARE.
     </tdml:infoset>
   </tdml:parserTestCase>
 
-  <tdml:parserTestCase name="oi9n2c16" root="PNG" model="xsd/png.dfdl.xsd">
+  <tdml:parserTestCase name="oi9n2c16" root="PNG" model="com/mitre/png/xsd/png.dfdl.xsd">
     <tdml:document>
       <tdml:documentPart type="file">PngSuite-2013jan13/oi9n2c16.png</tdml:documentPart>
     </tdml:document>
@@ -943,7 +943,7 @@ SOFTWARE.
     </tdml:infoset>
   </tdml:parserTestCase>
 
-  <tdml:parserTestCase name="PngSuite" root="PNG" model="xsd/png.dfdl.xsd">
+  <tdml:parserTestCase name="PngSuite" root="PNG" model="com/mitre/png/xsd/png.dfdl.xsd">
     <tdml:document>
       <tdml:documentPart type="file">PngSuite-2013jan13/PngSuite.png</tdml:documentPart>
     </tdml:document>
@@ -952,7 +952,7 @@ SOFTWARE.
     </tdml:infoset>
   </tdml:parserTestCase>
 
-  <tdml:parserTestCase name="pp0n2c16" root="PNG" model="xsd/png.dfdl.xsd">
+  <tdml:parserTestCase name="pp0n2c16" root="PNG" model="com/mitre/png/xsd/png.dfdl.xsd">
     <tdml:document>
       <tdml:documentPart type="file">PngSuite-2013jan13/pp0n2c16.png</tdml:documentPart>
     </tdml:document>
@@ -961,7 +961,7 @@ SOFTWARE.
     </tdml:infoset>
   </tdml:parserTestCase>
 
-  <tdml:parserTestCase name="pp0n6a08" root="PNG" model="xsd/png.dfdl.xsd">
+  <tdml:parserTestCase name="pp0n6a08" root="PNG" model="com/mitre/png/xsd/png.dfdl.xsd">
     <tdml:document>
       <tdml:documentPart type="file">PngSuite-2013jan13/pp0n6a08.png</tdml:documentPart>
     </tdml:document>
@@ -970,7 +970,7 @@ SOFTWARE.
     </tdml:infoset>
   </tdml:parserTestCase>
 
-  <tdml:parserTestCase name="ps1n0g08" root="PNG" model="xsd/png.dfdl.xsd">
+  <tdml:parserTestCase name="ps1n0g08" root="PNG" model="com/mitre/png/xsd/png.dfdl.xsd">
     <tdml:document>
       <tdml:documentPart type="file">PngSuite-2013jan13/ps1n0g08.png</tdml:documentPart>
     </tdml:document>
@@ -979,7 +979,7 @@ SOFTWARE.
     </tdml:infoset>
   </tdml:parserTestCase>
 
-  <tdml:parserTestCase name="ps1n2c16" root="PNG" model="xsd/png.dfdl.xsd">
+  <tdml:parserTestCase name="ps1n2c16" root="PNG" model="com/mitre/png/xsd/png.dfdl.xsd">
     <tdml:document>
       <tdml:documentPart type="file">PngSuite-2013jan13/ps1n2c16.png</tdml:documentPart>
     </tdml:document>
@@ -988,7 +988,7 @@ SOFTWARE.
     </tdml:infoset>
   </tdml:parserTestCase>
 
-  <tdml:parserTestCase name="ps2n0g08" root="PNG" model="xsd/png.dfdl.xsd">
+  <tdml:parserTestCase name="ps2n0g08" root="PNG" model="com/mitre/png/xsd/png.dfdl.xsd">
     <tdml:document>
       <tdml:documentPart type="file">PngSuite-2013jan13/ps2n0g08.png</tdml:documentPart>
     </tdml:document>
@@ -997,7 +997,7 @@ SOFTWARE.
     </tdml:infoset>
   </tdml:parserTestCase>
 
-  <tdml:parserTestCase name="ps2n2c16" root="PNG" model="xsd/png.dfdl.xsd">
+  <tdml:parserTestCase name="ps2n2c16" root="PNG" model="com/mitre/png/xsd/png.dfdl.xsd">
     <tdml:document>
       <tdml:documentPart type="file">PngSuite-2013jan13/ps2n2c16.png</tdml:documentPart>
     </tdml:document>
@@ -1006,7 +1006,7 @@ SOFTWARE.
     </tdml:infoset>
   </tdml:parserTestCase>
 
-  <tdml:parserTestCase name="s01i3p01" root="PNG" model="xsd/png.dfdl.xsd">
+  <tdml:parserTestCase name="s01i3p01" root="PNG" model="com/mitre/png/xsd/png.dfdl.xsd">
     <tdml:document>
       <tdml:documentPart type="file">PngSuite-2013jan13/s01i3p01.png</tdml:documentPart>
     </tdml:document>
@@ -1015,7 +1015,7 @@ SOFTWARE.
     </tdml:infoset>
   </tdml:parserTestCase>
 
-  <tdml:parserTestCase name="s01n3p01" root="PNG" model="xsd/png.dfdl.xsd">
+  <tdml:parserTestCase name="s01n3p01" root="PNG" model="com/mitre/png/xsd/png.dfdl.xsd">
     <tdml:document>
       <tdml:documentPart type="file">PngSuite-2013jan13/s01n3p01.png</tdml:documentPart>
     </tdml:document>
@@ -1024,7 +1024,7 @@ SOFTWARE.
     </tdml:infoset>
   </tdml:parserTestCase>
 
-  <tdml:parserTestCase name="s02i3p01" root="PNG" model="xsd/png.dfdl.xsd">
+  <tdml:parserTestCase name="s02i3p01" root="PNG" model="com/mitre/png/xsd/png.dfdl.xsd">
     <tdml:document>
       <tdml:documentPart type="file">PngSuite-2013jan13/s02i3p01.png</tdml:documentPart>
     </tdml:document>
@@ -1033,7 +1033,7 @@ SOFTWARE.
     </tdml:infoset>
   </tdml:parserTestCase>
 
-  <tdml:parserTestCase name="s02n3p01" root="PNG" model="xsd/png.dfdl.xsd">
+  <tdml:parserTestCase name="s02n3p01" root="PNG" model="com/mitre/png/xsd/png.dfdl.xsd">
     <tdml:document>
       <tdml:documentPart type="file">PngSuite-2013jan13/s02n3p01.png</tdml:documentPart>
     </tdml:document>
@@ -1042,7 +1042,7 @@ SOFTWARE.
     </tdml:infoset>
   </tdml:parserTestCase>
 
-  <tdml:parserTestCase name="s03i3p01" root="PNG" model="xsd/png.dfdl.xsd">
+  <tdml:parserTestCase name="s03i3p01" root="PNG" model="com/mitre/png/xsd/png.dfdl.xsd">
     <tdml:document>
       <tdml:documentPart type="file">PngSuite-2013jan13/s03i3p01.png</tdml:documentPart>
     </tdml:document>
@@ -1051,7 +1051,7 @@ SOFTWARE.
     </tdml:infoset>
   </tdml:parserTestCase>
 
-  <tdml:parserTestCase name="s03n3p01" root="PNG" model="xsd/png.dfdl.xsd">
+  <tdml:parserTestCase name="s03n3p01" root="PNG" model="com/mitre/png/xsd/png.dfdl.xsd">
     <tdml:document>
       <tdml:documentPart type="file">PngSuite-2013jan13/s03n3p01.png</tdml:documentPart>
     </tdml:document>
@@ -1060,7 +1060,7 @@ SOFTWARE.
     </tdml:infoset>
   </tdml:parserTestCase>
 
-  <tdml:parserTestCase name="s04i3p01" root="PNG" model="xsd/png.dfdl.xsd">
+  <tdml:parserTestCase name="s04i3p01" root="PNG" model="com/mitre/png/xsd/png.dfdl.xsd">
     <tdml:document>
       <tdml:documentPart type="file">PngSuite-2013jan13/s04i3p01.png</tdml:documentPart>
     </tdml:document>
@@ -1069,7 +1069,7 @@ SOFTWARE.
     </tdml:infoset>
   </tdml:parserTestCase>
 
-  <tdml:parserTestCase name="s04n3p01" root="PNG" model="xsd/png.dfdl.xsd">
+  <tdml:parserTestCase name="s04n3p01" root="PNG" model="com/mitre/png/xsd/png.dfdl.xsd">
     <tdml:document>
       <tdml:documentPart type="file">PngSuite-2013jan13/s04n3p01.png</tdml:documentPart>
     </tdml:document>
@@ -1078,7 +1078,7 @@ SOFTWARE.
     </tdml:infoset>
   </tdml:parserTestCase>
 
-  <tdml:parserTestCase name="s05i3p02" root="PNG" model="xsd/png.dfdl.xsd">
+  <tdml:parserTestCase name="s05i3p02" root="PNG" model="com/mitre/png/xsd/png.dfdl.xsd">
     <tdml:document>
       <tdml:documentPart type="file">PngSuite-2013jan13/s05i3p02.png</tdml:documentPart>
     </tdml:document>
@@ -1087,7 +1087,7 @@ SOFTWARE.
     </tdml:infoset>
   </tdml:parserTestCase>
 
-  <tdml:parserTestCase name="s05n3p02" root="PNG" model="xsd/png.dfdl.xsd">
+  <tdml:parserTestCase name="s05n3p02" root="PNG" model="com/mitre/png/xsd/png.dfdl.xsd">
     <tdml:document>
       <tdml:documentPart type="file">PngSuite-2013jan13/s05n3p02.png</tdml:documentPart>
     </tdml:document>
@@ -1096,7 +1096,7 @@ SOFTWARE.
     </tdml:infoset>
   </tdml:parserTestCase>
 
-  <tdml:parserTestCase name="s06i3p02" root="PNG" model="xsd/png.dfdl.xsd">
+  <tdml:parserTestCase name="s06i3p02" root="PNG" model="com/mitre/png/xsd/png.dfdl.xsd">
     <tdml:document>
       <tdml:documentPart type="file">PngSuite-2013jan13/s06i3p02.png</tdml:documentPart>
     </tdml:document>
@@ -1105,7 +1105,7 @@ SOFTWARE.
     </tdml:infoset>
   </tdml:parserTestCase>
 
-  <tdml:parserTestCase name="s06n3p02" root="PNG" model="xsd/png.dfdl.xsd">
+  <tdml:parserTestCase name="s06n3p02" root="PNG" model="com/mitre/png/xsd/png.dfdl.xsd">
     <tdml:document>
       <tdml:documentPart type="file">PngSuite-2013jan13/s06n3p02.png</tdml:documentPart>
     </tdml:document>
@@ -1114,7 +1114,7 @@ SOFTWARE.
     </tdml:infoset>
   </tdml:parserTestCase>
 
-  <tdml:parserTestCase name="s07i3p02" root="PNG" model="xsd/png.dfdl.xsd">
+  <tdml:parserTestCase name="s07i3p02" root="PNG" model="com/mitre/png/xsd/png.dfdl.xsd">
     <tdml:document>
       <tdml:documentPart type="file">PngSuite-2013jan13/s07i3p02.png</tdml:documentPart>
     </tdml:document>
@@ -1123,7 +1123,7 @@ SOFTWARE.
     </tdml:infoset>
   </tdml:parserTestCase>
 
-  <tdml:parserTestCase name="s07n3p02" root="PNG" model="xsd/png.dfdl.xsd">
+  <tdml:parserTestCase name="s07n3p02" root="PNG" model="com/mitre/png/xsd/png.dfdl.xsd">
     <tdml:document>
       <tdml:documentPart type="file">PngSuite-2013jan13/s07n3p02.png</tdml:documentPart>
     </tdml:document>
@@ -1132,7 +1132,7 @@ SOFTWARE.
     </tdml:infoset>
   </tdml:parserTestCase>
 
-  <tdml:parserTestCase name="s08i3p02" root="PNG" model="xsd/png.dfdl.xsd">
+  <tdml:parserTestCase name="s08i3p02" root="PNG" model="com/mitre/png/xsd/png.dfdl.xsd">
     <tdml:document>
       <tdml:documentPart type="file">PngSuite-2013jan13/s08i3p02.png</tdml:documentPart>
     </tdml:document>
@@ -1141,7 +1141,7 @@ SOFTWARE.
     </tdml:infoset>
   </tdml:parserTestCase>
 
-  <tdml:parserTestCase name="s08n3p02" root="PNG" model="xsd/png.dfdl.xsd">
+  <tdml:parserTestCase name="s08n3p02" root="PNG" model="com/mitre/png/xsd/png.dfdl.xsd">
     <tdml:document>
       <tdml:documentPart type="file">PngSuite-2013jan13/s08n3p02.png</tdml:documentPart>
     </tdml:document>
@@ -1150,7 +1150,7 @@ SOFTWARE.
     </tdml:infoset>
   </tdml:parserTestCase>
 
-  <tdml:parserTestCase name="s09i3p02" root="PNG" model="xsd/png.dfdl.xsd">
+  <tdml:parserTestCase name="s09i3p02" root="PNG" model="com/mitre/png/xsd/png.dfdl.xsd">
     <tdml:document>
       <tdml:documentPart type="file">PngSuite-2013jan13/s09i3p02.png</tdml:documentPart>
     </tdml:document>
@@ -1159,7 +1159,7 @@ SOFTWARE.
     </tdml:infoset>
   </tdml:parserTestCase>
 
-  <tdml:parserTestCase name="s09n3p02" root="PNG" model="xsd/png.dfdl.xsd">
+  <tdml:parserTestCase name="s09n3p02" root="PNG" model="com/mitre/png/xsd/png.dfdl.xsd">
     <tdml:document>
       <tdml:documentPart type="file">PngSuite-2013jan13/s09n3p02.png</tdml:documentPart>
     </tdml:document>
@@ -1168,7 +1168,7 @@ SOFTWARE.
     </tdml:infoset>
   </tdml:parserTestCase>
 
-  <tdml:parserTestCase name="s32i3p04" root="PNG" model="xsd/png.dfdl.xsd">
+  <tdml:parserTestCase name="s32i3p04" root="PNG" model="com/mitre/png/xsd/png.dfdl.xsd">
     <tdml:document>
       <tdml:documentPart type="file">PngSuite-2013jan13/s32i3p04.png</tdml:documentPart>
     </tdml:document>
@@ -1177,7 +1177,7 @@ SOFTWARE.
     </tdml:infoset>
   </tdml:parserTestCase>
 
-  <tdml:parserTestCase name="s32n3p04" root="PNG" model="xsd/png.dfdl.xsd">
+  <tdml:parserTestCase name="s32n3p04" root="PNG" model="com/mitre/png/xsd/png.dfdl.xsd">
     <tdml:document>
       <tdml:documentPart type="file">PngSuite-2013jan13/s32n3p04.png</tdml:documentPart>
     </tdml:document>
@@ -1186,7 +1186,7 @@ SOFTWARE.
     </tdml:infoset>
   </tdml:parserTestCase>
 
-  <tdml:parserTestCase name="s33i3p04" root="PNG" model="xsd/png.dfdl.xsd">
+  <tdml:parserTestCase name="s33i3p04" root="PNG" model="com/mitre/png/xsd/png.dfdl.xsd">
     <tdml:document>
       <tdml:documentPart type="file">PngSuite-2013jan13/s33i3p04.png</tdml:documentPart>
     </tdml:document>
@@ -1195,7 +1195,7 @@ SOFTWARE.
     </tdml:infoset>
   </tdml:parserTestCase>
 
-  <tdml:parserTestCase name="s33n3p04" root="PNG" model="xsd/png.dfdl.xsd">
+  <tdml:parserTestCase name="s33n3p04" root="PNG" model="com/mitre/png/xsd/png.dfdl.xsd">
     <tdml:document>
       <tdml:documentPart type="file">PngSuite-2013jan13/s33n3p04.png</tdml:documentPart>
     </tdml:document>
@@ -1204,7 +1204,7 @@ SOFTWARE.
     </tdml:infoset>
   </tdml:parserTestCase>
 
-  <tdml:parserTestCase name="s34i3p04" root="PNG" model="xsd/png.dfdl.xsd">
+  <tdml:parserTestCase name="s34i3p04" root="PNG" model="com/mitre/png/xsd/png.dfdl.xsd">
     <tdml:document>
       <tdml:documentPart type="file">PngSuite-2013jan13/s34i3p04.png</tdml:documentPart>
     </tdml:document>
@@ -1213,7 +1213,7 @@ SOFTWARE.
     </tdml:infoset>
   </tdml:parserTestCase>
 
-  <tdml:parserTestCase name="s34n3p04" root="PNG" model="xsd/png.dfdl.xsd">
+  <tdml:parserTestCase name="s34n3p04" root="PNG" model="com/mitre/png/xsd/png.dfdl.xsd">
     <tdml:document>
       <tdml:documentPart type="file">PngSuite-2013jan13/s34n3p04.png</tdml:documentPart>
     </tdml:document>
@@ -1222,7 +1222,7 @@ SOFTWARE.
     </tdml:infoset>
   </tdml:parserTestCase>
 
-  <tdml:parserTestCase name="s35i3p04" root="PNG" model="xsd/png.dfdl.xsd">
+  <tdml:parserTestCase name="s35i3p04" root="PNG" model="com/mitre/png/xsd/png.dfdl.xsd">
     <tdml:document>
       <tdml:documentPart type="file">PngSuite-2013jan13/s35i3p04.png</tdml:documentPart>
     </tdml:document>
@@ -1231,7 +1231,7 @@ SOFTWARE.
     </tdml:infoset>
   </tdml:parserTestCase>
 
-  <tdml:parserTestCase name="s35n3p04" root="PNG" model="xsd/png.dfdl.xsd">
+  <tdml:parserTestCase name="s35n3p04" root="PNG" model="com/mitre/png/xsd/png.dfdl.xsd">
     <tdml:document>
       <tdml:documentPart type="file">PngSuite-2013jan13/s35n3p04.png</tdml:documentPart>
     </tdml:document>
@@ -1240,7 +1240,7 @@ SOFTWARE.
     </tdml:infoset>
   </tdml:parserTestCase>
 
-  <tdml:parserTestCase name="s36i3p04" root="PNG" model="xsd/png.dfdl.xsd">
+  <tdml:parserTestCase name="s36i3p04" root="PNG" model="com/mitre/png/xsd/png.dfdl.xsd">
     <tdml:document>
       <tdml:documentPart type="file">PngSuite-2013jan13/s36i3p04.png</tdml:documentPart>
     </tdml:document>
@@ -1249,7 +1249,7 @@ SOFTWARE.
     </tdml:infoset>
   </tdml:parserTestCase>
 
-  <tdml:parserTestCase name="s36n3p04" root="PNG" model="xsd/png.dfdl.xsd">
+  <tdml:parserTestCase name="s36n3p04" root="PNG" model="com/mitre/png/xsd/png.dfdl.xsd">
     <tdml:document>
       <tdml:documentPart type="file">PngSuite-2013jan13/s36n3p04.png</tdml:documentPart>
     </tdml:document>
@@ -1258,7 +1258,7 @@ SOFTWARE.
     </tdml:infoset>
   </tdml:parserTestCase>
 
-  <tdml:parserTestCase name="s37i3p04" root="PNG" model="xsd/png.dfdl.xsd">
+  <tdml:parserTestCase name="s37i3p04" root="PNG" model="com/mitre/png/xsd/png.dfdl.xsd">
     <tdml:document>
       <tdml:documentPart type="file">PngSuite-2013jan13/s37i3p04.png</tdml:documentPart>
     </tdml:document>
@@ -1267,7 +1267,7 @@ SOFTWARE.
     </tdml:infoset>
   </tdml:parserTestCase>
 
-  <tdml:parserTestCase name="s37n3p04" root="PNG" model="xsd/png.dfdl.xsd">
+  <tdml:parserTestCase name="s37n3p04" root="PNG" model="com/mitre/png/xsd/png.dfdl.xsd">
     <tdml:document>
       <tdml:documentPart type="file">PngSuite-2013jan13/s37n3p04.png</tdml:documentPart>
     </tdml:document>
@@ -1276,7 +1276,7 @@ SOFTWARE.
     </tdml:infoset>
   </tdml:parserTestCase>
 
-  <tdml:parserTestCase name="s38i3p04" root="PNG" model="xsd/png.dfdl.xsd">
+  <tdml:parserTestCase name="s38i3p04" root="PNG" model="com/mitre/png/xsd/png.dfdl.xsd">
     <tdml:document>
       <tdml:documentPart type="file">PngSuite-2013jan13/s38i3p04.png</tdml:documentPart>
     </tdml:document>
@@ -1285,7 +1285,7 @@ SOFTWARE.
     </tdml:infoset>
   </tdml:parserTestCase>
 
-  <tdml:parserTestCase name="s38n3p04" root="PNG" model="xsd/png.dfdl.xsd">
+  <tdml:parserTestCase name="s38n3p04" root="PNG" model="com/mitre/png/xsd/png.dfdl.xsd">
     <tdml:document>
       <tdml:documentPart type="file">PngSuite-2013jan13/s38n3p04.png</tdml:documentPart>
     </tdml:document>
@@ -1294,7 +1294,7 @@ SOFTWARE.
     </tdml:infoset>
   </tdml:parserTestCase>
 
-  <tdml:parserTestCase name="s39i3p04" root="PNG" model="xsd/png.dfdl.xsd">
+  <tdml:parserTestCase name="s39i3p04" root="PNG" model="com/mitre/png/xsd/png.dfdl.xsd">
     <tdml:document>
       <tdml:documentPart type="file">PngSuite-2013jan13/s39i3p04.png</tdml:documentPart>
     </tdml:document>
@@ -1303,7 +1303,7 @@ SOFTWARE.
     </tdml:infoset>
   </tdml:parserTestCase>
 
-  <tdml:parserTestCase name="s39n3p04" root="PNG" model="xsd/png.dfdl.xsd">
+  <tdml:parserTestCase name="s39n3p04" root="PNG" model="com/mitre/png/xsd/png.dfdl.xsd">
     <tdml:document>
       <tdml:documentPart type="file">PngSuite-2013jan13/s39n3p04.png</tdml:documentPart>
     </tdml:document>
@@ -1312,7 +1312,7 @@ SOFTWARE.
     </tdml:infoset>
   </tdml:parserTestCase>
 
-  <tdml:parserTestCase name="s40i3p04" root="PNG" model="xsd/png.dfdl.xsd">
+  <tdml:parserTestCase name="s40i3p04" root="PNG" model="com/mitre/png/xsd/png.dfdl.xsd">
     <tdml:document>
       <tdml:documentPart type="file">PngSuite-2013jan13/s40i3p04.png</tdml:documentPart>
     </tdml:document>
@@ -1321,7 +1321,7 @@ SOFTWARE.
     </tdml:infoset>
   </tdml:parserTestCase>
 
-  <tdml:parserTestCase name="s40n3p04" root="PNG" model="xsd/png.dfdl.xsd">
+  <tdml:parserTestCase name="s40n3p04" root="PNG" model="com/mitre/png/xsd/png.dfdl.xsd">
     <tdml:document>
       <tdml:documentPart type="file">PngSuite-2013jan13/s40n3p04.png</tdml:documentPart>
     </tdml:document>
@@ -1330,7 +1330,7 @@ SOFTWARE.
     </tdml:infoset>
   </tdml:parserTestCase>
 
-  <tdml:parserTestCase name="tbbn0g04" root="PNG" model="xsd/png.dfdl.xsd">
+  <tdml:parserTestCase name="tbbn0g04" root="PNG" model="com/mitre/png/xsd/png.dfdl.xsd">
     <tdml:document>
       <tdml:documentPart type="file">PngSuite-2013jan13/tbbn0g04.png</tdml:documentPart>
     </tdml:document>
@@ -1339,7 +1339,7 @@ SOFTWARE.
     </tdml:infoset>
   </tdml:parserTestCase>
 
-  <tdml:parserTestCase name="tbbn2c16" root="PNG" model="xsd/png.dfdl.xsd">
+  <tdml:parserTestCase name="tbbn2c16" root="PNG" model="com/mitre/png/xsd/png.dfdl.xsd">
     <tdml:document>
       <tdml:documentPart type="file">PngSuite-2013jan13/tbbn2c16.png</tdml:documentPart>
     </tdml:document>
@@ -1348,7 +1348,7 @@ SOFTWARE.
     </tdml:infoset>
   </tdml:parserTestCase>
 
-  <tdml:parserTestCase name="tbbn3p08" root="PNG" model="xsd/png.dfdl.xsd">
+  <tdml:parserTestCase name="tbbn3p08" root="PNG" model="com/mitre/png/xsd/png.dfdl.xsd">
     <tdml:document>
       <tdml:documentPart type="file">PngSuite-2013jan13/tbbn3p08.png</tdml:documentPart>
     </tdml:document>
@@ -1357,7 +1357,7 @@ SOFTWARE.
     </tdml:infoset>
   </tdml:parserTestCase>
 
-  <tdml:parserTestCase name="tbgn2c16" root="PNG" model="xsd/png.dfdl.xsd">
+  <tdml:parserTestCase name="tbgn2c16" root="PNG" model="com/mitre/png/xsd/png.dfdl.xsd">
     <tdml:document>
       <tdml:documentPart type="file">PngSuite-2013jan13/tbgn2c16.png</tdml:documentPart>
     </tdml:document>
@@ -1366,7 +1366,7 @@ SOFTWARE.
     </tdml:infoset>
   </tdml:parserTestCase>
 
-  <tdml:parserTestCase name="tbgn3p08" root="PNG" model="xsd/png.dfdl.xsd">
+  <tdml:parserTestCase name="tbgn3p08" root="PNG" model="com/mitre/png/xsd/png.dfdl.xsd">
     <tdml:document>
       <tdml:documentPart type="file">PngSuite-2013jan13/tbgn3p08.png</tdml:documentPart>
     </tdml:document>
@@ -1375,7 +1375,7 @@ SOFTWARE.
     </tdml:infoset>
   </tdml:parserTestCase>
 
-  <tdml:parserTestCase name="tbrn2c08" root="PNG" model="xsd/png.dfdl.xsd">
+  <tdml:parserTestCase name="tbrn2c08" root="PNG" model="com/mitre/png/xsd/png.dfdl.xsd">
     <tdml:document>
       <tdml:documentPart type="file">PngSuite-2013jan13/tbrn2c08.png</tdml:documentPart>
     </tdml:document>
@@ -1384,7 +1384,7 @@ SOFTWARE.
     </tdml:infoset>
   </tdml:parserTestCase>
 
-  <tdml:parserTestCase name="tbwn0g16" root="PNG" model="xsd/png.dfdl.xsd">
+  <tdml:parserTestCase name="tbwn0g16" root="PNG" model="com/mitre/png/xsd/png.dfdl.xsd">
     <tdml:document>
       <tdml:documentPart type="file">PngSuite-2013jan13/tbwn0g16.png</tdml:documentPart>
     </tdml:document>
@@ -1393,7 +1393,7 @@ SOFTWARE.
     </tdml:infoset>
   </tdml:parserTestCase>
 
-  <tdml:parserTestCase name="tbwn3p08" root="PNG" model="xsd/png.dfdl.xsd">
+  <tdml:parserTestCase name="tbwn3p08" root="PNG" model="com/mitre/png/xsd/png.dfdl.xsd">
     <tdml:document>
       <tdml:documentPart type="file">PngSuite-2013jan13/tbwn3p08.png</tdml:documentPart>
     </tdml:document>
@@ -1402,7 +1402,7 @@ SOFTWARE.
     </tdml:infoset>
   </tdml:parserTestCase>
 
-  <tdml:parserTestCase name="tbyn3p08" root="PNG" model="xsd/png.dfdl.xsd">
+  <tdml:parserTestCase name="tbyn3p08" root="PNG" model="com/mitre/png/xsd/png.dfdl.xsd">
     <tdml:document>
       <tdml:documentPart type="file">PngSuite-2013jan13/tbyn3p08.png</tdml:documentPart>
     </tdml:document>
@@ -1411,7 +1411,7 @@ SOFTWARE.
     </tdml:infoset>
   </tdml:parserTestCase>
 
-  <tdml:parserTestCase name="tm3n3p02" root="PNG" model="xsd/png.dfdl.xsd">
+  <tdml:parserTestCase name="tm3n3p02" root="PNG" model="com/mitre/png/xsd/png.dfdl.xsd">
     <tdml:document>
       <tdml:documentPart type="file">PngSuite-2013jan13/tm3n3p02.png</tdml:documentPart>
     </tdml:document>
@@ -1420,7 +1420,7 @@ SOFTWARE.
     </tdml:infoset>
   </tdml:parserTestCase>
 
-  <tdml:parserTestCase name="tp0n0g08" root="PNG" model="xsd/png.dfdl.xsd">
+  <tdml:parserTestCase name="tp0n0g08" root="PNG" model="com/mitre/png/xsd/png.dfdl.xsd">
     <tdml:document>
       <tdml:documentPart type="file">PngSuite-2013jan13/tp0n0g08.png</tdml:documentPart>
     </tdml:document>
@@ -1429,7 +1429,7 @@ SOFTWARE.
     </tdml:infoset>
   </tdml:parserTestCase>
 
-  <tdml:parserTestCase name="tp0n2c08" root="PNG" model="xsd/png.dfdl.xsd">
+  <tdml:parserTestCase name="tp0n2c08" root="PNG" model="com/mitre/png/xsd/png.dfdl.xsd">
     <tdml:document>
       <tdml:documentPart type="file">PngSuite-2013jan13/tp0n2c08.png</tdml:documentPart>
     </tdml:document>
@@ -1438,7 +1438,7 @@ SOFTWARE.
     </tdml:infoset>
   </tdml:parserTestCase>
 
-  <tdml:parserTestCase name="tp0n3p08" root="PNG" model="xsd/png.dfdl.xsd">
+  <tdml:parserTestCase name="tp0n3p08" root="PNG" model="com/mitre/png/xsd/png.dfdl.xsd">
     <tdml:document>
       <tdml:documentPart type="file">PngSuite-2013jan13/tp0n3p08.png</tdml:documentPart>
     </tdml:document>
@@ -1447,7 +1447,7 @@ SOFTWARE.
     </tdml:infoset>
   </tdml:parserTestCase>
 
-  <tdml:parserTestCase name="tp1n3p08" root="PNG" model="xsd/png.dfdl.xsd">
+  <tdml:parserTestCase name="tp1n3p08" root="PNG" model="com/mitre/png/xsd/png.dfdl.xsd">
     <tdml:document>
       <tdml:documentPart type="file">PngSuite-2013jan13/tp1n3p08.png</tdml:documentPart>
     </tdml:document>
@@ -1456,7 +1456,7 @@ SOFTWARE.
     </tdml:infoset>
   </tdml:parserTestCase>
 
-  <tdml:parserTestCase name="xc1n0g08" root="PNG" model="xsd/png.dfdl.xsd">
+  <tdml:parserTestCase name="xc1n0g08" root="PNG" model="com/mitre/png/xsd/png.dfdl.xsd">
     <tdml:document>
       <tdml:documentPart type="file">PngSuite-2013jan13/xc1n0g08.png</tdml:documentPart>
     </tdml:document>
@@ -1465,7 +1465,7 @@ SOFTWARE.
     </tdml:infoset>
   </tdml:parserTestCase>
 
-  <tdml:parserTestCase name="xc9n2c08" root="PNG" model="xsd/png.dfdl.xsd">
+  <tdml:parserTestCase name="xc9n2c08" root="PNG" model="com/mitre/png/xsd/png.dfdl.xsd">
     <tdml:document>
       <tdml:documentPart type="file">PngSuite-2013jan13/xc9n2c08.png</tdml:documentPart>
     </tdml:document>
@@ -1474,7 +1474,7 @@ SOFTWARE.
     </tdml:infoset>
   </tdml:parserTestCase>
 
-  <tdml:parserTestCase name="xcrn0g04" root="PNG" model="xsd/png.dfdl.xsd">
+  <tdml:parserTestCase name="xcrn0g04" root="PNG" model="com/mitre/png/xsd/png.dfdl.xsd">
     <tdml:document>
       <tdml:documentPart type="file">PngSuite-2013jan13/xcrn0g04.png</tdml:documentPart>
     </tdml:document>
@@ -1483,7 +1483,7 @@ SOFTWARE.
     </tdml:errors>
   </tdml:parserTestCase>
 
-  <tdml:parserTestCase name="xcsn0g01" root="PNG" model="xsd/png.dfdl.xsd">
+  <tdml:parserTestCase name="xcsn0g01" root="PNG" model="com/mitre/png/xsd/png.dfdl.xsd">
     <tdml:document>
       <tdml:documentPart type="file">PngSuite-2013jan13/xcsn0g01.png</tdml:documentPart>
     </tdml:document>
@@ -1492,7 +1492,7 @@ SOFTWARE.
     </tdml:infoset>
   </tdml:parserTestCase>
 
-  <tdml:parserTestCase name="xd0n2c08" root="PNG" model="xsd/png.dfdl.xsd">
+  <tdml:parserTestCase name="xd0n2c08" root="PNG" model="com/mitre/png/xsd/png.dfdl.xsd">
     <tdml:document>
       <tdml:documentPart type="file">PngSuite-2013jan13/xd0n2c08.png</tdml:documentPart>
     </tdml:document>
@@ -1501,7 +1501,7 @@ SOFTWARE.
     </tdml:infoset>
   </tdml:parserTestCase>
 
-  <tdml:parserTestCase name="xd3n2c08" root="PNG" model="xsd/png.dfdl.xsd">
+  <tdml:parserTestCase name="xd3n2c08" root="PNG" model="com/mitre/png/xsd/png.dfdl.xsd">
     <tdml:document>
       <tdml:documentPart type="file">PngSuite-2013jan13/xd3n2c08.png</tdml:documentPart>
     </tdml:document>
@@ -1510,7 +1510,7 @@ SOFTWARE.
     </tdml:infoset>
   </tdml:parserTestCase>
 
-  <tdml:parserTestCase name="xd9n2c08" root="PNG" model="xsd/png.dfdl.xsd">
+  <tdml:parserTestCase name="xd9n2c08" root="PNG" model="com/mitre/png/xsd/png.dfdl.xsd">
     <tdml:document>
       <tdml:documentPart type="file">PngSuite-2013jan13/xd9n2c08.png</tdml:documentPart>
     </tdml:document>
@@ -1519,7 +1519,7 @@ SOFTWARE.
     </tdml:infoset>
   </tdml:parserTestCase>
 
-  <tdml:parserTestCase name="xdtn0g01" root="PNG" model="xsd/png.dfdl.xsd">
+  <tdml:parserTestCase name="xdtn0g01" root="PNG" model="com/mitre/png/xsd/png.dfdl.xsd">
     <tdml:document>
       <tdml:documentPart type="file">PngSuite-2013jan13/xdtn0g01.png</tdml:documentPart>
     </tdml:document>
@@ -1528,7 +1528,7 @@ SOFTWARE.
     </tdml:infoset>
   </tdml:parserTestCase>
 
-  <tdml:parserTestCase name="xhdn0g08" root="PNG" model="xsd/png.dfdl.xsd">
+  <tdml:parserTestCase name="xhdn0g08" root="PNG" model="com/mitre/png/xsd/png.dfdl.xsd">
     <tdml:document>
       <tdml:documentPart type="file">PngSuite-2013jan13/xhdn0g08.png</tdml:documentPart>
     </tdml:document>
@@ -1537,7 +1537,7 @@ SOFTWARE.
     </tdml:infoset>
   </tdml:parserTestCase>
 
-  <tdml:parserTestCase name="xlfn0g04" root="PNG" model="xsd/png.dfdl.xsd">
+  <tdml:parserTestCase name="xlfn0g04" root="PNG" model="com/mitre/png/xsd/png.dfdl.xsd">
     <tdml:document>
       <tdml:documentPart type="file">PngSuite-2013jan13/xlfn0g04.png</tdml:documentPart>
     </tdml:document>
@@ -1546,7 +1546,7 @@ SOFTWARE.
     </tdml:errors>
   </tdml:parserTestCase>
 
-  <tdml:parserTestCase name="xs1n0g01" root="PNG" model="xsd/png.dfdl.xsd">
+  <tdml:parserTestCase name="xs1n0g01" root="PNG" model="com/mitre/png/xsd/png.dfdl.xsd">
     <tdml:document>
       <tdml:documentPart type="file">PngSuite-2013jan13/xs1n0g01.png</tdml:documentPart>
     </tdml:document>
@@ -1555,7 +1555,7 @@ SOFTWARE.
     </tdml:errors>
   </tdml:parserTestCase>
 
-  <tdml:parserTestCase name="xs2n0g01" root="PNG" model="xsd/png.dfdl.xsd">
+  <tdml:parserTestCase name="xs2n0g01" root="PNG" model="com/mitre/png/xsd/png.dfdl.xsd">
     <tdml:document>
       <tdml:documentPart type="file">PngSuite-2013jan13/xs2n0g01.png</tdml:documentPart>
     </tdml:document>
@@ -1564,7 +1564,7 @@ SOFTWARE.
     </tdml:errors>
   </tdml:parserTestCase>
 
-  <tdml:parserTestCase name="xs4n0g01" root="PNG" model="xsd/png.dfdl.xsd">
+  <tdml:parserTestCase name="xs4n0g01" root="PNG" model="com/mitre/png/xsd/png.dfdl.xsd">
     <tdml:document>
       <tdml:documentPart type="file">PngSuite-2013jan13/xs4n0g01.png</tdml:documentPart>
     </tdml:document>
@@ -1573,7 +1573,7 @@ SOFTWARE.
     </tdml:errors>
   </tdml:parserTestCase>
 
-  <tdml:parserTestCase name="xs7n0g01" root="PNG" model="xsd/png.dfdl.xsd">
+  <tdml:parserTestCase name="xs7n0g01" root="PNG" model="com/mitre/png/xsd/png.dfdl.xsd">
     <tdml:document>
       <tdml:documentPart type="file">PngSuite-2013jan13/xs7n0g01.png</tdml:documentPart>
     </tdml:document>
@@ -1582,7 +1582,7 @@ SOFTWARE.
     </tdml:errors>
   </tdml:parserTestCase>
 
-  <tdml:parserTestCase name="z00n2c08" root="PNG" model="xsd/png.dfdl.xsd">
+  <tdml:parserTestCase name="z00n2c08" root="PNG" model="com/mitre/png/xsd/png.dfdl.xsd">
     <tdml:document>
       <tdml:documentPart type="file">PngSuite-2013jan13/z00n2c08.png</tdml:documentPart>
     </tdml:document>
@@ -1591,7 +1591,7 @@ SOFTWARE.
     </tdml:infoset>
   </tdml:parserTestCase>
 
-  <tdml:parserTestCase name="z03n2c08" root="PNG" model="xsd/png.dfdl.xsd">
+  <tdml:parserTestCase name="z03n2c08" root="PNG" model="com/mitre/png/xsd/png.dfdl.xsd">
     <tdml:document>
       <tdml:documentPart type="file">PngSuite-2013jan13/z03n2c08.png</tdml:documentPart>
     </tdml:document>
@@ -1600,7 +1600,7 @@ SOFTWARE.
     </tdml:infoset>
   </tdml:parserTestCase>
 
-  <tdml:parserTestCase name="z06n2c08" root="PNG" model="xsd/png.dfdl.xsd">
+  <tdml:parserTestCase name="z06n2c08" root="PNG" model="com/mitre/png/xsd/png.dfdl.xsd">
     <tdml:document>
       <tdml:documentPart type="file">PngSuite-2013jan13/z06n2c08.png</tdml:documentPart>
     </tdml:document>
@@ -1609,7 +1609,7 @@ SOFTWARE.
     </tdml:infoset>
   </tdml:parserTestCase>
 
-  <tdml:parserTestCase name="z09n2c08" root="PNG" model="xsd/png.dfdl.xsd">
+  <tdml:parserTestCase name="z09n2c08" root="PNG" model="com/mitre/png/xsd/png.dfdl.xsd">
     <tdml:document>
       <tdml:documentPart type="file">PngSuite-2013jan13/z09n2c08.png</tdml:documentPart>
     </tdml:document>
