@@ -3,22 +3,25 @@
            xmlns:dfdl="http://www.ogf.org/dfdl/dfdl-1.0/"
            xmlns:daf="urn:ogf:dfdl:2013:imp:opensource.ncsa.illinois.edu:2012:ext"
            xmlns:fn="http://www.w3.org/2005/xpath-functions">
-	
-	
-	<!-- 
-        DFDL Schema for the PNG image format.
-        Author: Roger Costello, The MITRE Corporation.
-        Version: 0.1
-        Date: May 27, 2016
-      -->
-	<!--
-        *
-        * NOTICE
-        * This software (or technical data) was produced for the U. S.
-        * Government under contract W15P7T-08-C-F600, and is subject 
-        * to the Rights in Data-General Clause 52.227-14 (JUNE 1987)
-        *
-    -->
+
+
+<!--
+     NOTICE
+     
+     This software was produced for the U. S. Government under
+     Basic Contract No. W15P7T-13-C-A802, and is subject to the
+     Rights in Noncommercial Computer Software and Noncommercial
+     Computer Software Documentation Clause 252.227-7014 (FEB 2012)
+     
+     Copyright 2017 The MITRE Corporation.
+ -->
+<!-- 
+     DFDL Schema for the PNG image format.
+     Author: Roger Costello, The MITRE Corporation.
+     Version: 0.1
+     Date: August 29, 2016
+     Date: May 27, 2016
+   -->
     <xs:annotation>
         <xs:appinfo source="http://www.ogf.org/dfdl/">
             <dfdl:format alignmentUnits="bytes" lengthUnits="bits" representation="binary" binaryNumberRep="binary" 
