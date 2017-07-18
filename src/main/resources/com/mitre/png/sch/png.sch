@@ -7,6 +7,17 @@
     
     <sch:ns uri="function" prefix="f"/>
     
+    <!--  
+        NOTICE
+        This software was produced for the U. S. Government under 
+        Basic Contract No. W15P7T-13-C-A802, and is subject to the
+        Rights in Noncommercial Computer Software and Noncommercial
+        Computer Software Documentation Clause 252.227-7014 (FEB 2012)
+        
+        © 2017 The MITRE Corporation.
+        
+    -->
+    
     <xsl:function name="f:power" as="xs:integer">
         <xsl:param name="base" as="xs:integer" />
         <xsl:param name="power" as="xs:integer" />
@@ -349,68 +360,95 @@
                 One tIME only.
             </sch:assert>
         </sch:rule>
-        <sch:rule context="Chunk[PLTE]">
-            <sch:assert test="not(preceding-sibling::Chunk[IDAT])">
-                PLTE shall come before the first IDAT.
-            </sch:assert>
-        </sch:rule>
+        <!--
+                Chunks which are horizontally aligned and appear between two other chunk types 
+                (higher and lower than the horizontally aligned chunks) may appear in any order 
+                between the two higher and lower chunk types to which they are connected. 
+        -->
         <sch:rule context="Chunk[cHRM]">
-            <sch:assert test="not(preceding-sibling::Chunk[PLTE])">
-                cHRM shall come before PLTE.
+            <sch:assert test="empty(following-sibling::* except(following-sibling::Chunk[(PLTE, tRNS, hIST, bKGD, IDAT, IEND, iCCP, sRGB, sBIT, gAMA)]))">
+                The only chunks that may follow cHRM are PLTE, tRNS, hIST, bKGD, IDAT, IEND, iCCP, sRGB, sBIT, and gAMA.
             </sch:assert>
         </sch:rule>
         <sch:rule context="Chunk[gAMA]">
-            <sch:assert test="not(preceding-sibling::Chunk[PLTE])">
-                gAMA shall come before PLTE.
+            <sch:assert test="empty(following-sibling::* except(following-sibling::Chunk[(PLTE, tRNS, hIST, bKGD, IDAT, IEND, iCCP, sRGB, sBIT, cHRM)]))">
+                The only chunks that may follow gAMA are PLTE, tRNS, hIST, bKGD, IDAT, IEND, iCCP, sRGB, sBIT, and cHRM.
             </sch:assert>
         </sch:rule>
-        <sch:rule context="Chunk[iCCP]">
-            <sch:assert test="not(preceding-sibling::Chunk[PLTE])">
-                iCCP shall come before PLTE.
-            </sch:assert>
-            <sch:assert test="not(/PNG/Chunk/sRGB)">
-                If the iCCP chunk is present, the sRGB chunk should not be present.
+        <sch:rule context="Chunk[sBIT]">
+            <sch:assert test="empty(following-sibling::* except(following-sibling::Chunk[(PLTE, tRNS, hIST, bKGD, IDAT, IEND, iCCP, sRGB, gAMA, cHRM)]))">
+                The only chunks that may follow sBIT are PLTE, tRNS, hIST, bKGD, IDAT, IEND, iCCP, sRGB, gAMA, and cHRM.
             </sch:assert>
         </sch:rule>
         <sch:rule context="Chunk[sRGB]">
-            <sch:assert test="not(preceding-sibling::Chunk[PLTE])">
-                sRGB shall come before PLTE.
+            <sch:assert test="empty(following-sibling::* except(following-sibling::Chunk[(PLTE, tRNS, hIST, bKGD, IDAT, IEND, iCCP, sBIT, gAMA, cHRM)]))">
+                The only chunks that may follow sRGB are PLTE, tRNS, hIST, bKGD, IDAT, IEND, iCCP, sBIT, gAMA, and cHRM.
             </sch:assert>
             <sch:assert test="not(/PNG/Chunk/iCCP)">
                 If the sRGB chunk is present, the iCCP chunk should not be present.
             </sch:assert>
         </sch:rule>
-        <sch:rule context="Chunk[sBIT]">
-            <sch:assert test="not(preceding-sibling::Chunk[PLTE])">
-                sBIT shall come before PLTE.
+        <sch:rule context="Chunk[iCCP]">
+            <sch:assert test="empty(following-sibling::* except(following-sibling::Chunk[(PLTE, tRNS, hIST, bKGD, IDAT, IEND, sRGB, sBIT, gAMA, cHRM)]))">
+                The only chunks that may follow iCCP are PLTE, tRNS, hIST, bKGD, IDAT, IEND, sRGB, sBIT, gAMA, and cHRM.
+            </sch:assert>
+            <sch:assert test="not(/PNG/Chunk/sRGB)">
+                If the iCCP chunk is present, the sRGB chunk should not be present.
+            </sch:assert>
+        </sch:rule>
+        <sch:rule context="Chunk[PLTE]">
+            <sch:assert test="empty(following-sibling::* except(following-sibling::Chunk[(tRNS, hIST, bKGD, IDAT, IEND)]))">
+                The only chunks that may follow PLTE are tRNS, hIST, bKGD, IDAT, and IEND.
             </sch:assert>
         </sch:rule>
         <sch:rule context="Chunk[bKGD]">
-            <sch:assert test="not(following-sibling::Chunk[PLTE]) and
-                              not(preceding-sibling::Chunk[IDAT])">
-                bKGD shall come after PLTE and before IDAT.
+            <sch:assert test="empty(following-sibling::* except(following-sibling::Chunk[(IDAT, IEND, tRNS, hIST)]))">
+                The only chunks that may follow bKGD are IDAT, IEND, tRNS, and hIST.
             </sch:assert>
         </sch:rule>
         <sch:rule context="Chunk[hIST]">
-            <sch:assert test="not(following-sibling::Chunk[PLTE]) and
-                              not(preceding-sibling::Chunk[IDAT])">
-                hIST shall come after PLTE and before IDAT.
+            <sch:assert test="empty(following-sibling::* except(following-sibling::Chunk[(IDAT, IEND, tRNS, bKGD)]))">
+                The only chunks that may follow hIST are IDAT, IEND, tRNS, and bKGD.
             </sch:assert>
         </sch:rule>
         <sch:rule context="Chunk[tRNS]">
-            <sch:assert test="not(following-sibling::Chunk[PLTE]) and
-                              not(preceding-sibling::Chunk[IDAT])">
-                tRNS shall come after PLTE and before IDAT.
+            <sch:assert test="empty(following-sibling::* except(following-sibling::Chunk[(IDAT, IEND, hIST, bKGD)]))">
+                The only chunks that may follow tRNS are IDAT, IEND, hIST, bKGD. 
             </sch:assert>
         </sch:rule>
         <sch:rule context="Chunk[pHYs]">
-            <sch:assert test="not(preceding-sibling::Chunk[IDAT])">
-                pHYs shall come before IDAT.
+            <sch:assert test="empty(following-sibling::* except(following-sibling::Chunk[(IDAT, IEND, tIME, zTXt, tEXt, iTXt, sPLT)]))">
+                The only chunks that may follow pHYs are IDAT, IEND, tIME, zTXt, tEXt, iTXt, and sPLT.
             </sch:assert>
         </sch:rule>
         <sch:rule context="Chunk[sPLT]">
-            <sch:assert test="not(preceding-sibling::Chunk[IDAT])">
-                sPLT shall come before IDAT.
+            <sch:assert test="empty(following-sibling::* except(following-sibling::Chunk[(IDAT, IEND, tIME, zTXt, tEXt, iTXt, pHYS, sPLT)]))">
+                The only chunks that may follow sPLT are IDAT, IEND, tIME, zTXt, tEXt, iTXt, pHYS, and sPLT.
+            </sch:assert>
+        </sch:rule>
+        <sch:rule context="Chunk[tIME]">
+            <sch:assert test="empty(following-sibling::* except(following-sibling::Chunk[(IEND, zTXt, tEXt, iTXt, pHYS, sPLT)]))">
+                The only chunks that may follow tIME are IDAT, zTXt, tEXt, iTXt, pHYS, and sPLT.
+            </sch:assert>
+        </sch:rule>
+        <sch:rule context="Chunk[zTXt]">
+            <sch:assert test="empty(following-sibling::* except(following-sibling::Chunk[(IEND, tIME, zTXt, tEXt, iTXt, pHYS, sPLT)]))">
+                The only chunks that may follow zTXt are IDAT, tIME, zTXt, tEXt, iTXt, pHYS, and sPLT.
+            </sch:assert>
+        </sch:rule>
+        <sch:rule context="Chunk[tEXt]">
+            <sch:assert test="empty(following-sibling::* except(following-sibling::Chunk[(IEND, tIME, zTXt, tEXt, iTXt, pHYS, sPLT)]))">
+                The only chunks that may follow zTXt are IDAT, tIME, zTXt, tEXt, iTXt, pHYS, and sPLT.
+            </sch:assert>
+        </sch:rule>
+        <sch:rule context="Chunk[iTXt]">
+            <sch:assert test="empty(following-sibling::* except(following-sibling::Chunk[(IEND, tIME, zTXt, tEXt, iTXt, pHYS, sPLT)]))">
+                The only chunks that may follow iTXt are IDAT, tIME, zTXt, tEXt, iTXt, pHYS, and sPLT.
+            </sch:assert>
+        </sch:rule>
+        <sch:rule context="Chunk[IDAT]">
+            <sch:assert test="empty(following-sibling::* except(following-sibling::Chunk[(IDAT, IEND)]))">
+                The only chunks that may follow IDAT are IDAT and IEND.
             </sch:assert>
         </sch:rule>
     </sch:pattern>
