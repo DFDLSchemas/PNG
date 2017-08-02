@@ -4,7 +4,7 @@ import edu.illinois.ncsa.daffodil.tdml.DFDLTestSuite
 import edu.illinois.ncsa.daffodil.util.Misc
 
 object TestPngSuite2013jan13 {
-  val tdmlFile = "PngSuite-2013jan13.tdml"
+  val tdmlFile = "com/mitre/png/PngSuite-2013jan13.tdml"
   val validateTDML = true
   val validateDFDLSchema = true
   lazy val runner = new DFDLTestSuite(Misc.getRequiredResource(tdmlFile), validateTDML, validateDFDLSchema)
