@@ -54,7 +54,7 @@
 				else if (fn:exists(../IEND)) then dfdl:valueLength(../IEND, 'bytes')
 				else if (fn:exists(../cHRM)) then 32
 				else if (fn:exists(../gAMA)) then dfdl:valueLength(../gAMA/Image_Gamma, 'bytes')
-				else if (fn:exists(../iCCP)) then dfdl:valueLength(../iCCP/Profile_Name, 'bytes') + dfdl:valueLength(../iCCP/Compressed_Profile, 'bytes') + 3
+				else if (fn:exists(../iCCP)) then dfdl:valueLength(../iCCP/Profile_Name, 'bytes') + dfdl:valueLength(../iCCP/Compressed_Profile, 'bytes') + 2
 				else if (fn:exists(../sBIT)) then (
 					if (fn:exists(../sBIT/Color_Type/Color_Type_0)) then 1
 					else if (fn:exists(../sBIT/Color_Type/Color_Types_2_and_3)) then 3
@@ -504,7 +504,7 @@
 						</xs:appinfo>
 					</xs:annotation>
 				</xs:element>
-				<xs:element name="Compressed_Profile" type="xs:hexBinary" dfdl:alignment="1" dfdl:alignmentUnits="bytes" dfdl:representation="binary" dfdl:lengthKind="explicit" dfdl:lengthUnits="bytes" dfdl:length="{../../Length - fn:string-length(../Profile_Name) - 3}" />
+				<xs:element name="Compressed_Profile" type="xs:hexBinary" dfdl:alignment="1" dfdl:alignmentUnits="bytes" dfdl:representation="binary" dfdl:lengthKind="explicit" dfdl:lengthUnits="bytes" dfdl:length="{../../Length - fn:string-length(../Profile_Name) - 2}" />
 			</xs:sequence>
 		</xs:complexType>
 	</xs:element>
