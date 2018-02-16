@@ -60,7 +60,7 @@
 					else if (fn:exists(../sBIT/Color_Type/Color_Types_2_and_3)) then 3
 					else if (fn:exists(../sBIT/Color_Type/Color_Type_4)) then 4
 					else if (fn:exists(../sBIT/Color_Type/Color_Type_6)) then 4
-					else daf:error()
+					else fn:error('png', 'fn:error called.', .)
 				)
 				else if (fn:exists(../sRGB)) then 1
 				else if (fn:exists(../tEXt)) then dfdl:valueLength(../tEXt/Keyword, 'bytes') + dfdl:valueLength(../tEXt/Text, 'bytes') + 1
@@ -70,14 +70,14 @@
 					if (fn:exists(../bKGD/Color_Types_0_and_4)) then 2
 					else if (fn:exists(../bKGD/Color_Types_2_and_6)) then 6
 					else if (fn:exists(../bKGD/Color_Type_3)) then 1
-					else daf:error()
+					else fn:error('png', 'fn:error called.', .)
 				)
 				else if (fn:exists(../hIST)) then fn:count(../hIST/Frequency) * 2
 				else if (fn:exists(../tRNS)) then (
 					if (fn:exists(../tRNS/Grey)) then 2
 					else if (fn:exists(../tRNS/Red)) then 6
 					else if (fn:exists(../tRNS/Alpha)) then fn:count(../tRNS/Alpha)
-					else daf:error()
+					else fn:error('png', 'fn:error called.', .)
 				)
 				else if (fn:exists(../pHYs)) then 9
 				else if (fn:exists(../sPLT)) then (
@@ -86,7 +86,7 @@
 					else (fn:count(../sPLT/Palette_Entries/Sixteen_bit_Sample_Depth) * 10) + dfdl:valueLength(../sPLT/Palette_Name, 'bytes') + 2
 				)
 				else if (fn:exists(../tIME)) then 7
-				else daf:error()
+				else fn:error('png', 'fn:error called.', .)
 				}" />
 			<xs:element name="Chunk_Type" type="xs:string" dfdl:alignment="1" dfdl:alignmentUnits="bytes" dfdl:representation="text" dfdl:lengthKind="explicit" dfdl:length="4" dfdl:lengthUnits="bytes" dfdl:outputValueCalc="{
 				     if (fn:exists(../IHDR)) then 'IHDR'
@@ -107,7 +107,7 @@
 				else if (fn:exists(../pHYs)) then 'pHYs'
 				else if (fn:exists(../sPLT)) then 'sPLT'
 				else if (fn:exists(../tIME)) then 'tIME'
-				else daf:error()
+				else fn:error('png', 'fn:error called.', .)
 				}" />
 		</xs:sequence>
 	</xs:group>
@@ -378,7 +378,7 @@
 					else if (../Rendering_Intent eq 1) then "relative colorimetric (1)"
 					else if (../Rendering_Intent eq 2) then "saturation (2)"
 					else if (../Rendering_Intent eq 3) then "absolute colorimetric (3)"
-					else "daf:error()"
+					else fn:error("png", "fn:error called.", .)
 					}' />
 			</xs:sequence>
 		</xs:complexType>
@@ -391,7 +391,7 @@
 				else if (../Unit eq 'relative colorimetric (1)') then 1
 				else if (../Unit eq 'saturation (2)') then 2
 				else if (../Unit eq 'absolute colorimetric (3)') then 3
-				else daf:error()
+				else fn:error('png', 'fn:error called.', .)
 				}" />
 		</xs:sequence>
 	</xs:group>
@@ -632,7 +632,7 @@
 				<xs:element name='Unit' type='xs:string' dfdl:inputValueCalc='{
 					if (../Unit_Specifier eq 0) then "unknown (0)"
 					else if (../Unit_Specifier eq 1) then "metre (1)"
-					else "daf:error()"
+					else fn:error("png", "fn:error called.", .)
 					}' />
 			</xs:sequence>
 		</xs:complexType>
@@ -643,7 +643,7 @@
 			<xs:element name="Unit_Specifier" type="unsignedint8" dfdl:outputValueCalc="{
 				     if (../Unit eq 'unknown (0)') then 0
 				else if (../Unit eq 'metre (1)') then 1
-				else daf:error()
+				else fn:error('png', 'fn:error called.', .)
 				}" />
 		</xs:sequence>
 	</xs:group>
