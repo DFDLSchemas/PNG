@@ -24,11 +24,12 @@
    -->
     <xs:annotation>
         <xs:appinfo source="http://www.ogf.org/dfdl/">
+            <dfdl:defineFormat name="pngFormat">
             <dfdl:format alignmentUnits="bytes" lengthUnits="bits" representation="binary" binaryNumberRep="binary" 
             	         byteOrder="bigEndian" bitOrder="mostSignificantBitFirst" lengthKind="implicit" alignment="1" encodingErrorPolicy="replace" 
                          binaryFloatRep="ieee" calendarPatternKind="implicit" documentFinalTerminatorCanBeMissing="yes" 
                          emptyValueDelimiterPolicy="none" escapeSchemeRef="" fillByte="f" floating="no" ignoreCase="no" 
-                         initiatedContent="no" initiator="" leadingSkip="0" separator="" separatorPolicy="suppressed" 
+                         initiatedContent="no" initiator="" leadingSkip="0" separator="" separatorSuppressionPolicy="anyEmpty" 
                          textStandardZeroRep="0" textStandardInfinityRep="Inf" textStandardExponentRep="E" 
                          textStandardNaNRep="NaN" textNumberPattern="#,##0.###;-#,##0.###" textNumberRounding="explicit" 
                          textNumberRoundingMode="roundUnnecessary" textNumberRoundingIncrement="0" textStandardGroupingSeparator="," 
@@ -36,6 +37,8 @@
                          textNumberRep="standard" textPadKind="none" textStandardBase="10" textTrimKind="none" trailingSkip="0" truncateSpecifiedLengthString="no" 
                          utf16Width="fixed" encoding="US-ASCII" nilKind="literalValue" nilValueDelimiterPolicy="none" occursCountKind="parsed"
                          textOutputMinLength="0" />
+                        </dfdl:defineFormat>
+                        <dfdl:format ref="pngFormat"/>
         </xs:appinfo>
     </xs:annotation>
 

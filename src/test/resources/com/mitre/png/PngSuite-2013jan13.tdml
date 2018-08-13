@@ -592,6 +592,7 @@ SOFTWARE.
     </tdml:infoset>
   </tdml:parserTestCase>
 
+
   <tdml:parserTestCase name="ctjn0g04" root="PNG" model="com/mitre/png/xsd/png.dfdl.xsd">
     <tdml:document>
       <tdml:documentPart type="file">PngSuite-2013jan13/ctjn0g04.png</tdml:documentPart>
