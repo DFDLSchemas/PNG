@@ -1,2 +1,8 @@
+.cache
+bin
+lib_managed
 target
-/.cache-tests
+project/
+.cache-tests
+.cache-main
+*~
