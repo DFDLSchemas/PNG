@@ -90,8 +90,7 @@
     <CRC>315671741</CRC>
   </Chunk>
   <Chunk>
-    <IEND>
-    </IEND>
+    <IEND />
     <CRC>2923585666</CRC>
   </Chunk>
 </PNG>
