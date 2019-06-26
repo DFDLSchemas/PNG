@@ -36,7 +36,7 @@
                          separatorPosition="infix" sequenceKind="ordered" terminator="" textBidi="no" textNumberCheckPolicy="strict" 
                          textNumberRep="standard" textPadKind="none" textStandardBase="10" textTrimKind="none" trailingSkip="0" truncateSpecifiedLengthString="no" 
                          utf16Width="fixed" encoding="US-ASCII" nilKind="literalValue" nilValueDelimiterPolicy="none" occursCountKind="parsed"
-                         textOutputMinLength="0" />
+                         textOutputMinLength="0" choiceLengthKind="implicit" />
                         </dfdl:defineFormat>
                         <dfdl:format ref="pngFormat"/>
         </xs:appinfo>
