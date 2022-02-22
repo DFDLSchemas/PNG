@@ -54,7 +54,7 @@
 				     if (fn:exists(../IHDR)) then dfdl:valueLength(../IHDR, 'bytes')
 				else if (fn:exists(../PLTE)) then fn:count(../PLTE/Entry) * 3
 				else if (fn:exists(../IDAT)) then dfdl:valueLength(../IDAT/Data, 'bytes')
-				else if (fn:exists(../IEND)) then dfdl:valueLength(../IEND, 'bytes')
+				else if (fn:exists(../IEND)) then 0
 				else if (fn:exists(../cHRM)) then 32
 				else if (fn:exists(../gAMA)) then dfdl:valueLength(../gAMA/Image_Gamma, 'bytes')
 				else if (fn:exists(../iCCP)) then dfdl:valueLength(../iCCP/Profile_Name, 'bytes') + dfdl:valueLength(../iCCP/Compressed_Profile, 'bytes') + 2
