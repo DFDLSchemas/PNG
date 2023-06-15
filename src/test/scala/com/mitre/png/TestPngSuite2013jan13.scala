@@ -1,14 +1,12 @@
 package com.mitre.png
+
+import org.junit.AfterClass
 import org.junit.Test
-import org.apache.daffodil.tdml.DFDLTestSuite
-import org.apache.daffodil.util.Misc
+import org.apache.daffodil.tdml.Runner
 
 object TestPngSuite2013jan13 {
-  val tdmlFile = "com/mitre/png/PngSuite-2013jan13.tdml"
-  val validateTDML = true
-  val validateDFDLSchema = true
-  lazy val runner = new DFDLTestSuite(Misc.getRequiredResource(tdmlFile), validateTDML, validateDFDLSchema)
-  runner.setCheckAllTopLevel(true)
+  lazy val runner = Runner("/com/mitre/png/PngSuite-2013jan13.tdml")
+  @AfterClass def shutdown(): Unit = { runner.reset }
 }
 
 class TestPngSuite2013jan13 {
