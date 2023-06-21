@@ -4,7 +4,7 @@ organization := "com.mitre"
  
 version := "0.0.1"
  
-scalaVersion := "2.12.11"
+scalaVersion := "2.12.18"
  
 libraryDependencies ++= Seq(
   "org.apache.daffodil" %% "daffodil-tdml-processor" % "3.5.0" % "test",
